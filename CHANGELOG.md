@@ -34,7 +34,7 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
   patch tests for the def `PlantWheat`, not for the mod's display name, which is Mlie's to change.
 - Each recipe also accepts Mlie's `RawWheat`, through
   `<li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>`.
-- `packageId` `nelim.fullzooncookies`. The original has none; 1.0 did not require it.
+- `packageId` `nelim.fullzooncookiesrenew`. The original has none; 1.0 did not require it.
 
 ### Changed
 
