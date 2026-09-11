@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    The original also declared AteFZfoods, worth +99 mood for a day. No def referenced it - no
+    biscuit used it as its tasteThought, nothing else mentioned it - so it never fired. Dropped
+    rather than carried over: a stray +99 waiting for someone to wire it up is not a feature.
+  -->
+
+  <ThoughtDef>
+    <defName>AteFZEggBiscuit</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>ate egg biscuit</label>
+        <description>I had an egg biscuit. Mild, and gone too soon.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteFZChocolateCookies</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>ate chocolate chip cookie</label>
+        <description>I had a chocolate chip cookie. An obvious combination, and it works every time.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteFZCookies</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>ate butter cookie</label>
+        <description>I had a butter cookie. I could smell the butter on it before I bit in.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteFZBerryBiscuits</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>ate berry biscuit</label>
+        <description>I had a berry biscuit. The berries in it were sweet.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>AteFZInsectJellyBiscuits</defName>
+    <durationDays>0.5</durationDays>
+    <stages>
+      <li>
+        <label>ate insect jelly biscuit</label>
+        <description>I had an insect jelly biscuit. It tasted of apple. I have no idea how, and I am not going to ask.</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

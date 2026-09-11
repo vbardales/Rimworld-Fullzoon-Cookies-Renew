@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Fullzoon's own text, restored. The English above is a translation of it. -->
+
+  <FZEggBiscuit.label>鸡蛋饼干</FZEggBiscuit.label>
+  <FZEggBiscuit.description>由小麦粉和鸡蛋做成的小饼干，做法简单，口味甜，是一款大众小吃。</FZEggBiscuit.description>
+
+  <FZChocolateCookies.label>巧克力曲奇饼干</FZChocolateCookies.label>
+  <FZChocolateCookies.description>巧克力曲奇是一种西式饼干，相当的受欢迎。</FZChocolateCookies.description>
+
+  <FZCookies.label>曲奇饼干</FZCookies.label>
+  <FZCookies.description>曲奇饼干是一种西式奶油点心，在欧美，过节时，为了向爱人和朋友表示心意和尊敬，女孩子会前往曲奇作坊，在导师的督导下，亲自烘焙味道诱人的曲奇送给他们。</FZCookies.description>
+
+  <FZBerryBiscuits.label>莓果饼干</FZBerryBiscuits.label>
+  <FZBerryBiscuits.description>莓果饼干是常见饼干之一，莓果和饼干的搭配意外的受欢迎，莓果饼干中富含令肌肤美丽健康的维生素C，多吃也能补充维生素。</FZBerryBiscuits.description>
+
+  <FZInsectJellyBiscuits.label>虫胶饼干</FZInsectJellyBiscuits.label>
+  <FZInsectJellyBiscuits.description>用虫胶和小麦粉做成的饼干，竟然是苹果味的，这让你想多吃几个。</FZInsectJellyBiscuits.description>
+
+</LanguageData>

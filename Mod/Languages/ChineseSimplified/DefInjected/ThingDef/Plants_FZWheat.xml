@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Fullzoon wrote the same word for the plant and for the grain: 小麦. -->
+
+  <FZPlant_Wheat.label>小麦</FZPlant_Wheat.label>
+  <FZPlant_Wheat.description>小麦</FZPlant_Wheat.description>
+
+</LanguageData>

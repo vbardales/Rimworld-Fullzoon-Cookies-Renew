@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    Labelled "wheat grain" rather than "wheat". Mlie's Vanilla-like Wheat, which many colonies
+    already run, calls its own unprocessed harvest "wheat"; two identical labels in the same
+    stockpile filter help nobody. The two are different things anyway: this one is clean grain,
+    ready to bake with, while Mlie's is straw and grain that has to go through a quern first.
+  -->
+
+  <ThingDef ParentName="PlantFoodRawBase">
+    <defName>FZRawWheat</defName>
+    <label>wheat grain</label>
+    <description>Threshed wheat grain. Hard to get down raw, but it bakes into every kind of biscuit.</description>
+    <soundInteract>Grain_Drop</soundInteract>
+    <soundDrop>Grain_Drop</soundDrop>
+    <graphicData>
+      <texPath>Things/Item/FZRawWheat</texPath>
+    </graphicData>
+    <statBases>
+      <MarketValue>1.1</MarketValue>
+    </statBases>
+    <ingestible>
+      <foodType>Seed</foodType>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>40</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

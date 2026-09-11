@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!--
+    Two wheats in one colony.
+
+    Mlie's Vanilla-like Wheat (Continued) is a common mod, and it grows wheat too: PlantWheat,
+    labelled "wheat plant", harvested as RawWheat. Nothing collides - the defNames differ - but a
+    growing zone offering two entries called "wheat plant", one of them needing research and a
+    quern and the other not, is a nuisance rather than a choice.
+
+    So when that mod is loaded, this one stands down: FZPlant_Wheat loses its sowTags and drops
+    out of the sow menu, and the fifteen recipes take Mlie's RawWheat instead - they already
+    accept it, through MayRequire in Recipes_FZfood_Meals.xml.
+
+    The test is on the def, not on the mod. PatchOperationFindMod would have been the obvious
+    tool, but it matches on ModMetaData.Name by exact string equality - "Vanilla-like wheat
+    (Continued)", capital letters and parentheses included - and that name is Mlie's to change.
+    PlantWheat is what actually causes the problem, so PlantWheat is what is tested.
+  -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="PlantWheat"]</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/ThingDef[defName="FZPlant_Wheat"]/plant/sowTags</xpath>
+    </match>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <CookFZEggBiscuit.label>cuire des biscuits à l'œuf</CookFZEggBiscuit.label>
+  <CookFZEggBiscuit.description>Cuire des biscuits à l'œuf avec du grain de blé et des œufs.</CookFZEggBiscuit.description>
+  <CookFZEggBiscuit.jobString>Cuisson de biscuits.</CookFZEggBiscuit.jobString>
+  <Cook5FZEggBiscuit.label>cuire des biscuits à l'œuf x5</Cook5FZEggBiscuit.label>
+  <Cook5FZEggBiscuit.description>Cuire des biscuits à l'œuf avec du grain de blé et des œufs.</Cook5FZEggBiscuit.description>
+  <Cook5FZEggBiscuit.jobString>Cuisson de biscuits.</Cook5FZEggBiscuit.jobString>
+  <Cook10FZEggBiscuit.label>cuire des biscuits à l'œuf x10</Cook10FZEggBiscuit.label>
+  <Cook10FZEggBiscuit.description>Cuire des biscuits à l'œuf avec du grain de blé et des œufs.</Cook10FZEggBiscuit.description>
+  <Cook10FZEggBiscuit.jobString>Cuisson de biscuits.</Cook10FZEggBiscuit.jobString>
+
+  <CookFZChocolateCookies.label>cuire des cookies aux pépites de chocolat</CookFZChocolateCookies.label>
+  <CookFZChocolateCookies.description>Cuire des cookies aux pépites de chocolat avec du grain de blé, du chocolat et du lait.</CookFZChocolateCookies.description>
+  <CookFZChocolateCookies.jobString>Cuisson de biscuits.</CookFZChocolateCookies.jobString>
+  <Cook5FZChocolateCookies.label>cuire des cookies aux pépites de chocolat x5</Cook5FZChocolateCookies.label>
+  <Cook5FZChocolateCookies.description>Cuire des cookies aux pépites de chocolat avec du grain de blé, du chocolat et du lait.</Cook5FZChocolateCookies.description>
+  <Cook5FZChocolateCookies.jobString>Cuisson de biscuits.</Cook5FZChocolateCookies.jobString>
+  <Cook10FZChocolateCookies.label>cuire des cookies aux pépites de chocolat x10</Cook10FZChocolateCookies.label>
+  <Cook10FZChocolateCookies.description>Cuire des cookies aux pépites de chocolat avec du grain de blé, du chocolat et du lait.</Cook10FZChocolateCookies.description>
+  <Cook10FZChocolateCookies.jobString>Cuisson de biscuits.</Cook10FZChocolateCookies.jobString>
+
+  <CookFZCookies.label>cuire des biscuits au beurre</CookFZCookies.label>
+  <CookFZCookies.description>Cuire des biscuits au beurre avec du grain de blé et du lait.</CookFZCookies.description>
+  <CookFZCookies.jobString>Cuisson de biscuits.</CookFZCookies.jobString>
+  <Cook5FZCookies.label>cuire des biscuits au beurre x5</Cook5FZCookies.label>
+  <Cook5FZCookies.description>Cuire des biscuits au beurre avec du grain de blé et du lait.</Cook5FZCookies.description>
+  <Cook5FZCookies.jobString>Cuisson de biscuits.</Cook5FZCookies.jobString>
+  <Cook10FZCookies.label>cuire des biscuits au beurre x10</Cook10FZCookies.label>
+  <Cook10FZCookies.description>Cuire des biscuits au beurre avec du grain de blé et du lait.</Cook10FZCookies.description>
+  <Cook10FZCookies.jobString>Cuisson de biscuits.</Cook10FZCookies.jobString>
+
+  <CookFZBerryBiscuits.label>cuire des biscuits aux baies</CookFZBerryBiscuits.label>
+  <CookFZBerryBiscuits.description>Cuire des biscuits aux baies avec du grain de blé et des baies.</CookFZBerryBiscuits.description>
+  <CookFZBerryBiscuits.jobString>Cuisson de biscuits.</CookFZBerryBiscuits.jobString>
+  <Cook5FZBerryBiscuits.label>cuire des biscuits aux baies x5</Cook5FZBerryBiscuits.label>
+  <Cook5FZBerryBiscuits.description>Cuire des biscuits aux baies avec du grain de blé et des baies.</Cook5FZBerryBiscuits.description>
+  <Cook5FZBerryBiscuits.jobString>Cuisson de biscuits.</Cook5FZBerryBiscuits.jobString>
+  <Cook10FZBerryBiscuits.label>cuire des biscuits aux baies x10</Cook10FZBerryBiscuits.label>
+  <Cook10FZBerryBiscuits.description>Cuire des biscuits aux baies avec du grain de blé et des baies.</Cook10FZBerryBiscuits.description>
+  <Cook10FZBerryBiscuits.jobString>Cuisson de biscuits.</Cook10FZBerryBiscuits.jobString>
+
+  <CookFZInsectJellyBiscuits.label>cuire des biscuits à la gelée d'insecte</CookFZInsectJellyBiscuits.label>
+  <CookFZInsectJellyBiscuits.description>Cuire des biscuits à la gelée d'insecte avec du grain de blé et de la gelée d'insecte.</CookFZInsectJellyBiscuits.description>
+  <CookFZInsectJellyBiscuits.jobString>Cuisson de biscuits.</CookFZInsectJellyBiscuits.jobString>
+  <Cook5FZInsectJellyBiscuits.label>cuire des biscuits à la gelée d'insecte x5</Cook5FZInsectJellyBiscuits.label>
+  <Cook5FZInsectJellyBiscuits.description>Cuire des biscuits à la gelée d'insecte avec du grain de blé et de la gelée d'insecte.</Cook5FZInsectJellyBiscuits.description>
+  <Cook5FZInsectJellyBiscuits.jobString>Cuisson de biscuits.</Cook5FZInsectJellyBiscuits.jobString>
+  <Cook10FZInsectJellyBiscuits.label>cuire des biscuits à la gelée d'insecte x10</Cook10FZInsectJellyBiscuits.label>
+  <Cook10FZInsectJellyBiscuits.description>Cuire des biscuits à la gelée d'insecte avec du grain de blé et de la gelée d'insecte.</Cook10FZInsectJellyBiscuits.description>
+  <Cook10FZInsectJellyBiscuits.jobString>Cuisson de biscuits.</Cook10FZInsectJellyBiscuits.jobString>
+
+</LanguageData>

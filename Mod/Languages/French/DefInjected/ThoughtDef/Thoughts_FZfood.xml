@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!--
+    A thought stage is addressed by its English label, spaces turned into underscores - not by
+    its position in the list.
+  -->
+
+  <AteFZEggBiscuit.stages.ate_egg_biscuit.label>a mangé un biscuit à l'œuf</AteFZEggBiscuit.stages.ate_egg_biscuit.label>
+  <AteFZEggBiscuit.stages.ate_egg_biscuit.description>J'ai mangé un biscuit à l'œuf. Doux, et fini trop vite.</AteFZEggBiscuit.stages.ate_egg_biscuit.description>
+
+  <AteFZChocolateCookies.stages.ate_chocolate_chip_cookie.label>a mangé un cookie aux pépites de chocolat</AteFZChocolateCookies.stages.ate_chocolate_chip_cookie.label>
+  <AteFZChocolateCookies.stages.ate_chocolate_chip_cookie.description>J'ai mangé un cookie aux pépites de chocolat. Une association évidente, et qui marche à tous les coups.</AteFZChocolateCookies.stages.ate_chocolate_chip_cookie.description>
+
+  <AteFZCookies.stages.ate_butter_cookie.label>a mangé un biscuit au beurre</AteFZCookies.stages.ate_butter_cookie.label>
+  <AteFZCookies.stages.ate_butter_cookie.description>J'ai mangé un biscuit au beurre. Je le sentais avant même de croquer dedans.</AteFZCookies.stages.ate_butter_cookie.description>
+
+  <AteFZBerryBiscuits.stages.ate_berry_biscuit.label>a mangé un biscuit aux baies</AteFZBerryBiscuits.stages.ate_berry_biscuit.label>
+  <AteFZBerryBiscuits.stages.ate_berry_biscuit.description>J'ai mangé un biscuit aux baies. Les baies dedans étaient sucrées.</AteFZBerryBiscuits.stages.ate_berry_biscuit.description>
+
+  <AteFZInsectJellyBiscuits.stages.ate_insect_jelly_biscuit.label>a mangé un biscuit à la gelée d'insecte</AteFZInsectJellyBiscuits.stages.ate_insect_jelly_biscuit.label>
+  <AteFZInsectJellyBiscuits.stages.ate_insect_jelly_biscuit.description>J'ai mangé un biscuit à la gelée d'insecte. Ça avait un goût de pomme. Je ne sais pas comment, et je ne compte pas demander.</AteFZInsectJellyBiscuits.stages.ate_insect_jelly_biscuit.description>
+
+</LanguageData>

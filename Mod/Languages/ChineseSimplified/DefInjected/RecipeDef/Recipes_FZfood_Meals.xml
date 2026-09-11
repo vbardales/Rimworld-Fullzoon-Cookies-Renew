@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Fullzoon's own labels, restored. The jobString had no Chinese original. -->
+
+  <CookFZEggBiscuit.label>做鸡蛋饼干</CookFZEggBiscuit.label>
+  <CookFZEggBiscuit.description>用鸡蛋和小麦来做鸡蛋饼干</CookFZEggBiscuit.description>
+  <CookFZEggBiscuit.jobString>正在烘焙饼干。</CookFZEggBiscuit.jobString>
+  <Cook5FZEggBiscuit.label>做鸡蛋饼干*5</Cook5FZEggBiscuit.label>
+  <Cook5FZEggBiscuit.description>用鸡蛋和小麦来做鸡蛋饼干</Cook5FZEggBiscuit.description>
+  <Cook5FZEggBiscuit.jobString>正在烘焙饼干。</Cook5FZEggBiscuit.jobString>
+  <Cook10FZEggBiscuit.label>做鸡蛋饼干*10</Cook10FZEggBiscuit.label>
+  <Cook10FZEggBiscuit.description>用鸡蛋和小麦来做鸡蛋饼干</Cook10FZEggBiscuit.description>
+  <Cook10FZEggBiscuit.jobString>正在烘焙饼干。</Cook10FZEggBiscuit.jobString>
+
+  <CookFZChocolateCookies.label>做巧克力曲奇</CookFZChocolateCookies.label>
+  <CookFZChocolateCookies.description>用巧克力、奶和小麦来做出巧克力曲奇</CookFZChocolateCookies.description>
+  <CookFZChocolateCookies.jobString>正在烘焙饼干。</CookFZChocolateCookies.jobString>
+  <Cook5FZChocolateCookies.label>做巧克力曲奇*5</Cook5FZChocolateCookies.label>
+  <Cook5FZChocolateCookies.description>用巧克力、奶和小麦来做出巧克力曲奇</Cook5FZChocolateCookies.description>
+  <Cook5FZChocolateCookies.jobString>正在烘焙饼干。</Cook5FZChocolateCookies.jobString>
+  <Cook10FZChocolateCookies.label>做巧克力曲奇*10</Cook10FZChocolateCookies.label>
+  <Cook10FZChocolateCookies.description>用巧克力、奶和小麦来做出巧克力曲奇</Cook10FZChocolateCookies.description>
+  <Cook10FZChocolateCookies.jobString>正在烘焙饼干。</Cook10FZChocolateCookies.jobString>
+
+  <CookFZCookies.label>做曲奇饼干</CookFZCookies.label>
+  <CookFZCookies.description>用奶和小麦来做出曲奇饼干</CookFZCookies.description>
+  <CookFZCookies.jobString>正在烘焙饼干。</CookFZCookies.jobString>
+  <Cook5FZCookies.label>做曲奇饼干*5</Cook5FZCookies.label>
+  <Cook5FZCookies.description>用奶和小麦来做出曲奇饼干</Cook5FZCookies.description>
+  <Cook5FZCookies.jobString>正在烘焙饼干。</Cook5FZCookies.jobString>
+  <Cook10FZCookies.label>做曲奇饼干*10</Cook10FZCookies.label>
+  <Cook10FZCookies.description>用奶和小麦来做出曲奇饼干</Cook10FZCookies.description>
+  <Cook10FZCookies.jobString>正在烘焙饼干。</Cook10FZCookies.jobString>
+
+  <CookFZBerryBiscuits.label>做莓果饼干</CookFZBerryBiscuits.label>
+  <CookFZBerryBiscuits.description>用莓果和小麦做出莓果饼干</CookFZBerryBiscuits.description>
+  <CookFZBerryBiscuits.jobString>正在烘焙饼干。</CookFZBerryBiscuits.jobString>
+  <Cook5FZBerryBiscuits.label>做莓果饼干*5</Cook5FZBerryBiscuits.label>
+  <Cook5FZBerryBiscuits.description>用莓果和小麦做出莓果饼干</Cook5FZBerryBiscuits.description>
+  <Cook5FZBerryBiscuits.jobString>正在烘焙饼干。</Cook5FZBerryBiscuits.jobString>
+  <Cook10FZBerryBiscuits.label>做莓果饼干*10</Cook10FZBerryBiscuits.label>
+  <Cook10FZBerryBiscuits.description>用莓果和小麦做出莓果饼干</Cook10FZBerryBiscuits.description>
+  <Cook10FZBerryBiscuits.jobString>正在烘焙饼干。</Cook10FZBerryBiscuits.jobString>
+
+  <CookFZInsectJellyBiscuits.label>做虫胶饼干</CookFZInsectJellyBiscuits.label>
+  <CookFZInsectJellyBiscuits.description>用虫胶和小麦做出虫胶饼干</CookFZInsectJellyBiscuits.description>
+  <CookFZInsectJellyBiscuits.jobString>正在烘焙饼干。</CookFZInsectJellyBiscuits.jobString>
+  <Cook5FZInsectJellyBiscuits.label>做虫胶饼干*5</Cook5FZInsectJellyBiscuits.label>
+  <Cook5FZInsectJellyBiscuits.description>用虫胶和小麦做出虫胶饼干</Cook5FZInsectJellyBiscuits.description>
+  <Cook5FZInsectJellyBiscuits.jobString>正在烘焙饼干。</Cook5FZInsectJellyBiscuits.jobString>
+  <Cook10FZInsectJellyBiscuits.label>做虫胶饼干*10</Cook10FZInsectJellyBiscuits.label>
+  <Cook10FZInsectJellyBiscuits.description>用虫胶和小麦做出虫胶饼干</Cook10FZInsectJellyBiscuits.description>
+  <Cook10FZInsectJellyBiscuits.jobString>正在烘焙饼干。</Cook10FZInsectJellyBiscuits.jobString>
+
+</LanguageData>

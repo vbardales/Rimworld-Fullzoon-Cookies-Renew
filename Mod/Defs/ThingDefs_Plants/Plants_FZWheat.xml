@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    The original mod shipped its own <ThingDef Name="PlantBase" Abstract="True"> here: a copy of
+    the vanilla base every plant in the game inherits from. Two abstract defs may share a Name
+    without any error: XmlInheritance keeps a list per name, and GetBestParentFor resolves each
+    ParentName to the copy from the highest-loading mod at or below the def asking for it. That
+    is what makes redeclaring a vanilla name dangerous rather than noisy - every plant of every
+    mod loading after this one would have been reparented onto Fullzoon's copy, silently, and
+    that copy was not even faithful: it dropped BeautyOutdoors and the Plants thing category,
+    and set harvestWork to 250 instead of 200.
+
+    The copy is gone; this plant inherits the real PlantBase, and carries the 250 itself.
+  -->
+
+  <ThingDef ParentName="PlantBase">
+    <defName>FZPlant_Wheat</defName>
+    <label>wheat plant</label>
+    <description>A grain plant grown for its seed. It is quicker to bring in than most crops, and the grain keeps well, but it is of little use until it has been baked into something.</description>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Nutrition>0.20</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RicePlant</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <pathCost>10</pathCost>
+    <ingestible />
+    <tradeability>Buyable</tradeability>
+    <plant>
+      <dieIfLeafless>true</dieIfLeafless>
+      <maxMeshCount>4</maxMeshCount>
+      <harvestTag>Standard</harvestTag>
+      <harvestedThingDef>FZRawWheat</harvestedThingDef>
+      <harvestYield>6</harvestYield>
+      <!-- 250, as the mod's own PlantBase copy set it. Vanilla PlantBase says 200. -->
+      <harvestWork>250</harvestWork>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+      <topWindExposure>0.1</topWindExposure>
+      <growDays>4.5</growDays>
+      <visualSizeRange>0.3~0.8</visualSizeRange>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+    </plant>
+  </ThingDef>
+
+</Defs>

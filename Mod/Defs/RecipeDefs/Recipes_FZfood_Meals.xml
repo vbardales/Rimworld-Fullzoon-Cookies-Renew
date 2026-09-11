@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    The original mod shipped its own <RecipeDef Name="CookMealBase" Abstract="True"> here: a copy
+    of the vanilla base every cooking recipe inherits from. Two abstract defs may share a Name
+    without any error: GetBestParentFor resolves each ParentName to the copy from the
+    highest-loading mod at or below the def asking for it, so this copy would quietly have stood
+    in for Ludeon's on every vanilla meal recipe loading after it - and being a 1.0 copy, it was
+    missing the Anomaly exclusion of twisted meat. Not one of the fifteen recipes below ever
+    inherited from it. It is gone.
+
+    Wheat: each recipe takes this mod's FZRawWheat, and also Mlie's RawWheat where that mod is
+    loaded, so a colony that already grows wheat does not have to grow a second kind.
+
+    Eggs: the egg biscuit asked for EggChickenUnfertilized by name, which locked out the six
+    other vanilla eggs - duck, goose, turkey, emu, ostrich, cassowary - and every modded bird.
+    It now takes the EggsUnfertilized category.
+  -->
+
+  <!-- egg biscuit -->
+
+  <RecipeDef>
+    <defName>CookFZEggBiscuit</defName>
+    <label>bake egg biscuits</label>
+    <description>Bake egg biscuits from wheat grain and eggs.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>300</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>EggsUnfertilized</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+      <categories>
+        <li>EggsUnfertilized</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <FZEggBiscuit>5</FZEggBiscuit>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook5FZEggBiscuit</defName>
+    <label>bake egg biscuits x5</label>
+    <description>Bake egg biscuits from wheat grain and eggs.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>EggsUnfertilized</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+      <categories>
+        <li>EggsUnfertilized</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <FZEggBiscuit>25</FZEggBiscuit>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook10FZEggBiscuit</defName>
+    <label>bake egg biscuits x10</label>
+    <description>Bake egg biscuits from wheat grain and eggs.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>3000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <categories>
+            <li>EggsUnfertilized</li>
+          </categories>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+      <categories>
+        <li>EggsUnfertilized</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <FZEggBiscuit>50</FZEggBiscuit>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <!-- chocolate chip cookie -->
+
+  <RecipeDef>
+    <defName>CookFZChocolateCookies</defName>
+    <label>bake chocolate chip cookies</label>
+    <description>Bake chocolate chip cookies from wheat grain, chocolate and milk.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>300</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chocolate</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Milk</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>Chocolate</li>
+        <li>Milk</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZChocolateCookies>5</FZChocolateCookies>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook5FZChocolateCookies</defName>
+    <label>bake chocolate chip cookies x5</label>
+    <description>Bake chocolate chip cookies from wheat grain, chocolate and milk.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chocolate</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Milk</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>Chocolate</li>
+        <li>Milk</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZChocolateCookies>25</FZChocolateCookies>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook10FZChocolateCookies</defName>
+    <label>bake chocolate chip cookies x10</label>
+    <description>Bake chocolate chip cookies from wheat grain, chocolate and milk.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>3000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Chocolate</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Milk</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>Chocolate</li>
+        <li>Milk</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZChocolateCookies>50</FZChocolateCookies>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <!-- butter cookie -->
+
+  <RecipeDef>
+    <defName>CookFZCookies</defName>
+    <label>bake butter cookies</label>
+    <description>Bake butter cookies from wheat grain and milk.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>300</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Milk</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>Milk</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZCookies>5</FZCookies>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook5FZCookies</defName>
+    <label>bake butter cookies x5</label>
+    <description>Bake butter cookies from wheat grain and milk.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Milk</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>Milk</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZCookies>25</FZCookies>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook10FZCookies</defName>
+    <label>bake butter cookies x10</label>
+    <description>Bake butter cookies from wheat grain and milk.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>3000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Milk</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>Milk</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZCookies>50</FZCookies>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <!-- berry biscuit -->
+
+  <RecipeDef>
+    <defName>CookFZBerryBiscuits</defName>
+    <label>bake berry biscuits</label>
+    <description>Bake berry biscuits from wheat grain and berries.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>300</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawBerries</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>RawBerries</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZBerryBiscuits>5</FZBerryBiscuits>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook5FZBerryBiscuits</defName>
+    <label>bake berry biscuits x5</label>
+    <description>Bake berry biscuits from wheat grain and berries.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawBerries</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>RawBerries</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZBerryBiscuits>25</FZBerryBiscuits>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook10FZBerryBiscuits</defName>
+    <label>bake berry biscuits x10</label>
+    <description>Bake berry biscuits from wheat grain and berries.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>3000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RawBerries</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>RawBerries</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZBerryBiscuits>50</FZBerryBiscuits>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <!-- insect jelly biscuit -->
+
+  <RecipeDef>
+    <defName>CookFZInsectJellyBiscuits</defName>
+    <label>bake insect jelly biscuits</label>
+    <description>Bake insect jelly biscuits from wheat grain and insect jelly.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>300</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>InsectJelly</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZInsectJellyBiscuits>5</FZInsectJellyBiscuits>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook5FZInsectJellyBiscuits</defName>
+    <label>bake insect jelly biscuits x5</label>
+    <description>Bake insect jelly biscuits from wheat grain and insect jelly.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>1500</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>InsectJelly</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZInsectJellyBiscuits>25</FZInsectJellyBiscuits>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>Cook10FZInsectJellyBiscuits</defName>
+    <label>bake insect jelly biscuits x10</label>
+    <description>Bake insect jelly biscuits from wheat grain and insect jelly.</description>
+    <jobString>Baking biscuits.</jobString>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <workAmount>3000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FZRawWheat</li>
+            <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+          </thingDefs>
+        </filter>
+        <count>80</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>InsectJelly</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>FZRawWheat</li>
+        <li>InsectJelly</li>
+        <li MayRequire="Mlie.VanillalikeWheat">RawWheat</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FZInsectJellyBiscuits>50</FZInsectJellyBiscuits>
+    </products>
+    <recipeUsers>
+      <li>ElectricStove</li>
+      <li>FueledStove</li>
+    </recipeUsers>
+    <workSkill>Cooking</workSkill>
+  </RecipeDef>
+
+</Defs>

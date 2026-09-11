@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FZEggBiscuit.label>biscuit à l'œuf</FZEggBiscuit.label>
+  <FZEggBiscuit.description>Un petit biscuit de farine de blé et d'œuf. Simple à faire, à peine sucré, et mangé partout.</FZEggBiscuit.description>
+
+  <FZChocolateCookies.label>cookie aux pépites de chocolat</FZChocolateCookies.label>
+  <FZChocolateCookies.description>Un biscuit occidental parsemé de chocolat. Difficile de trouver quelqu'un qui en refuse un.</FZChocolateCookies.description>
+
+  <FZCookies.label>biscuit au beurre</FZCookies.label>
+  <FZCookies.description>Un riche biscuit occidental à la crème. Dans certains pays, en préparer est une coutume des fêtes : on réserve une heure dans un atelier, on suit les instructions du pâtissier, et on offre la fournée aux gens qu'on aime.</FZCookies.description>
+
+  <FZBerryBiscuits.label>biscuit aux baies</FZBerryBiscuits.label>
+  <FZBerryBiscuits.description>Des baies cuites à même la pâte, un mariage qui marche mieux qu'il n'y paraît. Il y reste assez de vitamine C pour que ça compte.</FZBerryBiscuits.description>
+
+  <FZInsectJellyBiscuits.label>biscuit à la gelée d'insecte</FZInsectJellyBiscuits.label>
+  <FZInsectJellyBiscuits.description>Un biscuit de farine de blé et de gelée d'insecte. Contre toute attente il a un goût de pomme, et on se surprend à en reprendre un.</FZInsectJellyBiscuits.description>
+
+</LanguageData>
