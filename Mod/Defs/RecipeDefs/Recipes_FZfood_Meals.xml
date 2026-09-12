@@ -13,9 +13,9 @@
     Wheat: each recipe takes this mod's FZRawWheat, and also Mlie's RawWheat where that mod is
     loaded, so a colony that already grows wheat does not have to grow a second kind.
 
-    Eggs: the egg biscuit asked for EggChickenUnfertilized by name, which locked out the six
-    other vanilla eggs - duck, goose, turkey, emu, ostrich, cassowary - and every modded bird.
-    It now takes the EggsUnfertilized category.
+    Eggs: the egg biscuit asked for EggChickenUnfertilized by name, which locked out the nine
+    other unfertilised eggs vanilla ships - duck, goose, turkey, emu, ostrich, cassowary, cobra,
+    iguana and tortoise - and every modded bird. It now takes the EggsUnfertilized category.
   -->
 
   <!-- egg biscuit -->

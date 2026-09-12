@@ -23,8 +23,9 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
 - **`AteFZfoods` dropped.** A sixth `ThoughtDef` worth +99 mood for a day, referenced by nothing.
   It never fired.
 - **Egg biscuits accept every unfertilised egg.** The recipe named `EggChickenUnfertilized`,
-  which locked out duck, goose, turkey, emu, ostrich and cassowary eggs, and every modded bird.
-  It now takes the `EggsUnfertilized` category.
+  which locked out the nine other unfertilised eggs vanilla ships - duck, goose, turkey, emu,
+  ostrich, cassowary, cobra, iguana and tortoise - and every modded bird. It now takes the
+  `EggsUnfertilized` category.
 
 ### Added
 

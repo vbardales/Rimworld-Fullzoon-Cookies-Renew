@@ -57,8 +57,8 @@ Both copies are deleted. The wheat inherits the real `PlantBase` and carries its
 **A sixth thought, `AteFZfoods`, was worth +99 mood** for a day. Nothing referenced it, so it
 never fired. Dropped.
 
-**The egg biscuit asked for chicken eggs by name**, locking out the six other vanilla eggs and
-every modded bird. It takes the `EggsUnfertilized` category now.
+**The egg biscuit asked for chicken eggs by name**, locking out the nine other unfertilised eggs
+vanilla ships and every modded bird. It takes the `EggsUnfertilized` category now.
 
 ## Runs alongside Vanilla-like Wheat
 

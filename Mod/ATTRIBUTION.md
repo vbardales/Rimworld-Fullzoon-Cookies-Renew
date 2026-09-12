@@ -76,8 +76,8 @@ ever inherited from it.** Each declares its own `fixedIngredientFilter` and its 
   `tasteThought`; nothing referenced it at all. It never fired. Dropped rather than carried
   forward.
 - **`EggChickenUnfertilized` by name.** The egg biscuit could only be baked from chicken eggs —
-  not duck, goose, turkey, emu, ostrich or cassowary, and not a modded bird. It now takes the
-  `EggsUnfertilized` category.
+  not duck, goose, turkey, emu, ostrich, cassowary, cobra, iguana or tortoise, and not a modded
+  bird. It now takes the `EggsUnfertilized` category.
 - **The wheat has no texture of its own.** `FZPlant_Wheat` points at `Things/Plant/RicePlant`,
   vanilla's rice. In game the crop is a rice field. Left as it is: inventing a plant texture is
   not porting.
