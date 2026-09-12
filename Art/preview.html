@@ -14,6 +14,13 @@
   crop is taken low rather than centred: the bottom strip is the empty bench and floor in front
   of the table, while the band above the tray carries the lamp and the settler at the stove.
 
+  The veil is cream rather than the near-black the first 54 showcases used, and the ink is dark
+  because of it: the colour is sampled from the wheat grain in the bowl, the one pale thing in
+  the picture, and its luminance is far above the 0.18 line that chooses between the two inks.
+  The text shadows are gone with the dark veil - a black shadow under a black letter lifts
+  nothing and dirties the edge - and the rule is a burnt amber, the repository's #D68F2C being
+  too close to the cream to be seen on it.
+
   The count is engraved: five biscuits is a number that cannot move. Fullzoon's mod stopped at
   1.0 and the five are named one by one in the defs, so nothing outside this repository can
   change it. See the rule in STYLE_RIMWORLD.md.
@@ -27,17 +34,18 @@
   .shot { position:absolute; inset:0; width:896px; height:504px;
           object-fit:cover; object-position:50% 54%; }
 
-  /* Repository standard: radial darkening from the top-left, nil at 74%. It lands on the bare
-     floor tiles left of the table, which is the calmest corner of the picture and the one the
-     prompt reserved. */
+  /* Repository standard: a wash from the top-left corner. It is flatter than the near-black veil
+     the first 54 showcases used - see STYLE_RIMWORLD.md: a pale wash has to hold its strength
+     across the whole text block, because what it fights is a dark picture rather than a bright
+     one. It lands on the bare floor tiles left of the table, which is the calmest corner of
+     the picture and the one the prompt reserved. */
   .veil { position:absolute; inset:0;
-    background: radial-gradient(circle at 0% 0%, rgba(6,5,4,.86) 0%, rgba(6,5,4,0) 74%); }
+    background: radial-gradient(ellipse 900px 680px at top left, rgba(239,217,168,.94) 0%, rgba(239,217,168,.90) 45%, rgba(239,217,168,0) 100%); }
 
   .text { position:absolute; left:56px; top:86px; width:430px; }
-  h1 { font-size:44px; line-height:1.06; font-weight:700; color:#f2ece1;
-       letter-spacing:-.5px; text-shadow:0 2px 10px rgba(0,0,0,.7); }
-  .rule { width:58px; height:3px; background:#D68F2C; margin:22px 0 20px; }
-  p { font-size:21px; line-height:1.42; color:#d8cfc0; text-shadow:0 1px 6px rgba(0,0,0,.75); }
+  h1 { font-size:44px; line-height:1.06; font-weight:700; color:#17120E; letter-spacing:-.5px; }
+  .rule { width:58px; height:3px; background:#8A5A18; margin:22px 0 20px; }
+  p { font-size:21px; line-height:1.42; color:#3A2E22; }
 </style>
 <div class="stage">
   <img class="shot" src="Preview-source.png">
