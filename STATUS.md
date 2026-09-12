@@ -22,7 +22,7 @@ updated:      2026-09-12, releve automatique
 Status card, read by a pass over every mod rather than by asking each thread one at a time. It
 lives at the root, never inside `Mod/`, so Steam never receives it.
 
-The fields above were read off the disk on 2026-09-12. Three of them cannot be, and wait on the
+The fields above were read off the disk on 2026-09-12. Four of them cannot be, and wait on the
 session that holds this mod:
 
 - **`stage`** — one of `port`, `showcase`, `preTest`, `done`, `tested`, `published`. Filled in
