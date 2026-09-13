@@ -1,8 +1,7 @@
 # Functional scenarios, to be played in game
 
 This mod is XML and nothing else: no assembly, no Harmony, no tick, and a single patch operation.
-So there is no out-of-game suite next door to run first — there is no code to run. Everything the
-mod claims happens in a colony, and only a colony can answer for it. These are the scenarios that
+Shared XML/reference/translation validators provide automated static checks (see STATUS.md). Runtime behavior still requires a colony. These are the scenarios that
 do, written so each one has a single thing to watch and a single way of being wrong.
 
 The mod has never been run in a game. Until scenario 0 passes, nothing below is worth playing.
@@ -19,8 +18,7 @@ take four days and a half.
 
 **Do.** Start the game with the mod active and load any save.
 
-**Expect.** No red at startup. The mod does nothing at any other moment — no assembly, no tick, no
-job — so a fault that is not here is not anywhere.
+**Expect.** No mod-related errors at startup. Continue the later gameplay scenarios even after a clean startup; XML-defined behavior can still fail when used.
 
 **Watch for in `Player.log`.** Four lines, each meaning something different:
 
@@ -30,8 +28,7 @@ job — so a fault that is not here is not anywhere.
   a game update, and the egg biscuit has no egg.
 - `XML error ... no parent named PlantBase` — the wheat has lost the vanilla base it now inherits
   from, which would mean Core itself failed to load first.
-- `Patch operation Verse.PatchOperationConditional ... failed` — the Mlie patch. Being conditional
-  it cannot fail on a missing target, so this line means the xpath itself is malformed.
+- `Patch operation Verse.PatchOperationConditional ... failed` — the Mlie patch. Inspect the full operation error and active mod list; a missing removal target or conflicting patch can also cause failure.
 
 **If it fails here, stop.** Everything below assumes the defs are live.
 
@@ -71,11 +68,7 @@ accepts the wheat grain for the simple meal.**
 
 **Why it matters, and what is wrong.** `FZRawWheat` inherits `PlantFoodRawBase`, which puts it in
 the `PlantFoodRaw` category — the same shelf as raw rice and potatoes. Every vanilla recipe that
-filters on `FoodRaw` therefore takes it: simple, fine and lavish meals, pemmican, kibble. The
-`README.md`, the `CHANGELOG.md` and the `About.xml` description all say the grain is *good for
-nothing but baking*, and that sentence is false. Either the sentence goes, or the item leaves the
-category — and leaving the category would also stop animals grazing on a dropped stack and change
-what a hauler thinks it is holding, which is probably not wanted. **Settle it before publishing.**
+filters on `FoodRaw` therefore takes it: simple, fine and lavish meals, pemmican, kibble. The earlier baking-only claim in README/About was corrected on 2026-09-13; the grain category and gameplay remain unchanged.
 
 ## 4. Fifteen bills, two stoves, no campfire
 
@@ -167,9 +160,9 @@ patch removes the sow tags, not the plant.
 Mlie's to change. If both wheats appear in the sow menu with that mod active, the xpath no longer
 matches — the def was renamed, or the operation was edited.
 
-## 11. French and Chinese read through
+## 11. English, French and Chinese read through
 
-**Do.** Restart in French, then in Chinese (Simplified). Open the sow menu, a stove's bill list, an
+**Do.** Restart in English, then French, then Chinese (Simplified). Open the sow menu, a stove's bill list, an
 item's info card, and a mood tab carrying a biscuit memory.
 
 **Expect.** Every label and every description in the chosen language. No raw key on screen —
@@ -180,6 +173,45 @@ the def it targets.
 port's own work; the Chinese is Fullzoon's, restored rather than thrown away.
 
 ---
+
+## 12. New colony and existing-save persistence
+
+**Preconditions.** RimWorld 1.6, Core and this mod only, development mode enabled.
+Use a new test colony and a separate backup copy of an existing 1.6 colony without this mod.
+Never overwrite the original save. Record game version, language and mod list.
+
+**Do.** Start the new colony and run scenarios 0-8. Keep grain, each biscuit, a planted
+wheat tile, a growing-zone crop selection, stove bills and stockpile filters. Save,
+quit the game, restart and reload. Repeat by adding the mod to the existing colony copy,
+creating the same objects and saving/reloading. Repeat the UI inspection in English and French.
+
+**Expect.** Both colonies load without mod-related errors; contents, counts, crop selection,
+bills and filters survive reload. Wheat grows and can be harvested; recipes still execute.
+No untranslated owned labels, clipped text, empty settings page or settings MainButton.
+Inspect Player.log at startup, after actions and after reload; record actual results.
+
+## 13. Migration from the original mod
+
+**Preconditions.** A backup of a genuine save using the original Fullzoon mod, with baked
+biscuits, grain, planted wheat, growing zones, bills and filters. Record its game version.
+If no compatible source save exists, mark this scenario unverified, not passed.
+
+**Do.** Record those objects and quantities. On a copy, disable the original, enable this
+port, then load in the supported game version. Never enable both mods together. Compare
+objects, bill ingredients and filters; bake and harvest; save under a new name, restart,
+and reload. Distinguish errors caused by a game-version migration from this mod's results.
+
+**Expect.** The retained DefNames preserve corresponding objects and configuration, and
+baking/harvesting work after reload. No unresolved references or mod-related exceptions.
+Record losses or changed behavior rather than assuming compatibility from matching names.
+Inspect Player.log and attach observations. This scenario has not been executed.
+
+## Result recording
+
+For each scenario, record date, game version, ordered mod list, language, save origin,
+expected versus observed result, pass/fail/unverified and Player.log evidence location.
+After any fix, rerun the affected scenario plus startup and reload checks. The absence of
+an exception at startup alone does not prove later gameplay behavior.
 
 ## What these scenarios cannot answer
 

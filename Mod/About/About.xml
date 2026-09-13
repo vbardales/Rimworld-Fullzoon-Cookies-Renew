@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <packageId>nelim.fullzooncookiesrenew</packageId>
-  <name>Fullzoon's Cookies Renew</name>
+  <name>Fullzoon's Cookies Renew (unofficial)</name>
   <author>Fullzoon - 1.6 port: nelim</author>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
   <url>https://github.com/vbardales/Rimworld-Fullzoon-Cookies-Renew</url>
-  <description>A wheat crop and five biscuits baked from it, at either vanilla stove.
+  <description>UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
+
+A wheat crop and five biscuits baked from it, at either vanilla stove.
 
 - Egg biscuit - wheat grain and an egg
 - Chocolate chip cookie - wheat grain, chocolate, milk
@@ -15,9 +17,9 @@
 - Berry biscuit - wheat grain and berries
 - Insect jelly biscuit - wheat grain and insect jelly
 
-Each one comes in a batch of five, and every recipe also has an x5 and an x10 form, so filling a stockpile does not mean queueing fifteen bills. Biscuits are gluttonous snacks in the mould of vanilla chocolate: almost no nutrition, never eaten as a meal, and worth joy and a mood memory when a colonist eats one for pleasure. The insect jelly biscuit is the best of them, which is a strange thing to be able to say.
+Each one comes in a batch of five, and every recipe also has an x5 and an x10 form, so filling a stockpile does not mean queueing fifteen bills. Biscuits are gluttonous snacks in the mould of vanilla chocolate: almost no nutrition, avoided for ordinary meals, and worth joy and a mood memory when a colonist eats one for pleasure. The insect jelly biscuit is the best of them, which is a strange thing to be able to say.
 
-The wheat sows on ordinary soil or in hydroponics, grows in 4.5 days and yields six grain. The grain keeps for forty days and is good for nothing but baking.
+The wheat sows on ordinary soil or in hydroponics, grows in 4.5 days and yields six grain. The grain keeps for forty days and can be used for biscuits and ordinary meals.
 
 No DLC required. No assembly, no framework, no dependency. English, French, and Fullzoon's own Chinese.
 
@@ -49,7 +51,9 @@ Content mod: removing it mid-save destroys any biscuits already baked and any wh
 
 Source, changelog and attribution: https://github.com/vbardales/Rimworld-Fullzoon-Cookies-Renew
 
-The port work was done with the help of an AI assistant (Claude, by Anthropic), under human direction and in-game testing. Thanks to Fullzoon for the biscuits.
+The port work was done with the help of an AI assistant (Claude, by Anthropic), under human direction. Thanks to Fullzoon for the biscuits.
 
-If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.</description>
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+[url=https://github.com/vbardales/Rimworld-Fullzoon-Cookies-Renew]Source code on GitHub[/url]</description>
 </ModMetaData>

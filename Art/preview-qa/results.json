@@ -1,0 +1,58 @@
+{
+  "dimensions": [
+    896,
+    504
+  ],
+  "bytes": 666456,
+  "fonts": [
+    {
+      "familyName": "Segoe UI Semibold",
+      "postScriptName": "SegoeUI-Semibold",
+      "isCustomFont": false,
+      "glyphCount": 23
+    }
+  ],
+  "checks": [
+    {
+      "selector": ".prefix",
+      "x": 50,
+      "y": 66,
+      "width": 133,
+      "height": 40,
+      "minContrast": 5.59
+    },
+    {
+      "selector": ".main-title",
+      "x": 195,
+      "y": 48,
+      "width": 164,
+      "height": 62,
+      "minContrast": 11.32
+    },
+    {
+      "selector": "h1 > .suffix:last-child",
+      "x": 50,
+      "y": 116,
+      "width": 90,
+      "height": 40,
+      "minContrast": 5.59
+    },
+    {
+      "selector": ".tag",
+      "x": 50,
+      "y": 163,
+      "width": 114,
+      "height": 27,
+      "minContrast": 5.54
+    },
+    {
+      "selector": ".summary",
+      "x": 50,
+      "y": 228,
+      "width": 430,
+      "height": 61,
+      "minContrast": 5.56
+    }
+  ],
+  "badgeContrast": 5.14
+}

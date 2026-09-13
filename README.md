@@ -1,4 +1,6 @@
-# Fullzoon's Cookies Renew
+# Fullzoon's Cookies Renew (unofficial)
+
+UNOFFICIAL. This mod is published without the original author's explicit consent. If the original author contacts me to request its removal, I undertake to take it down promptly.
 
 Port of **Fullzoon's 满月的饼干Cookies** to RimWorld 1.6.
 
@@ -25,11 +27,11 @@ Each recipe yields five and comes in an ×1, an ×5 and an ×10 form, so filling
 not mean queueing fifteen bills. Work scales with the batch: 300, 1500, 3000.
 
 Biscuits are gluttonous snacks in the mould of vanilla chocolate — 0.09 nutrition, `DesperateOnly`
-so a colonist never treats one as a meal, and worth joy and a half-day mood memory when eaten for
+so colonists avoid them for ordinary meals, and worth joy and a half-day mood memory when eaten for
 pleasure.
 
 The wheat sows on ordinary soil or in hydroponics, grows in 4.5 days and yields six grain. The
-grain keeps forty days and is good for nothing but baking.
+grain keeps forty days and can be used for biscuits and ordinary meals.
 
 No DLC required. No assembly, no framework, no dependency. English, French, and Fullzoon's own
 Chinese.
@@ -81,8 +83,7 @@ stockpile filter.
 
 ## Compatibility with the original
 
-The original `defName`s are kept, so **a save moves between the two mods without losing
-anything** — baked biscuits, growing zones, bills and stockpile filters all survive the swap.
+The original `defName`s are kept to support save continuity. Migration from the original mod has not yet been validated in game; back up your save before switching.
 
 The original has **no `packageId`** — 1.0 did not require one — so it cannot be declared in
 `<incompatibleWith>`. Do not run the two together anyway: the `defName`s are the same and the game
