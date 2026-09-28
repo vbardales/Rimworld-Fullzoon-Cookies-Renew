@@ -21,6 +21,23 @@ This is the usual convention for ports on the RimWorld Workshop: republished wit
 name** and **removal on request, without argument**. The `<author>` field keeps Fullzoon's name,
 and the removal clause is in the description.
 
+### Upstream repository: none found, checked 2026-09-28
+
+PUBLISHING.md asks a port to start from the original project's Git repository when there is one,
+and to send corrections back to it. This mod has none that could be found, so the provenance used
+is the Workshop files as installed and there is nothing to open a pull request against:
+
+- The Workshop page itself, read through the Steam Web API (`GetPublishedFileDetails`, item
+  1623487558): last updated 2019-01-15, tag 1.0, a description of 1,258 characters that contains no
+  URL of any kind, no licence, and no statement about reuse.
+- The copy installed from the Workshop has no repository in its `About.xml`.
+- GitHub holds no repository and no code carrying the mod's own defNames (`FZPlant_Wheat`,
+  `FZRawWheat`, `AteFZEggBiscuit`). The one account named after the author is a personal website
+  from 2020 with nothing about RimWorld in it, and nothing ties it to the mod.
+
+The only way to reach the author is the comments of the Workshop page, which the publication plan
+uses for the credit and removal message.
+
 ## What the mod is
 
 31 defs: five biscuits on a shared abstract base, fifteen recipes (each biscuit at ×1, ×5, ×10),
