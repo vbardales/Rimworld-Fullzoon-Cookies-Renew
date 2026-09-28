@@ -8,9 +8,9 @@ packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-stage:        preTest
-workflow_stage: preTest
-current_step: "write the Pickle suite that TESTING.md plans, then rerun the static checks"
+stage:        done
+workflow_stage: done
+current_step: "the owner's rulings on scenarios 8 and 13, then the first Pickle passes of Tests/Pickle/README.md (done -> tested)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 dependencies: none
@@ -18,10 +18,9 @@ showcase:     complete
 tested_on:
 workshop:     3806761765
 remaining:
-  - "feature: no Pickle suite. `Tests/Pickle/` does not exist and nothing written argues that Pickle does not apply. It does: scenarios 0 to 12 need a running game. TESTING.md maps each scenario and plans the passes. Blocks `done`."
-  - "unverified: the fourteen functional scenarios of `_tools/FUNCTIONAL-SCENARIOS.md` (0 to 13), none played in a game. Every runtime claim of the mod rests on them."
-  - "unverified: the Vanilla-like Wheat integration (scenario 10). The conditional patch and the `MayRequire` guards were simulated on XML only and never run with that mod mounted."
-  - "unverified: English, French and Chinese display in the game (scenario 11), and persistence in a new colony and an existing save (scenario 12)."
+  - "defect: the README and the About description say a colonist eats a biscuit for pleasure, and the game never sends one. The biscuits pay joy when ingested, but the game's only ingesting joy giver, `JoyGiverDef EatChocolate`, searches `Chocolate` and `InsectJelly` by name (`JoyGiver_Ingest` reads `def.thingDefs`, read from the 1.6 assembly on 2026-09-28) and this mod does not add its biscuits to it. A biscuit is eaten only by a starving colonist with nothing else. The owner rules: change the text, or add the biscuits to a joy giver. Blocks `tested` (scenario 8) and, until the text is true, `prepublished`."
+  - "unverified: the Pickle suite of `Tests/Pickle/` (30 scenarios in 14 features) has never been played, and neither has any manual scenario. Three passes are required, bare English, bare French and beside Mlie's wheat, and a fourth for Chinese Simplified if the install carries it. A first run will very probably fail somewhere: `Tests/Pickle/README.md` names what is least certain, the two bakes, and the way a dotted field path prints."
+  - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
   - "unverified: migration from the original mod (scenario 13). It needs a real save made by the original. Without one it must be declared not applicable to `tested` with that reason, since `tested` allows no manual test left to validate."
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
 historical_remaining_2026_09_12:
@@ -29,13 +28,50 @@ historical_remaining_2026_09_12:
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-09-28, workflow audit
-audited_revision: 47304c60e6ad57a5d5015de96639898e8cd984d8
+updated:      2026-09-28, Pickle suite written, audit replayed
+audited_revision: e7b71ae74337c848d74ffd0b499250002673e69e
 ---
 
 # Fullzoon's Cookies Renew — status
 
 ## Where this mod stands
+
+**Audit of 2026-09-28, later the same day: `preTest` becomes `done` again.** The section below, written that
+morning, put the mod at `preTest` for one reason, and the reason is gone: the Pickle suite exists. The audit was
+replayed for `preTest -> done` on the revision below, and nothing stands in its way. The section further down
+keeps its reasoning as history.
+
+`done` means ready to be played, not played. **Nothing has been played:** not one scenario of the suite, not one
+manual scenario. The suite was written and checked offline, which is all `done` asks (`AUDIT.md`, the
+clarification of 2026-09-21).
+
+**Reading the game's code, to write the scenario for eating a biscuit for pleasure, found that it cannot
+happen.** The mod's text says a colonist eats a biscuit for pleasure. The game never sends one: see the first
+`remaining` line. It does not move the stage, since no criterion before `tested` asks a claim to be true, and it
+is not fixed here, since the two ways of fixing it are not the same mod. It is the owner's to rule on, and
+`prepublished` will not pass while the description says it.
+
+### Replay of `preTest -> done`, revision `e7b71ae74337c848d74ffd0b499250002673e69e` (`e7b71ae`)
+
+| Criterion | Result |
+| --- | --- |
+| Functional scenarios written with setup, actions and expected results | Met. Scenarios 0 to 13 of `_tools/FUNCTIONAL-SCENARIOS.md`. Scenario 8 now says what is wrong with its own expectation |
+| Automated tests written, executed and green | Met. The four shared validators (`Check-XmlFields`, `Check-DefRefs`, `Check-TypeRefs`, `Check-DefInjected`) ran on `47304c6`, and `Mod/` has not changed since, so their result stands for this revision. `_tools/Check-Recipes.ps1` and `Tests/Pickle/Check-Steps.ps1` were written today and pass. No compiled-code test applies: there is no code |
+| Pickle scenarios written, and their scope justified | Met. 30 scenarios in 14 features, no local C#. `TESTING.md` gives every one of the 14 manual scenarios a disposition, played by the suite, proved offline, not applicable with its reason, or open |
+| XML tests written, executed and green | Met, same evidence as the automated line |
+| Every non-applicability justified in writing | Met, in the table of `TESTING.md`. Two scenarios are open and are not claimed as not applicable: 8 and 13 |
+| Results correspond to the delivered version | Met. `Mod/` is identical between `47304c6`, where the shared validators ran, and this revision |
+| Nothing artificial to fill a box | Two of the 14 manual scenarios are left out of Pickle on purpose, and the pleasure path has no scenario because it would assert a defect |
+
+The suite was **not** run, and the audit does not need it to be: playing it is a criterion of `done -> tested`.
+`Check-Steps.ps1` says it parses and that every step exists, and prints what each pass must show: pass 1
+discovers 24 and plays 21, pass 2 discovers 16 and plays 14, pass 3 discovers 23 and plays 23, pass 4 discovers
+16 and plays 14.
+
+## Where this mod stood that morning, kept as history
+
+> **Replaced on 2026-09-28, later the same day** by the section above. Kept as it was written.
+
 
 **Audit of 2026-09-28: `done` becomes `preTest`.** This section and the audit below supersede the
 "current result" of 2026-09-13, which said `done` and stays further down as history.
@@ -62,6 +98,8 @@ next upload. Nothing held the old one: no `ModsConfig.xml` line, no save, and no
 collection naming it. `PublishedFileId.txt` is unchanged, so the next upload updates the item.
 
 ## Workflow audit — 2026-09-28
+
+> Written that morning. Its `preTest -> done` row is replaced by the replay above; every other row stands.
 
 Revision audited: `47304c60e6ad57a5d5015de96639898e8cd984d8` (`47304c6`), `Mod/` changed since 2026-09-20 only by the packageId and
 the `ATTRIBUTION.md` copy. At the start the working tree held, untracked: `PublishedFileId.txt`, six
@@ -107,22 +145,30 @@ in `TESTING.md`.
 
 **Documents read**, with their versions and the ones that were of no use: `docs/PROTOCOLS-READ.md`.
 
-## Next transition: preTest -> done
+## Next transition: done -> tested
 
-Strictly what it takes:
+Strictly what it takes, in the order that saves machine time:
 
-1. Write the Pickle suite the way `PickleTools/Authoring/README.md` says, scoped as `TESTING.md`
-   plans it, or write down, per scenario, why a game is not needed. The plan says why none is.
-2. Rerun the four static scripts on the revision that is then delivered.
+1. **The owner rules on the pleasure path** (scenario 8): change the text that says "eaten for pleasure", or add
+   the biscuits to a joy giver. Either way the scenario is then closed, or replayed as written.
+2. **Scenario 13**: a save made by the original mod, or a decision that it is not applicable to `tested`, with the
+   reason written down.
+3. **Play the suite**, one request per pass, from `Tests/Pickle/README.md`: bare English, bare French, beside
+   Mlie's wheat, and Chinese if the install has it. Expect reds on the first run and read the cook, the fuel and
+   the haul before blaming a recipe. Each red is fixed and replayed green.
+4. **Open the `@review` capture** of `14` and look at it, and read every `Player.log`.
+5. The three conditions added on 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
+   scenario has run on a map that mounts its mod, no manual test left to validate.
 
-That is all. Playing the suite is a criterion of `done -> tested`, not of `done`.
+Playing it takes the machine's queue, and each request ships the working tree as it stands when its ticket is played: keep the tree on
+the revision under test until each `RUN_DONE`.
 
 ## What `tested` will ask
 
 Beyond the game running the scenarios, three checks, all in `TESTING.md`: no scenario left in
 `@wip`; every conditional scenario has run on a map that mounts its mod (here scenario 10, with
 Mlie's wheat); no manual test left to validate, each being automated and green or listed not
-applicable with its reason (here scenario 13).
+applicable with its reason (here scenarios 8 and 13).
 
 ## Recommendations, none of them a blocker
 
