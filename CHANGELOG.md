@@ -2,7 +2,9 @@
 
 All notable changes to this mod are documented here.
 
-## [1.0.0] — 2026-09-05
+## [1.0.0] — unreleased
+
+The tag and the GitHub release come with the publication, from the publishing CI, not by hand.
 
 First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
 
@@ -61,3 +63,19 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
 
 - `FZfood.png`, a seventh texture no def references - a cut-out photograph of a double
   cheeseburger, unrelated to anything in the mod. Dropped, not archived.
+
+## [0.1.0] — 2026-09-23
+
+Creation of a publishIdFile. Prepublication: a first upload whose only purpose was to create the
+Workshop item (private, as Steam creates every item, RimWorld never changing that) and obtain
+`Mod/About/PublishedFileId.txt`, which holds the item ID `3806761765`.
+
+The upload contained `Mod/` as it stood at commit `73d3406` (tree `1906c02`), unchanged since, plus
+six generated `.dds` textures that sat beside the PNGs in `Mod/Textures/Things/Item/` (written at
+14:13, two hours before the ID file at 16:34; untracked, now ignored, and never part of a later CI
+upload, which ships tracked files only). The commit that adds the ID file is the commit of this
+version. `packageId` was `nelim.fullzooncookiesrenew` at that upload; it became
+`nelim.fullzooncookies` afterwards (see 1.0.0), so the item's own `About.xml` on Steam keeps the old
+one until the next upload.
+
+This entry does not say the mod is public or tested: see `STATUS.md`.
