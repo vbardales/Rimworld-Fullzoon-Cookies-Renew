@@ -13,6 +13,7 @@ workflow_stage: done
 current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md, then the other passes (done -> tested)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
+upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:
