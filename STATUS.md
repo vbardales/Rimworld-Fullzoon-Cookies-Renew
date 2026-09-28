@@ -1,41 +1,148 @@
 ---
-localization: complete
+localization:   complete
 translation_en: complete
 translation_fr: complete
 settings_audit: not_applicable
 mod:          Fullzoon's Cookies Renew (unofficial)
-packageId:    nelim.fullzooncookiesrenew
+packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-stage:        done
+stage:        preTest
+workflow_stage: preTest
+current_step: "write the Pickle suite that TESTING.md plans, then rerun the static checks"
 licence:      silent
-licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. The mod declares 1.0 and nothing since.
+licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 dependencies: none
 showcase:     complete
 tested_on:
-workshop:
+workshop:     3806761765
 remaining:
-  - unverified: execute scenarios 0-13 in game, inspect Player.log, verify EN/FR UI, new and existing saves, original-mod migration, and optional Vanilla-like Wheat integration.
+  - "feature: no Pickle suite. `Tests/Pickle/` does not exist and nothing written argues that Pickle does not apply. It does: scenarios 0 to 12 need a running game. TESTING.md maps each scenario and plans the passes. Blocks `done`."
+  - "unverified: the fourteen functional scenarios of `_tools/FUNCTIONAL-SCENARIOS.md` (0 to 13), none played in a game. Every runtime claim of the mod rests on them."
+  - "unverified: the Vanilla-like Wheat integration (scenario 10). The conditional patch and the `MayRequire` guards were simulated on XML only and never run with that mod mounted."
+  - "unverified: English, French and Chinese display in the game (scenario 11), and persistence in a new colony and an existing save (scenario 12)."
+  - "unverified: migration from the original mod (scenario 13). It needs a real save made by the original. Without one it must be declared not applicable to `tested` with that reason, since `tested` allows no manual test left to validate."
+  - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
 historical_remaining_2026_09_12:
   - unverified: the twelve scenarios of `_tools/FUNCTIONAL-SCENARIOS.md`, none of them played
-  - defect: three documents say the wheat grain is good for nothing but baking, and it is not.
-    `FZRawWheat` inherits `PlantFoodRawBase` and sits in `PlantFoodRaw`, so every vanilla recipe
-    filtering on `FoodRaw` takes it - simple, fine and lavish meals, pemmican, kibble. Cutting the
-    sentence and taking the item out of the category are both real answers and are not the same
-    mod; scenario 3 states the finding and leaves the choice
-  - defect: the icon's background is a wall of biscuits where the ModIcon block of
-    `STYLE_RIMWORLD.md` asks for a plain near-black one. Cropped to 88 % of its frame it passes
-    the 32 px test, the wink and the ponytail reading clearly, but it is off-style and the call is
-    hers
+  - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
+  - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-09-13, evidence-based workflow audit
-audited_revision: 72fb2227fd7265015586381ce8663a3a98bfed2e
+updated:      2026-09-28, workflow audit
+audited_revision: 47304c60e6ad57a5d5015de96639898e8cd984d8
 ---
 
 # Fullzoon's Cookies Renew — status
 
+## Where this mod stands
+
+**Audit of 2026-09-28: `done` becomes `preTest`.** This section and the audit below supersede the
+"current result" of 2026-09-13, which said `done` and stays further down as history.
+
+One criterion is not met, and it is the only one. `preTest -> done` asks for Pickle suites written,
+or their absence justified in writing, and `Tests/Pickle/` does not exist while nothing says why
+Pickle would not apply. It does apply: eating a biscuit for joy, sowing the wheat, a recipe at the
+stove and the coexistence with Mlie's wheat can only be shown by a game that runs. Silence is not a
+justification, so the mod does not stand at `done`. Everything before that transition is
+re-established on the current revision and the current protocols, below.
+
+What did not move the stage: everything that needs the game. Those checks are `unverified` in
+`remaining` and in `tested_on`, never a reason to go back.
+
+**The Workshop item exists.** A prepublication on 2026-09-23 created item `3806761765`, private as
+Steam creates every item. `Mod/About/PublishedFileId.txt` had been sitting untracked since; it is
+committed today (`3f23830`, `Add published Workshop file ID for 0.1.0`) and `CHANGELOG.md` opens
+on `0.1.0`, with `1.0.0` unreleased above it. This is an act, not a state: `prepublished` in the
+chain is still ahead.
+
+**The packageId lost its `renew` today**, the owner's call: `nelim.fullzooncookies`. The item was
+uploaded with `nelim.fullzooncookiesrenew`, so its own `About.xml` on Steam keeps that until the
+next upload. Nothing held the old one: no `ModsConfig.xml` line, no save, and no other mod of the
+collection naming it. `PublishedFileId.txt` is unchanged, so the next upload updates the item.
+
+## Workflow audit — 2026-09-28
+
+Revision audited: `47304c60e6ad57a5d5015de96639898e8cd984d8` (`47304c6`), `Mod/` changed since 2026-09-20 only by the packageId and
+the `ATTRIBUTION.md` copy. At the start the working tree held, untracked: `PublishedFileId.txt`, six
+generated `.dds` in `Mod/Textures`, and two Explorer `.ico` in `Art/`. The first was committed, the
+others are now ignored. `Mod/desktop.ini` (an Explorer folder icon, ignored) is on disk and not
+tracked. No game was started.
+
+**`stage` codes.** The field has six values and the chain twelve states. `port` is before
+`horsMonoRepo`; `showcase` covers `Preview générée` up to `l10n`; `preTest`, `done`, `tested` and
+`published` are their own state. `workflow_stage` carries the exact state, here `preTest` as well.
+
+| Transition | Result on this revision |
+| --- | --- |
+| dansMonoRepo -> horsMonoRepo | Validated. Standalone repository, `origin` on the public GitHub repository, working tree pushed. `STATUS.md`, English `README.md`, `ATTRIBUTION.md`, `LICENSE`, `CHANGELOG.md`. Visibility and `silent` are consistent with `ATTRIBUTION.md`, and the source declares no 1.6 support. Names agree, `(unofficial)` included. The two shipped copies match their roots by hash |
+| horsMonoRepo -> ModIcon générée | Validated. No build applies. Icon 128 x 128, 34,124 bytes, looked at in full and at 32 px, head and wink and ponytail still read. The owner accepted it on 2026-09-13, background and weight included; nothing was regenerated or resized |
+| ModIcon générée -> Preview générée | Validated. 896 x 504, 666,456 bytes, looked at in full and at 268 px, no camera defect found |
+| Preview générée -> preOptions | Validated. Accent and secondary ink are visibly apart, the English description ends on `[url=...]Source code on GitHub[/url]` at the standalone repository, prefix and suffix are at 65 % in the secondary ink, tag and 1.6 badge present. The palette is in `Art/preview-palette.json` and loaded by `Art/preview.html`. Contrast per element is in `Art/preview-qa/results.json`, all above 4.5:1 |
+| preOptions -> options | Validated, `settings_audit: not_applicable`. No assembly, no settings class, no main-button def in `Mod/`, so no empty page and no shortcut. Recipe and batch choices, sowing and filters are the game's own controls |
+| options -> l10n | Replayed against the current `TRANSLATIONS.md`. Validated. 69 translatable strings, all in native Def fields, English from the source values, French and Chinese by DefInjected, 138 keys and 0 errors. The counts-and-plurals rule of 2026-09-25 does not apply: no counted phrase, no parameter, only the `x5` and `x10` of a batch label |
+| l10n -> preTest | Validated. Core only for the required references. Mlie's Vanilla-like Wheat (`Mlie.VanillalikeWheat`, installed item 2717707382, supports 1.6) is optional, guarded by `MayRequire` on every one of the 30 references and by a conditional patch that tests the def. No `loadAfter`, no `LoadFolders`. Cited from the audit of 2026-09-13 and rechecked against the installed item |
+| preTest -> done | **Not met.** The four static scripts were rerun and pass (below); fourteen functional scenarios are written. No Pickle suite and no written reason for its absence |
+| done -> tested | Not reached. Nothing was played |
+
+**Checks run**, all offline, logged in `docs/runs/2026-09-28.md`:
+
+- `Check-XmlFields.ps1`: 7 files, no unknown field.
+- `Check-DefRefs.ps1`: 27 defs, 1 abstract parent, no unresolved reference, every `ParentName` resolved.
+- `Check-TypeRefs.ps1`: no foreign type.
+- `Check-DefInjected.ps1`: 138 keys, 0 errors.
+- Root and `Mod/` copies of `LICENSE` and `ATTRIBUTION.md` compared by hash, identical.
+- Both delivered images opened and looked at. Nothing was generated.
+
+**The original mod has no repository**, checked and written into `ATTRIBUTION.md` on 2026-09-28: the
+Workshop page through the Steam API (updated 2019-01-15, no link), the installed copy's `About.xml`,
+and GitHub by the author's name and by the mod's defNames. So the provenance is the Workshop files
+as installed and there is nothing to send a pull request to. The Workshop comments are the only
+route to the author.
+
+**Evidence** stays on disk. The one tracked folder, `Art/preview-qa`, is untracked and ignored; its
+two images (568 KB) were deleted, being regenerated by `Art/render-preview.cjs`, and `results.json`
+stays. `.dds`, `.ico` and `Tests/Pickle/Evidence/` are ignored. What to keep from a run is written
+in `TESTING.md`.
+
+**Documents read**, with their versions and the ones that were of no use: `docs/PROTOCOLS-READ.md`.
+
+## Next transition: preTest -> done
+
+Strictly what it takes:
+
+1. Write the Pickle suite the way `PickleTools/Authoring/README.md` says, scoped as `TESTING.md`
+   plans it, or write down, per scenario, why a game is not needed. The plan says why none is.
+2. Rerun the four static scripts on the revision that is then delivered.
+
+That is all. Playing the suite is a criterion of `done -> tested`, not of `done`.
+
+## What `tested` will ask
+
+Beyond the game running the scenarios, three checks, all in `TESTING.md`: no scenario left in
+`@wip`; every conditional scenario has run on a map that mounts its mod (here scenario 10, with
+Mlie's wheat); no manual test left to validate, each being automated and green or listed not
+applicable with its reason (here scenario 13).
+
+## Recommendations, none of them a blocker
+
+- `STYLE_RIMWORLD.md` now names `Art/Preview.png` as the un-overlaid source. Here it is
+  `Art/Preview-source.png`, which the render script reads. Renaming means touching that script.
+- The icon weighs 34 KB where the guide says 20 to 30 KB. Accepted with the icon; unchanged.
+- The MIT scope in `LICENSE` lists the port's text, patch and packaging but not its own icon and
+  banner. The owner may want them named there.
+- Name the tool that generated the two images. `About.xml` credits the AI assistant that did the
+  port work, and nothing says what made the pictures.
+- Before `prepublished`: `PUBLICATION.md` with the single Markdown description, `IF I GO QUIET`,
+  `AI-GENERATED` and `THANKS`; register rows in `WORKSHOP_COMMENTS.md` for Fullzoon's page
+  (1623487558) and for Mlie's Vanilla-like Wheat (2717707382), whose credit goes to its author and to
+  Mlie, checked on the page. The Steam page description as it stands should be `About.xml` at
+  `73d3406`.
+
+
 ## Current result after authorized follow-up — 2026-09-13
+
+> **Superseded on 2026-09-28.** `stage` is `preTest` since that audit, no longer `done`. The text below is kept as it was written.
 
 **Stage: done**, meaning ready for final in-game validation, not tested.
 This section supersedes the remaining-work statements and transition failures in the
@@ -84,6 +191,8 @@ Original-save migration stays unverified if an appropriate source save is unavai
 No game session was performed by the assistant. No missing runtime result is a pass.
 
 ## Workflow audit — 2026-09-13
+
+> **Superseded on 2026-09-28** by the audit above. Kept as history.
 
 This audit supersedes the historical interpretation below. `stage` uses the literal
 workflow names, not letter codes. Current stage: **Preview générée** (Preview generated).
