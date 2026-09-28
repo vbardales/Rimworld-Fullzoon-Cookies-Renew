@@ -8,6 +8,9 @@
 #
 # After a reload every object kept from before belongs to the game that was replaced. Nothing here holds one:
 # the steps below find things again by definition and by cell.
+#
+# The counts are read over the whole map (test-colony holds none of these things), not in the stockpile: the
+# spawn step places a stack NEAR the first stockpile cell, and nothing promises it stays inside the zone.
 @save
 Feature: the mod's things survive a save and a reload
 
@@ -19,8 +22,8 @@ Feature: the mod's things survive a save and a reload
     And I spawn a "FZPlant_Wheat" at (144, 155)
     And I add bill "CookFZEggBiscuit" to the "FueledStove"
     When I save and reload
-    Then the stockpile holds 5 "FZRawWheat"
-    And the stockpile holds 5 "FZEggBiscuit"
+    Then 5 "FZRawWheat" exist
+    And 5 "FZEggBiscuit" exist
     And a "FZPlant_Wheat" is at (144, 155)
     And the "FueledStove" has 1 bills
     And no errors were logged
