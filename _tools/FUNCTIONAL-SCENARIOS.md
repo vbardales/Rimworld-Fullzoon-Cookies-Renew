@@ -206,19 +206,10 @@ Inspect Player.log at startup, after actions and after reload; record actual res
 
 ## 13. Migration from the original mod
 
-**Preconditions.** A backup of a genuine save using the original Fullzoon mod, with baked
-biscuits, grain, planted wheat, growing zones, bills and filters. Record its game version.
-If no compatible source save exists, mark this scenario unverified, not passed.
-
-**Do.** Record those objects and quantities. On a copy, disable the original, enable this
-port, then load in the supported game version. Never enable both mods together. Compare
-objects, bill ingredients and filters; bake and harvest; save under a new name, restart,
-and reload. Distinguish errors caused by a game-version migration from this mod's results.
-
-**Expect.** The retained DefNames preserve corresponding objects and configuration, and
-baking/harvesting work after reload. No unresolved references or mod-related exceptions.
-Record losses or changed behavior rather than assuming compatibility from matching names.
-Inspect Player.log and attach observations. This scenario has not been executed.
+**Dropped on 2026-09-28.** The owner ruled that compatibility with saves made by the original mod is not a goal, and
+the promise was taken out of the README and the CHANGELOG. The scenario is kept as a number so that the others
+keep theirs; there is nothing to play. Its preconditions needed a save that only the original can make, and
+nothing in the port relies on the answer.
 
 ## Result recording
 
@@ -230,7 +221,6 @@ an exception at startup alone does not prove later gameplay behavior.
 ## What these scenarios cannot answer
 
 - **Side by side with the original mod.** The defNames are identical, so the two cannot be loaded
-  together: the game complains about every one of them. That a save moves from one to the other is
-  the thing the port preserved, and it can only be tested by swapping the mods between two loads of
-  the same colony.
+  together: the game complains about every one of them. That is the warning the README gives, and it is not
+  played: the original declares no `packageId`, so the game cannot be told to refuse the pair.
 - **The Workshop listing.** Preview, icon and description are read by Steam, not by the game.

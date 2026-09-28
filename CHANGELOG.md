@@ -71,7 +71,7 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
 - The five biscuits, the wheat, their stats, nutrition, joy and market values.
 - The fifteen recipes and their ingredient counts.
 - The six textures.
-- The original `defName`s, so a save moves between the two mods without losing anything.
+- The original `defName`s.
 
 ### Not carried over
 

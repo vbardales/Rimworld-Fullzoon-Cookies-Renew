@@ -40,7 +40,7 @@ suite, proved offline, not applicable with its reason, or open with what it is w
 | 10 Two wheats in one colony | **Pickle, conditional** | `07` alone, `08` beside Mlie, `11` a bake with Mlie's grain; passes 1 and 3 |
 | 11 English, French, Chinese | **Pickle**, one pass per language | `04`, `05` and `06`, generated from the defs and the translations |
 | 12 New colony, existing save, reload | **Pickle**, two of the three | `13` grain, biscuits, a plant and a bill survive a save and a reload. **An existing save:** `test-colony` was written without this mod (its list has no `nelim.fullzooncookies`), so every `@save` scenario is this mod added to a save that never had it. **A new colony:** not applicable, the mod adds no def a new game generates or seeds differently from a loaded one |
-| 13 Migration from the original | **open, not Pickle** | needs a save made by the original, which cannot be produced here, and the original cannot be loaded beside this mod. Stays `unverified` until such a save exists, or is declared not applicable to `tested` with that reason |
+| 13 Migration from the original | **not applicable** | dropped on 2026-09-28: the owner ruled that compatibility with saves made by the original is not a goal, and the promise left the README and the CHANGELOG. Nothing in the port relies on the answer |
 
 **The pleasure path, in full.** The biscuits carry a joy kind and an amount, so they pay joy whenever a colonist ingests
 one. But a colonist is only *sent* to food for pleasure by a `JoyGiver_Ingest`, which reads a fixed list, and the
@@ -89,8 +89,7 @@ the Workshop images and their order belong to `PUBLICATION.md`, at the step afte
    report folder is shared by the whole machine. A scenario skipped for want of its condition is not passed. Here:
    `08` and `11` in pass 3, and `02` in every pass, for LoadAudit.
 3. **No manual test is left to validate.** Each of scenarios 0 to 13 is automated and green, or listed above as
-   not applicable with its reason. One is open and must be closed first: 13, waiting on a save made by the original or on a decision that it is
-   not applicable.
+   not applicable with its reason. None is open: 13 is not applicable, the owner having dropped it.
 4. The suites ran green, the discovered and played counts agree with the table above, `exitReason` was read before
    the numbers, and the `Player.log` of each pass was read. The `@review` capture was opened and looked at.
 5. English and French were checked in the game, developer mode on: a missing key shows as accented gibberish only

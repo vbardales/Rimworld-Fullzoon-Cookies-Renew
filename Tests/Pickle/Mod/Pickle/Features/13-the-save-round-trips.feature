@@ -2,10 +2,6 @@
 # the crop in the ground, and a bill queued at a stove. This is the persistence half of what a mod made only of
 # defs can lose: a def whose name changed, or whose class cannot be saved, comes back as nothing.
 #
-# The original's defNames are kept so that a colony moves between the two mods without losing anything, and
-# this is the loaded-game check that the names still hold in the port's own saves. That a save made by the
-# ORIGINAL mod loads is a different claim, which needs a save that only the original can make: see TESTING.md.
-#
 # After a reload every object kept from before belongs to the game that was replaced. Nothing here holds one:
 # the steps below find things again by definition and by cell.
 #

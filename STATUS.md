@@ -10,7 +10,7 @@ visibility:   public
 detached:     yes
 stage:        done
 workflow_stage: done
-current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md; the owner's ruling on scenario 13 is open (done -> tested)"
+current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md, then the other passes (done -> tested)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 dependencies: none
@@ -21,14 +21,13 @@ remaining:
   - "unverified: the Pickle suite of `Tests/Pickle/` (32 scenarios in 15 features) has never been played, and neither has any manual scenario. Three passes are required, bare English, bare French and beside Mlie's wheat, and a fourth for Chinese Simplified if the install carries it. A first run will very probably fail somewhere: `Tests/Pickle/README.md` names what is least certain, the two bakes, and the way a dotted field path prints. Request 20260928-131214-960-f08d, pass 1, is in the queue."
   - "unverified: the joy giver `EatFZBiscuits`, added on 2026-09-28 on the owner's word, has never been seen working. Scenario 15 asks the game to choose it, and is the least deterministic scenario of the suite: a red there is to be read before it is blamed on the giver. Manual scenario 8 replays it by hand."
   - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
-  - "unverified: migration from the original mod (scenario 13). It needs a real save made by the original. Without one it must be declared not applicable to `tested` with that reason, since `tested` allows no manual test left to validate."
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
 historical_remaining_2026_09_12:
   - unverified: the twelve scenarios of `_tools/FUNCTIONAL-SCENARIOS.md`, none of them played
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-09-28, joy giver added, audit replayed
+updated:      2026-09-28, migration from the original dropped
 audited_revision: 8b092c5cd13d84ce9f836a20d43d3f3183914971
 ---
 
@@ -62,7 +61,7 @@ description is true again, and was extended by a sentence saying so.
 | Automated tests written, executed and green | Met. The four shared validators (`Check-XmlFields`, `Check-DefRefs`, `Check-TypeRefs`, `Check-DefInjected`) were replayed on `8b092c5`, after `Mod/` gained the joy giver: 8 files, 28 defs, 138 keys, no fault. `_tools/Check-Recipes.ps1` and `Tests/Pickle/Check-Steps.ps1` were written today and pass. No compiled-code test applies: there is no code |
 | Pickle scenarios written, and their scope justified | Met. 32 scenarios in 15 features, no local C#. `TESTING.md` gives every one of the 14 manual scenarios a disposition, played by the suite, proved offline, not applicable with its reason, or open |
 | XML tests written, executed and green | Met, same evidence as the automated line |
-| Every non-applicability justified in writing | Met, in the table of `TESTING.md`. One scenario is open and is not claimed as not applicable: 13. Scenario 8 was open until the joy giver was added |
+| Every non-applicability justified in writing | Met, in the table of `TESTING.md`. None is open. Scenario 13 was dropped on 2026-09-28 at the owner's word, and scenario 8 was open until the joy giver was added |
 | Results correspond to the delivered version | Met. The validators ran on the revision that holds the final `Mod/`; nothing in `Mod/` has moved since |
 | Nothing artificial to fill a box | Two of the 14 manual scenarios are left out of Pickle on purpose, and the pleasure path has no scenario because it would assert a defect |
 
@@ -152,16 +151,15 @@ in `TESTING.md`.
 
 Strictly what it takes, in the order that saves machine time:
 
-1. **Scenario 13**: a save made by the original mod, or a decision that it is not applicable to `tested`, with
-   the reason written down. This is the owner's.
-2. **Play the suite**, one request per pass, from `Tests/Pickle/README.md`: bare English (filed, waiting), bare
+1. **Play the suite**, one request per pass, from `Tests/Pickle/README.md`: bare English (filed, waiting), bare
    French, beside Mlie's wheat, and Chinese if the install has it. Expect reds on the first run and read the
    cook, the fuel and the haul before blaming a recipe, and what the colonist did before blaming the joy giver.
    Each red is fixed and replayed green.
-3. **Open the `@review` capture** of `14` and look at it, and read every `Player.log`.
-4. The three conditions added on 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
+2. **Open the `@review` capture** of `14` and look at it, and read every `Player.log`.
+3. The three conditions added on 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
    scenario has run on a map that mounts its mod, no manual test left to validate.
 
+Nothing is left to the owner: scenario 13, the migration from the original, was dropped on 2026-09-28 at her word.
 A request ships the working tree as it stands when its ticket is played, so the one already filed will play the
 tree with the joy giver and scenario 15, not the one it was filed at. Keep the tree on the revision under test
 until each `RUN_DONE`.
@@ -171,7 +169,7 @@ until each `RUN_DONE`.
 Beyond the game running the scenarios, three checks, all in `TESTING.md`: no scenario left in
 `@wip`; every conditional scenario has run on a map that mounts its mod (here scenario 10, with
 Mlie's wheat); no manual test left to validate, each being automated and green or listed not
-applicable with its reason (here scenario 13).
+applicable with its reason (scenario 13 is the one listed: dropped by the owner on 2026-09-28).
 
 ## Recommendations, none of them a blocker
 

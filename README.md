@@ -82,9 +82,7 @@ the sow menu, and the fifteen recipes take Mlie's `RawWheat` instead — they ac
 This mod's grain is labelled **wheat grain**, not *wheat*, so the two never read alike in a
 stockpile filter.
 
-## Compatibility with the original
-
-The original `defName`s are kept to support save continuity. Migration from the original mod has not yet been validated in game; back up your save before switching.
+## Not with the original
 
 The original has **no `packageId`** — 1.0 did not require one — so it cannot be declared in
 `<incompatibleWith>`. Do not run the two together anyway: the `defName`s are the same and the game
