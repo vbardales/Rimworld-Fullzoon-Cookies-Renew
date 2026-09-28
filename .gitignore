@@ -20,3 +20,19 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Generated textures. The game, or a tool, writes a .dds cache beside each PNG in Mod/Textures. They
+# are never tracked and never wanted: the PNG is the source. Steam sends the folder as it stands on
+# disk, so six of them travelled with the 0.1.0 upload (see CHANGELOG.md); the publication CI sends
+# tracked files only.
+*.dds
+
+# Windows Explorer folder icons (Art/ModIcon.ico, Art/Preview.ico), local to this machine and never
+# part of the mod. desktop.ini is ignored above.
+*.ico
+
+# Test and preview evidence lives on disk and never in git: captures and logs grow without limit.
+# What is worth keeping is one line per run in docs/runs/, and the few files named in STATUS.md.
+Tests/Pickle/Evidence/
+evidence/
+Art/preview-qa/
