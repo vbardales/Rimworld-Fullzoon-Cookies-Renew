@@ -10,7 +10,7 @@ visibility:   public
 detached:     yes
 stage:        done
 workflow_stage: done
-current_step: "the owner's rulings on scenarios 8 and 13, then the first Pickle passes of Tests/Pickle/README.md (done -> tested)"
+current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md; the owner's rulings on scenarios 8 and 13 are open (done -> tested)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 dependencies: none
@@ -28,7 +28,7 @@ historical_remaining_2026_09_12:
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-09-28, Pickle suite written, audit replayed
+updated:      2026-09-28, pass 1 request filed
 audited_revision: e7b71ae74337c848d74ffd0b499250002673e69e
 ---
 
