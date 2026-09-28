@@ -10,7 +10,7 @@ visibility:   public
 detached:     yes
 stage:        done
 workflow_stage: done
-current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md; the owner's rulings on scenarios 8 and 13 are open (done -> tested)"
+current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md; the owner's ruling on scenario 13 is open (done -> tested)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 dependencies: none
@@ -18,8 +18,8 @@ showcase:     complete
 tested_on:
 workshop:     3806761765
 remaining:
-  - "defect: the README and the About description say a colonist eats a biscuit for pleasure, and the game never sends one. The biscuits pay joy when ingested, but the game's only ingesting joy giver, `JoyGiverDef EatChocolate`, searches `Chocolate` and `InsectJelly` by name (`JoyGiver_Ingest` reads `def.thingDefs`, read from the 1.6 assembly on 2026-09-28) and this mod does not add its biscuits to it. A biscuit is eaten only by a starving colonist with nothing else. The owner rules: change the text, or add the biscuits to a joy giver. Blocks `tested` (scenario 8) and, until the text is true, `prepublished`."
-  - "unverified: the Pickle suite of `Tests/Pickle/` (30 scenarios in 14 features) has never been played, and neither has any manual scenario. Three passes are required, bare English, bare French and beside Mlie's wheat, and a fourth for Chinese Simplified if the install carries it. A first run will very probably fail somewhere: `Tests/Pickle/README.md` names what is least certain, the two bakes, and the way a dotted field path prints."
+  - "unverified: the Pickle suite of `Tests/Pickle/` (32 scenarios in 15 features) has never been played, and neither has any manual scenario. Three passes are required, bare English, bare French and beside Mlie's wheat, and a fourth for Chinese Simplified if the install carries it. A first run will very probably fail somewhere: `Tests/Pickle/README.md` names what is least certain, the two bakes, and the way a dotted field path prints. Request 20260928-131214-960-f08d, pass 1, is in the queue."
+  - "unverified: the joy giver `EatFZBiscuits`, added on 2026-09-28 on the owner's word, has never been seen working. Scenario 15 asks the game to choose it, and is the least deterministic scenario of the suite: a red there is to be read before it is blamed on the giver. Manual scenario 8 replays it by hand."
   - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
   - "unverified: migration from the original mod (scenario 13). It needs a real save made by the original. Without one it must be declared not applicable to `tested` with that reason, since `tested` allows no manual test left to validate."
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -28,8 +28,8 @@ historical_remaining_2026_09_12:
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-09-28, pass 1 request filed
-audited_revision: e7b71ae74337c848d74ffd0b499250002673e69e
+updated:      2026-09-28, joy giver added, audit replayed
+audited_revision: 8b092c5cd13d84ce9f836a20d43d3f3183914971
 ---
 
 # Fullzoon's Cookies Renew — status
@@ -45,28 +45,31 @@ keeps its reasoning as history.
 manual scenario. The suite was written and checked offline, which is all `done` asks (`AUDIT.md`, the
 clarification of 2026-09-21).
 
-**Reading the game's code, to write the scenario for eating a biscuit for pleasure, found that it cannot
-happen.** The mod's text says a colonist eats a biscuit for pleasure. The game never sends one: see the first
-`remaining` line. It does not move the stage, since no criterion before `tested` asks a claim to be true, and it
-is not fixed here, since the two ways of fixing it are not the same mod. It is the owner's to rule on, and
-`prepublished` will not pass while the description says it.
+**Reading the game's code, to write the scenario for eating a biscuit for pleasure, found that it could not
+happen, and the owner ruled the same day.** The mod's text says a colonist eats a biscuit for pleasure, and the
+game never sent one: a colonist is sent to food for pleasure by a `JoyGiver_Ingest`, and the game's only one
+lists `Chocolate` and `InsectJelly` by name. The owner ruled that the biscuits get a joy giver like the
+chocolate's, and `EatFZBiscuits` (`Mod/Defs/JoyGiverDefs/`) now lists the five, with chocolate's own base
+chance and joy kind. Nothing is patched. **It has not been seen working:** scenario 15 asks the game to choose
+it and is the least deterministic scenario there is; see `remaining`. The text of the README and the About
+description is true again, and was extended by a sentence saying so.
 
-### Replay of `preTest -> done`, revision `e7b71ae74337c848d74ffd0b499250002673e69e` (`e7b71ae`)
+### Replay of `preTest -> done`, revision `8b092c5cd13d84ce9f836a20d43d3f3183914971` (`8b092c5`)
 
 | Criterion | Result |
 | --- | --- |
 | Functional scenarios written with setup, actions and expected results | Met. Scenarios 0 to 13 of `_tools/FUNCTIONAL-SCENARIOS.md`. Scenario 8 now says what is wrong with its own expectation |
-| Automated tests written, executed and green | Met. The four shared validators (`Check-XmlFields`, `Check-DefRefs`, `Check-TypeRefs`, `Check-DefInjected`) ran on `47304c6`, and `Mod/` has not changed since, so their result stands for this revision. `_tools/Check-Recipes.ps1` and `Tests/Pickle/Check-Steps.ps1` were written today and pass. No compiled-code test applies: there is no code |
-| Pickle scenarios written, and their scope justified | Met. 30 scenarios in 14 features, no local C#. `TESTING.md` gives every one of the 14 manual scenarios a disposition, played by the suite, proved offline, not applicable with its reason, or open |
+| Automated tests written, executed and green | Met. The four shared validators (`Check-XmlFields`, `Check-DefRefs`, `Check-TypeRefs`, `Check-DefInjected`) were replayed on `8b092c5`, after `Mod/` gained the joy giver: 8 files, 28 defs, 138 keys, no fault. `_tools/Check-Recipes.ps1` and `Tests/Pickle/Check-Steps.ps1` were written today and pass. No compiled-code test applies: there is no code |
+| Pickle scenarios written, and their scope justified | Met. 32 scenarios in 15 features, no local C#. `TESTING.md` gives every one of the 14 manual scenarios a disposition, played by the suite, proved offline, not applicable with its reason, or open |
 | XML tests written, executed and green | Met, same evidence as the automated line |
-| Every non-applicability justified in writing | Met, in the table of `TESTING.md`. Two scenarios are open and are not claimed as not applicable: 8 and 13 |
-| Results correspond to the delivered version | Met. `Mod/` is identical between `47304c6`, where the shared validators ran, and this revision |
+| Every non-applicability justified in writing | Met, in the table of `TESTING.md`. One scenario is open and is not claimed as not applicable: 13. Scenario 8 was open until the joy giver was added |
+| Results correspond to the delivered version | Met. The validators ran on the revision that holds the final `Mod/`; nothing in `Mod/` has moved since |
 | Nothing artificial to fill a box | Two of the 14 manual scenarios are left out of Pickle on purpose, and the pleasure path has no scenario because it would assert a defect |
 
 The suite was **not** run, and the audit does not need it to be: playing it is a criterion of `done -> tested`.
 `Check-Steps.ps1` says it parses and that every step exists, and prints what each pass must show: pass 1
-discovers 24 and plays 21, pass 2 discovers 16 and plays 14, pass 3 discovers 23 and plays 23, pass 4 discovers
-16 and plays 14.
+discovers 26 and plays 23, pass 2 discovers 17 and plays 15, pass 3 discovers 25 and plays 25, pass 4 discovers
+17 and plays 15.
 
 ## Where this mod stood that morning, kept as history
 
@@ -149,26 +152,26 @@ in `TESTING.md`.
 
 Strictly what it takes, in the order that saves machine time:
 
-1. **The owner rules on the pleasure path** (scenario 8): change the text that says "eaten for pleasure", or add
-   the biscuits to a joy giver. Either way the scenario is then closed, or replayed as written.
-2. **Scenario 13**: a save made by the original mod, or a decision that it is not applicable to `tested`, with the
-   reason written down.
-3. **Play the suite**, one request per pass, from `Tests/Pickle/README.md`: bare English, bare French, beside
-   Mlie's wheat, and Chinese if the install has it. Expect reds on the first run and read the cook, the fuel and
-   the haul before blaming a recipe. Each red is fixed and replayed green.
-4. **Open the `@review` capture** of `14` and look at it, and read every `Player.log`.
-5. The three conditions added on 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
+1. **Scenario 13**: a save made by the original mod, or a decision that it is not applicable to `tested`, with
+   the reason written down. This is the owner's.
+2. **Play the suite**, one request per pass, from `Tests/Pickle/README.md`: bare English (filed, waiting), bare
+   French, beside Mlie's wheat, and Chinese if the install has it. Expect reds on the first run and read the
+   cook, the fuel and the haul before blaming a recipe, and what the colonist did before blaming the joy giver.
+   Each red is fixed and replayed green.
+3. **Open the `@review` capture** of `14` and look at it, and read every `Player.log`.
+4. The three conditions added on 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
    scenario has run on a map that mounts its mod, no manual test left to validate.
 
-Playing it takes the machine's queue, and each request ships the working tree as it stands when its ticket is played: keep the tree on
-the revision under test until each `RUN_DONE`.
+A request ships the working tree as it stands when its ticket is played, so the one already filed will play the
+tree with the joy giver and scenario 15, not the one it was filed at. Keep the tree on the revision under test
+until each `RUN_DONE`.
 
 ## What `tested` will ask
 
 Beyond the game running the scenarios, three checks, all in `TESTING.md`: no scenario left in
 `@wip`; every conditional scenario has run on a map that mounts its mod (here scenario 10, with
 Mlie's wheat); no manual test left to validate, each being automated and green or listed not
-applicable with its reason (here scenarios 8 and 13).
+applicable with its reason (here scenario 13).
 
 ## Recommendations, none of them a blocker
 
