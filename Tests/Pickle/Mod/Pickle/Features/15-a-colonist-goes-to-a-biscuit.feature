@@ -26,6 +26,8 @@ Feature: a colonist with time to spare goes to a biscuit
     And I spawn a "FZInsectJellyBiscuits" at (146, 155)
     When "Guest" needs "Food" is set to 100 percent
     And "Guest" needs "Joy" is set to 1 percent
+    And I draft "Guest"
+    And I undraft "Guest"
     And game speed is ultrafast
     And I wait for "Guest" to have job "Ingest"
     Then "Guest" has thought "AteFZInsectJellyBiscuits"
