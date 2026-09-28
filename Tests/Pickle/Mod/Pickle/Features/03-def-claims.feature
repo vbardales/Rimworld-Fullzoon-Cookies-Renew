@@ -50,8 +50,8 @@ Feature: the defs carry what they inherit, as the game merged them
     And def "FZBerryBiscuits" field "ingestible.joyKind" is "Gluttonous"
     And def "FZInsectJellyBiscuits" field "ingestible.joyKind" is "Gluttonous"
 
-  # What this does NOT say, and STATUS.md carries as a defect: the joy is only paid when a colonist ingests a
-  # biscuit, and the game's only ingesting joy giver, JoyGiverDef EatChocolate, searches Chocolate and
-  # InsectJelly by name and nothing else (JoyGiver_Ingest reads def.thingDefs, read from the 1.6 assembly on
-  # 2026-09-28). So nothing here says a colonist is ever sent to a biscuit for pleasure, and there is no
-  # scenario for it: it would assert the defect, and go red the day the defect is fixed.
+  # The joy is paid when a colonist ingests a biscuit, and a colonist with time to spare is SENT to one by the
+  # joy giver EatFZBiscuits, which lists the five as vanilla's EatChocolate lists chocolate. Before 2026-09-28 the
+  # port had no such giver, and the game's only ingesting one searched Chocolate and InsectJelly by name, so no
+  # colonist ever went to a biscuit for pleasure (JoyGiver_Ingest reads def.thingDefs, read from the 1.6
+  # assembly). 01 asserts the giver exists and leaves EatChocolate alone; 15 asks the game to use it.

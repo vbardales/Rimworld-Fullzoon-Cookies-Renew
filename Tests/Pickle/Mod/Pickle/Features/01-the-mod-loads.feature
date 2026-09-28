@@ -47,3 +47,12 @@ Feature: the mod loads and defines its crop, its grain, its biscuits, their memo
     And def "CookFZInsectJellyBiscuits" of type "RecipeDef" exists
     And def "Cook5FZInsectJellyBiscuits" of type "RecipeDef" exists
     And def "Cook10FZInsectJellyBiscuits" of type "RecipeDef" exists
+
+  # The giver that sends a colonist with time to spare to a biscuit, the way vanilla's EatChocolate sends one to
+  # chocolate. Without it the biscuits pay their joy only to a starving colonist: see 15 and the run log.
+  Scenario: the joy giver for the biscuits exists
+    Given the main menu is open
+    Then def "EatFZBiscuits" of type "JoyGiverDef" exists
+    And def "EatFZBiscuits" field "joyKind" is "Gluttonous"
+    And def "EatChocolate" of type "JoyGiverDef" exists
+    And no def "EatChocolate" was patched

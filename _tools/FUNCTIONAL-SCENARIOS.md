@@ -121,24 +121,24 @@ preferability, which would mean the abstract base did not apply.
 
 **Do.** Give a colonist free time with biscuits in store. Watch the recreation bar and the mood tab.
 
-**Expect, as the mod describes itself.** Recreation rises by the biscuit's own amount — 0.10 for the egg
-biscuit, 0.13 for the chocolate chip cookie, 0.15 for the butter cookie, 0.08 for the berry biscuit, 0.20 for the
-insect jelly biscuit — under the *gluttonous* recreation type. A mood memory appears for half a day, worth +3, +5,
-+5, +3 and +7 in the same order, each with its own line of text.
+**Expect.** The colonist goes to a biscuit on their own, and recreation rises by the biscuit's own amount — 0.10
+for the egg biscuit, 0.13 for the chocolate chip cookie, 0.15 for the butter cookie, 0.08 for the berry biscuit,
+0.20 for the insect jelly biscuit — under the *gluttonous* recreation type. A mood memory appears for half a day,
+worth +3, +5, +5, +3 and +7 in the same order, each with its own line of text.
 
-**What is wrong, found on 2026-09-28 by reading the game's code rather than by playing.** The first half of that
-expectation cannot happen. The biscuits carry a joy amount and a joy kind, so they pay joy when a colonist
-ingests one. But a colonist is sent to food *for pleasure* by the game's only ingesting joy giver,
-`JoyGiverDef EatChocolate`, whose class reads a fixed list of defs, `Chocolate` and `InsectJelly`, and nothing
-else. The mod does not add its biscuits to that list, so **no free colonist ever goes to a biscuit**. A biscuit is
-eaten only by a colonist who is starving with nothing better, since its preferability is `DesperateOnly`. Watching
-the recreation bar with a biscuit in store will show nothing.
+**What was wrong, and is fixed, found on 2026-09-28 by reading the game's code rather than by playing.** A
+colonist is sent to food *for pleasure* by a `JoyGiver_Ingest`, whose class reads a fixed list of defs. The
+game's only one, `JoyGiverDef EatChocolate`, lists `Chocolate` and `InsectJelly`, and the port had no giver of its
+own, so **no free colonist ever went to a biscuit**: it was eaten only by a starving colonist with nothing better,
+its preferability being `DesperateOnly`. The README and the About description said the opposite. The owner ruled
+that the biscuits get a giver like the chocolate's, and `EatFZBiscuits` now lists the five, with chocolate's base
+chance and joy kind.
 
-**Play it as it is, then.** What can be watched today is the second half, and only by giving the memory: the
-suite does that (`Tests/Pickle/.../12-the-memories.feature`), and it proves the five memories are wired and
-worth their moods, not when they fire. The pleasure half is **open**, waiting on the owner: either the description
-stops saying "eaten for pleasure", or the biscuits are added to a joy giver. If the second, replay this scenario
-as written: a free colonist, biscuits in store, and the job `Ingest` taken without hunger.
+**Play it as written.** Nothing has been seen working yet. The suite plays it (`Tests/Pickle/.../15-a-colonist-goes-
+to-a-biscuit.feature`) for one biscuit, and proves the five memories are wired in `12`. By hand, read the job the
+colonist takes when their recreation is low: `Ingest`, without hunger. **Two things to see with the chocolate
+beside it:** a colonist who has both chooses between them, and both feed the same tolerance, since they share the
+joy kind. A biscuit that is never chosen while chocolate is would be the giver's chance, not a fault.
 
 **Why it matters.** Fullzoon also shipped `AteFZfoods`, a sixth thought worth **+99 mood** that
 nothing referenced. It is dropped. If a +99 memory ever shows up in that tab, a `tasteThought` is

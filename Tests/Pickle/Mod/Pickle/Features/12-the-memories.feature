@@ -2,10 +2,10 @@
 # directly and the game is asked what it contributes: this proves the five ThoughtDefs are wired and worth
 # +3, +5, +5, +3 and +7, and nothing about WHEN a colonist gets one.
 #
-# The when is the biscuit's tasteThought, given by the game when a colonist ingests one, and this suite has no
-# step that makes a colonist ingest. It could only be reached by starving a colonist beside nothing but a
-# biscuit, and test-colony holds meals and pemmican that a starving colonist would take first. So the trigger
-# is left to the manual scenarios and is unverified; see TESTING.md.
+# The when is the biscuit's tasteThought, given by the game when a colonist ingests one. That is 15: a colonist
+# with time to spare is sent to a biscuit by the joy giver and gets the memory by eating it. A starving colonist
+# beside nothing but a biscuit is not played, since test-colony holds meals and pemmican that it would take
+# first.
 #
 # "is given thought" proves the memory landed and lists every thought the pawn holds when it did not, which is
 # how a trait or a precept that nullifies it would show.

@@ -15,8 +15,8 @@ in [`Tests/Pickle/`](Tests/Pickle/README.md).
 |---|---|
 | Static checks: fields, references, types, DefInjected | shared scripts of the collection, run and green on 2026-09-28: `docs/runs/2026-09-28.md` |
 | `_tools/Check-Recipes.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
-| `Tests/Pickle/Check-Steps.ps1` | written and run green on 2026-09-28: 30 scenarios in 14 features parse, every step line resolves to exactly one step, and the counts each pass must show are computed from the tags. Seen failing on four injected faults |
-| Pickle suite | **written, never played.** 30 scenarios in 14 features, no local C# |
+| `Tests/Pickle/Check-Steps.ps1` | written and run green on 2026-09-28: 32 scenarios in 15 features parse, every step line resolves to exactly one step, and the counts each pass must show are computed from the tags. Seen failing on four injected faults |
+| Pickle suite | **written, never played.** 32 scenarios in 15 features, no local C# |
 | Functional scenarios 0 to 13 | written with setup, actions and expected results; **none played** |
 | Compiled-code unit tests | not applicable: there is no code |
 
@@ -35,20 +35,22 @@ suite, proved offline, not applicable with its reason, or open with what it is w
 | 5 The batches multiply | **offline**, and Pickle for x1 | `Check-Recipes.ps1` asserts x5 and x10 are five and ten times x1 in ingredients, product and work; `10` bakes an x1 for real |
 | 6 Any unfertilised egg | **Pickle** | `10` second scenario, a duck egg being the only egg in the colony. That a fertilised egg is refused is the ingredient filter's UI: not applicable |
 | 7 A biscuit is not a meal | **Pickle, the data half** | `03` asserts the inherited `DesperateOnly`. Watching a starving colonist choose or refuse it needs a colony with no other food, and `test-colony` holds meals and pemmican it would take first: not applicable, the choice being vanilla's food logic, the same as for vanilla chocolate |
-| 8 Eaten for pleasure, joy and a memory | **Pickle for the memory; the pleasure path is a defect, open** | `12` the five memories are wired and worth +3, +5, +5, +3 and +7; `03` the joy kind. The colonist is never sent to a biscuit for pleasure: see below. Open until the owner rules |
+| 8 Eaten for pleasure, joy and a memory | **Pickle** | `15` a colonist with time to spare is sent to an insect jelly biscuit by the joy giver `EatFZBiscuits`, eats it and keeps its memory; `01` the giver exists; `12` the five memories are wired and worth +3, +5, +5, +3 and +7; `03` the joy kind. The giver was added on 2026-09-28, after the owner ruled: see below |
 | 9 Nothing else reparented | **Pickle** | `03` vanilla rice keeps its beauty and its harvest work of 200; the wheat inherits the same base |
 | 10 Two wheats in one colony | **Pickle, conditional** | `07` alone, `08` beside Mlie, `11` a bake with Mlie's grain; passes 1 and 3 |
 | 11 English, French, Chinese | **Pickle**, one pass per language | `04`, `05` and `06`, generated from the defs and the translations |
 | 12 New colony, existing save, reload | **Pickle**, two of the three | `13` grain, biscuits, a plant and a bill survive a save and a reload. **An existing save:** `test-colony` was written without this mod (its list has no `nelim.fullzooncookies`), so every `@save` scenario is this mod added to a save that never had it. **A new colony:** not applicable, the mod adds no def a new game generates or seeds differently from a loaded one |
 | 13 Migration from the original | **open, not Pickle** | needs a save made by the original, which cannot be produced here, and the original cannot be loaded beside this mod. Stays `unverified` until such a save exists, or is declared not applicable to `tested` with that reason |
 
-**The pleasure path, in full.** The biscuits carry a joy kind and an amount, so they pay joy whenever a colonist
-ingests one. But the game's only ingesting joy giver, `JoyGiverDef EatChocolate` with `JoyGiver_Ingest`, searches
-a fixed list, `Chocolate` and `InsectJelly`, and this mod does not add its biscuits to it. A colonist is therefore
-never sent to a biscuit for pleasure; one is eaten only when a colonist is starving and has nothing else. The
-README and the About description say the opposite. Read from the 1.6 assembly on 2026-09-28; recorded in
-`STATUS.md`. Fixing the text or adding the biscuits to a joy giver is the owner's call. Once it is made, scenario 8's
-pleasure half is replayed: a free colonist, biscuits in store, and the job `Ingest`.
+**The pleasure path, in full.** The biscuits carry a joy kind and an amount, so they pay joy whenever a colonist ingests
+one. But a colonist is only *sent* to food for pleasure by a `JoyGiver_Ingest`, which reads a fixed list, and the
+game's only one, `JoyGiverDef EatChocolate`, lists `Chocolate` and `InsectJelly`. The port did not add its biscuits
+to it, so until 2026-09-28 a colonist never went to one for pleasure and only a starving colonist with nothing
+else ate one, while the README and the About description said the opposite. Found by reading the class in the
+1.6 assembly, in order to write the scenario. The owner ruled the same day that the biscuits get a giver like
+the chocolate's, and `Mod/Defs/JoyGiverDefs/JoyGivers_FZfood.xml` adds `EatFZBiscuits`, with chocolate's own base
+chance, joy kind and requirement of hands. Nothing has yet been seen working: `15` is the scenario that will show
+it, and it asks the game to choose, so a red there is to be read before it is blamed on the giver.
 
 The `@review` capture (`14`) asserts nothing: a person opens it.
 
@@ -61,10 +63,10 @@ requires SYR Processor Framework (2633514537), which the pass map lists first. T
 
 | # | Pass | Mods | Language | Discovers, plays, skips by requirement |
 |---|---|---|---|---|
-| 1 | `sans-facultatifs` | Core, the DLC, Harmony, RimLogging, Pickle, LoadAudit, this mod | English | 24, 21, 3 |
-| 2 | `sans-facultatifs` | the same | French | 16, 14, 2 |
-| 3 | `avec-mlie` | the same plus SYR Processor Framework and Mlie's wheat | English | 23, 23, 0 |
-| 4 | `sans-facultatifs`, only if the install carries the language | the same | ChineseSimplified | 16, 14, 2 |
+| 1 | `sans-facultatifs` | Core, the DLC, Harmony, RimLogging, Pickle, LoadAudit, this mod | English | 26, 23, 3 |
+| 2 | `sans-facultatifs` | the same | French | 17, 15, 2 |
+| 3 | `avec-mlie` | the same plus SYR Processor Framework and Mlie's wheat | English | 25, 25, 0 |
+| 4 | `sans-facultatifs`, only if the install carries the language | the same | ChineseSimplified | 17, 15, 2 |
 
 Three passes are required, four with Chinese; a pass without the language is `unverified`, never skipped in
 silence. One pass is one request, with its own `-DepMap` and `-Language` and a fresh `-EvidenceDir`; the exact
@@ -87,8 +89,8 @@ the Workshop images and their order belong to `PUBLICATION.md`, at the step afte
    report folder is shared by the whole machine. A scenario skipped for want of its condition is not passed. Here:
    `08` and `11` in pass 3, and `02` in every pass, for LoadAudit.
 3. **No manual test is left to validate.** Each of scenarios 0 to 13 is automated and green, or listed above as
-   not applicable with its reason. Two are open and must be closed first: 8, waiting on the owner's ruling, and
-   13, waiting on a save made by the original or on a decision that it is not applicable.
+   not applicable with its reason. One is open and must be closed first: 13, waiting on a save made by the original or on a decision that it is
+   not applicable.
 4. The suites ran green, the discovered and played counts agree with the table above, `exitReason` was read before
    the numbers, and the `Player.log` of each pass was read. The `@review` capture was opened and looked at.
 5. English and French were checked in the game, developer mode on: a missing key shows as accented gibberish only

@@ -140,6 +140,10 @@ causes the problem.
 - Recipe labels turned from `做鸡蛋饼干*5` into `bake egg biscuits x5`, and the `jobString`
   from "Cooking FZfood meals." into "Baking biscuits."
 - `<supportedVersions>` set to 1.6; a `packageId` added, which 1.0 did not require.
+- **A joy giver added**, `EatFZBiscuits`. The original's biscuits carry a joy kind and an amount, but the game's
+  only ingesting joy giver, `EatChocolate`, searches `Chocolate` and `InsectJelly` by name, and the original never
+  added its own to it, so no colonist ever went to a biscuit for pleasure. This is the one addition to what the
+  biscuits do, and it is the port's own def, in `Defs/JoyGiverDefs/`. Nothing in the game is patched.
 
 ## What did not change
 

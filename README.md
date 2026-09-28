@@ -28,7 +28,8 @@ not mean queueing fifteen bills. Work scales with the batch: 300, 1500, 3000.
 
 Biscuits are gluttonous snacks in the mould of vanilla chocolate — 0.09 nutrition, `DesperateOnly`
 so colonists avoid them for ordinary meals, and worth joy and a half-day mood memory when eaten for
-pleasure.
+pleasure. A colonist with time to spare goes looking for one, as for chocolate: the port adds a joy giver
+of its own that lists the five, the way vanilla's lists chocolate.
 
 The wheat sows on ordinary soil or in hydroponics, grows in 4.5 days and yields six grain. The
 grain keeps forty days and can be used for biscuits and ordinary meals.

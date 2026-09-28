@@ -12,7 +12,7 @@ There is no local C#: no `Source/`, no assembly. The suite uses Pickle's own ste
 
 | Feature | Tags | Passes | Asserts |
 |---|---|---|---|
-| `01-the-mod-loads` | | all | the mod is loaded, and its seven things, five memories and fifteen recipes are in the database the game built |
+| `01-the-mod-loads` | | all | the mod is loaded, and its seven things, five memories and fifteen recipes are in the database the game built, and so is the joy giver that sends a colonist to a biscuit |
 | `02-the-load-is-clean` | `@requires` LoadAudit | all | nothing in the game log, from the start of the run, belongs to the mod as an error, a warning, an unresolved def or a message repeated five times |
 | `03-def-claims` | | all | as the game merged them: vanilla rice keeps the plant base's beauty and its harvest work of 200; the wheat inherits the same base and keeps its own 250, grows in 4.5 days and yields six; each biscuit inherits `DesperateOnly` and `Gluttonous` from the snack base |
 | `04-labels-en`, `05-labels-fr`, `06-labels-zh` | `@en-only`, `@fr-only`, `@zh-only` | one language each | the label and description of the crop, the grain and the five biscuits, and the label of the fifteen bills, as the loaded defs hold them in the language the game started in. **Generated** |
@@ -24,17 +24,19 @@ There is no local C#: no `Source/`, no assembly. The suite uses Pickle's own ste
 | `12-the-memories` | `@save` | English passes | the five memories are wired and worth +3, +5, +5, +3 and +7 |
 | `13-the-save-round-trips` | `@save` | English passes | grain, biscuits, a plant of the crop and a queued bill come back after a save and a reload |
 | `14-a-capture` | `@save @review` | English passes | one capture of the five biscuits and the grain, for a person to open |
+| `15-a-colonist-goes-to-a-biscuit` | `@save @slow` | English passes | a colonist with time to spare is sent to an insect jelly biscuit by the joy giver, eats it and keeps its memory |
 
-Thirty scenarios in fourteen features. What each pass should discover, play and skip is computed by
+Thirty-two scenarios in fifteen features. What each pass should discover, play and skip is computed by
 `Check-Steps.ps1` from the tags, and is the number a report has to match.
 
 ## Three limits worth knowing before reading a green
 
-**What is not here, on purpose.** A colonist choosing a biscuit for pleasure is not tested, because it does not
-happen: the game's only ingesting joy giver, `EatChocolate`, searches `Chocolate` and `InsectJelly` by name,
-and this mod does not add its biscuits to it. That is a defect of the claim, in `STATUS.md`. The memories are
-tested by giving them, not by a colonist eating: `12` proves they are wired, not when they fire. A colonist
-starving beside a biscuit is not tested either, because `test-colony` holds meals and pemmican that it would
+**The joy giver, and what is not here.** Until 2026-09-28 a colonist never chose a biscuit for pleasure: the
+game's only ingesting joy giver, `EatChocolate`, searches `Chocolate` and `InsectJelly` by name, and the port had
+no giver of its own. It has one now, `EatFZBiscuits`, and `01` asserts it exists. `15` asks the game to use it,
+and is the least deterministic scenario of the suite, since it asks the game to *choose*. The memories are
+tested by giving them in `12`, which proves they are wired, not when they fire; `15` is where one fires. A
+colonist starving beside a biscuit is not tested, because `test-colony` holds meals and pemmican that it would
 take first.
 
 **The bakes are the least certain part.** `10` and `11` lean on a cook made able by two vanilla backstories
@@ -86,10 +88,10 @@ Submit-PickleRun.ps1 -Mod FullzoonCookiesRenew -Owner local_<session id> -Label 
 
 | # | Pass | Extra arguments | Discovers, plays, skips |
 |---|---|---|---|
-| 1 | bare, English | `-DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only'` | 24, 21, 3 |
-| 2 | bare, French | `-DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'Fullzoon Cookies Renew - Pickle tests,!@en-only,!@zh-only,!@save'` | 16, 14, 2 |
-| 3 | with Mlie, English | `-DepMap wsl-deps.avec-mlie.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only,!@wheat-alone'` | 23, 23, 0 |
-| 4 | bare, Chinese, if the install has it | `-DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'Fullzoon Cookies Renew - Pickle tests,!@en-only,!@fr-only,!@save'` | 16, 14, 2 |
+| 1 | bare, English | `-DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only'` | 26, 23, 3 |
+| 2 | bare, French | `-DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'Fullzoon Cookies Renew - Pickle tests,!@en-only,!@zh-only,!@save'` | 17, 15, 2 |
+| 3 | with Mlie, English | `-DepMap wsl-deps.avec-mlie.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only,!@wheat-alone'` | 25, 25, 0 |
+| 4 | bare, Chinese, if the install has it | `-DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'Fullzoon Cookies Renew - Pickle tests,!@en-only,!@fr-only,!@save'` | 17, 15, 2 |
 
 Skipped by requirement is what a pass without Mlie's mod must show for `08` and `11`: skipped counts, exclusions
 do not, which is why `!@wheat-alone` and the language tags are exclusions and the requirements are not. **The

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    Sends a colonist with time to spare to a biscuit, the way vanilla's EatChocolate sends one to chocolate.
+
+    The biscuits carry a joy kind and an amount, so they pay joy whenever a colonist ingests one. But a colonist
+    is only SENT to food for pleasure by a JoyGiver_Ingest, and that class reads a fixed list, def.thingDefs.
+    Vanilla's only one, EatChocolate, lists Chocolate and InsectJelly and nothing else, and the original mod
+    never added its biscuits to it or made a giver of its own: a biscuit was eaten only by a starving colonist
+    with nothing better, which is not what the mod says it is for. Found on 2026-09-28 by reading the class
+    while writing the scenario for it.
+
+    A def of its own rather than a patch of EatChocolate: nothing to break if another mod rewrites that list,
+    and nothing patched, so the patch tree stays what it was. The numbers are chocolate's own: the same base
+    chance, the same joy kind, so a biscuit and a square of chocolate share one appetite and one tolerance, and
+    the same requirement of hands.
+  -->
+
+  <JoyGiverDef>
+    <defName>EatFZBiscuits</defName>
+    <giverClass>JoyGiver_Ingest</giverClass>
+    <baseChance>2.5</baseChance>
+    <thingDefs>
+      <li>FZEggBiscuit</li>
+      <li>FZChocolateCookies</li>
+      <li>FZCookies</li>
+      <li>FZBerryBiscuits</li>
+      <li>FZInsectJellyBiscuits</li>
+    </thingDefs>
+    <joyKind>Gluttonous</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+</Defs>

@@ -40,6 +40,12 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
 - `packageId` `nelim.fullzooncookies`. The original has none; 1.0 did not require it. The `renew` the
   id carried at the 0.1.0 prepublication was dropped before the first public version: the `nelim.`
   prefix already says the mod is mine, and the name, folder and repository say it is a port.
+- A joy giver of its own, `EatFZBiscuits`, in `Defs/JoyGiverDefs/`. The game's only ingesting joy giver,
+  `EatChocolate`, lists `Chocolate` and `InsectJelly` by name, and the original never added its biscuits to it
+  or made a giver of its own, so no colonist ever went to a biscuit for pleasure: only a starving one ate
+  one. The new giver lists the five, with chocolate's own base chance, joy kind and requirement of hands.
+  Nothing in the game was patched to do it. Found on 2026-09-28 by reading the class, and added on the
+  owner's word.
 - An in-game test suite for Pickle, under `Tests/Pickle/`: 30 scenarios in 14 features and no code of its
   own. Three passes are required, bare English, bare French and beside Mlie's Vanilla-like Wheat, and a
   fourth for Chinese Simplified. Written on 2026-09-28 and not yet played. Development only; none of it is in
