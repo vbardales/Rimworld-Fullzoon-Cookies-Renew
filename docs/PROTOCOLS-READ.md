@@ -27,15 +27,19 @@ the only thing that pins what was read.
 
 | Document | Version read | Useful here? |
 |---|---|---|
-| `PickleTools/README.md` | `c771bef` 2026-09-25, `2e26bfc661` | **Not yet.** The table of shared steps matters when the suite is written |
+| `PickleTools/README.md` | `c771bef` 2026-09-25, `2e26bfc661` | **Yes**, the table of shared tools: LoadAudit is the one this suite stages |
 | `PickleTools/Headless/README.md` | `ed4e73a` 2026-09-26, `fe33491fb3` | **Partly.** Passes, `wsl-deps` maps, exit codes and the evidence directory shaped `TESTING.md`. No run was launched |
-| `PickleTools/docs/steps.md` | `96eda0f` 2026-09-28, `29f9265d9b` | **No.** Only the list of tool sections was read: there is no suite to write steps for yet. Read it properly when there is |
+| `PickleTools/docs/steps.md` | `96eda0f` 2026-09-28, `29f9265d9b` | **Partly.** The tool sections and the ExpansionSteps, LoadAudit and ScreenshotMode tables were read for the suite; the rest of it was not |
 | `Rimworld-Release-Admin/docs/OPERATIONS.md` | `3c03f51` 2026-09-26, `82bcd0f7db` | **Partly.** The first-publication path and the CI rules; nothing is published from here yet |
 | `Rimworld-Ticket-Dispatcher/docs/WELCOME.md` | `77ca9d7` 2026-09-27, `e25a71e7cf` | **Yes.** The rules on `desktop.ini` and `.ico` in `Mod/`, on deleting evidence with long names, and where protocol versions live |
 | `Rimworld-Ticket-Dispatcher/docs/SUBMIT.md` | `d07b2b8` 2026-09-26, `cfe2c10876` | **Not yet.** Needed the day a run is submitted |
 
-Not in the list given for this session and not read: `PickleTools/Authoring/README.md`, which
-`AUDIT.md` names as the starting point for writing a suite. It is the first thing to read then.
+Not in the list given for the first session and read afterwards, to write the suite:
+
+| Document | Version read | Useful here? |
+|---|---|---|
+| `PickleTools/Authoring/README.md` | `8d3ca6d` 2026-09-26, `897a405797` | **Yes**, it is the guide the suite was written from: layout, pass maps, `@requires`, the timeouts, evidence |
+| Pickle's own `Docs/steps.md`, upstream repository `RimWorks/Rimworld-Pickle`, tag `v4.9.1` | read from GitHub, `31322` bytes. The installed Pickle is 4.9.1 (`4.9.1+e22b90a`); the current `v4.10.2` differs only by a world-camera section | **Yes**, it is the catalogue the steps come from. The staged copy in the WSL install was not read: the WSL did not answer in time |
 
 ## This mod's own documents
 
@@ -45,6 +49,7 @@ Not in the list given for this session and not read: `PickleTools/Authoring/READ
 | `README.md`, `ATTRIBUTION.md`, `LICENSE`, `Mod/About/About.xml` | read in full |
 | `CHANGELOG.md` | read and reorganised: `1.0.0` unreleased above the new `0.1.0` |
 | `_tools/FUNCTIONAL-SCENARIOS.md` | read: scenarios 0 to 13, all manual, none played |
-| `TESTING.md` | did not exist, written on that day |
+| `TESTING.md` | did not exist, written on that day, revised the same day after the suite |
 | `docs/runs/` | did not exist, opened on that day |
-| `PUBLICATION.md`, `BACKLOG.md`, `NOTES.md`, `BUGS.md`, `Tests/Pickle/` | do not exist |
+| `Tests/Pickle/` | written on that day, never played |
+| `PUBLICATION.md`, `BACKLOG.md`, `NOTES.md`, `BUGS.md` | do not exist |

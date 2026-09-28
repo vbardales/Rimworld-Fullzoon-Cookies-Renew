@@ -1,0 +1,9 @@
+# Pass "sans-facultatifs": Core, the DLC, Harmony, RimLogging, Pickle, this mod and its test companion.
+# Nothing optional: no wheat mod, so the crop stays in the sow menu and 07 plays, 08 and 11 are skipped by
+# requirement. That is the pass in which the mod has to stand up alone.
+#
+# The one line below is not an optional gameplay mod: it stages PickleTools/LoadAudit, the two steps that
+# read the game log from the start of the run and say whether anything in it belongs to this mod (feature
+# 02). The tool is not in the aggregate bundle, so a pass that wants it names it. It adds no def and
+# changes nothing the mod does; a game with it and a game without it load the mod the same way.
+nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod

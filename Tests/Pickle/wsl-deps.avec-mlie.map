@@ -1,0 +1,15 @@
+# Pass "avec-mlie": Mlie's Vanilla-like Wheat (Continued) beside this mod.
+#
+# The one optional mod the port names. It grows wheat too, so beside it this wheat leaves the sow menu and the
+# fifteen recipes accept its RawWheat as well as their own grain. 08 and 11 play here, because their tag finds
+# the mod; 07 is left out with !@wheat-alone, since it asserts the opposite of this pass.
+#
+# Mlie's mod requires SYR Processor Framework (Workshop 2633514537, syrchalis.processor.framework), so the
+# framework comes first: mods of a map are staged and activated in the order of the file. Whether the WSL
+# install already holds these two Workshop items has not been checked; a missing one is a download, and a
+# download goes through Use-Wsl.ps1 like any other work on the machine (PickleTools/Headless/README.md).
+#
+# The first line is PickleTools/LoadAudit, the same as in the bare pass.
+nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
+syrchalis.processor.framework 2633514537
+Mlie.VanillalikeWheat 2717707382

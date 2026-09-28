@@ -8,3 +8,8 @@
 *.txt   text
 
 *.png binary
+
+# The pass maps are read by a `while read` loop in the WSL staging: a carriage return on a Workshop id
+# would make it a different id, in silence. Features are read by Pickle on Linux.
+*.map      text eol=lf
+*.feature  text eol=lf

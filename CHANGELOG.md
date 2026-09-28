@@ -40,6 +40,12 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
 - `packageId` `nelim.fullzooncookies`. The original has none; 1.0 did not require it. The `renew` the
   id carried at the 0.1.0 prepublication was dropped before the first public version: the `nelim.`
   prefix already says the mod is mine, and the name, folder and repository say it is a port.
+- An in-game test suite for Pickle, under `Tests/Pickle/`: 30 scenarios in 14 features and no code of its
+  own. Three passes are required, bare English, bare French and beside Mlie's Vanilla-like Wheat, and a
+  fourth for Chinese Simplified. Written on 2026-09-28 and not yet played. Development only; none of it is in
+  `Mod/`, so none of it reaches a player.
+- `_tools/Check-Recipes.ps1`, an offline check that the fifteen recipes are five biscuits at x1, x5 and x10,
+  multiples of one another, at the two stoves. Development only.
 
 ### Changed
 
