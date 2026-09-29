@@ -6,7 +6,7 @@ const lum=rgb=>rgb.map(v=>v/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4)
 const hex=v=>v.match(/[a-f\d]{2}/gi).map(v=>parseInt(v,16));
 const contrast=(a,b)=>(Math.max(a,b)+.05)/(Math.min(a,b)+.05);
 (async()=>{
- const server=http.createServer((req,res)=>{const name=path.basename(new URL(req.url,'http://localhost').pathname);if(!['preview.html','preview-palette.json','Preview-source.png'].includes(name)){res.writeHead(404);res.end();return;}res.setHeader('Content-Type',name.endsWith('.png')?'image/png':name.endsWith('.json')?'application/json':'text/html; charset=utf-8');res.end(fs.readFileSync(path.join(root,name)));});
+ const server=http.createServer((req,res)=>{const name=path.basename(new URL(req.url,'http://localhost').pathname);if(!['preview.html','preview-palette.json','Preview-source.png','ModIcon-source.png'].includes(name)){res.writeHead(404);res.end();return;}res.setHeader('Content-Type',name.endsWith('.png')?'image/png':name.endsWith('.json')?'application/json':'text/html; charset=utf-8');res.end(fs.readFileSync(path.join(root,name)));});
  await new Promise(r=>server.listen(0,'127.0.0.1',r));let browser;
  try{
   browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
