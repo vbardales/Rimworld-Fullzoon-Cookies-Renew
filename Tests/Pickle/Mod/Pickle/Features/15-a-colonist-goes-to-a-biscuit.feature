@@ -11,8 +11,11 @@
 #     IsForbidden), and its meals and pemmican are not joy food;
 #   - the biscuit is an insect jelly biscuit, the one with the most joy and a memory of its own, so a job for it
 #     and the memory it leaves name the same biscuit.
-# Other joy givers compete, and the colony may have things to do that joy does not outweigh; if the first run
-# never sees the job, look at what the colonist did instead before blaming the giver.
+# Other joy givers compete (Horseshoes, Skygaze...), and once the colonist commits to one of those it runs for
+# a while uninterrupted: a single reroll is not enough to make the pick likely. Draft/undraft forces a fresh
+# job choice each time it is called, so it is repeated several times before waiting, to raise the odds that at
+# least one of the rerolls lands on the biscuit. If it still never sees the job, look at what the colonist did
+# instead before blaming the giver.
 #
 # "I wait for X to have job" gives up after 30 real seconds, at the speed set. The memory is checked afterwards
 # and waits for itself: eating takes a few game seconds after the job starts.
@@ -26,9 +29,19 @@ Feature: a colonist with time to spare goes to a biscuit
     And I spawn a "FZInsectJellyBiscuits" at (146, 155)
     When "Guest" needs "Food" is set to 100 percent
     And "Guest" needs "Joy" is set to 1 percent
+    And game speed is ultrafast
     And I draft "Guest"
     And I undraft "Guest"
-    And game speed is ultrafast
+    And I draft "Guest"
+    And I undraft "Guest"
+    And I draft "Guest"
+    And I undraft "Guest"
+    And I draft "Guest"
+    And I undraft "Guest"
+    And I draft "Guest"
+    And I undraft "Guest"
+    And I draft "Guest"
+    And I undraft "Guest"
     And I wait for "Guest" to have job "Ingest"
     Then "Guest" has thought "AteFZInsectJellyBiscuits"
     And no errors were logged
