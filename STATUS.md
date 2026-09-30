@@ -1,7 +1,7 @@
 ---
 localization:   complete
 translation_en: complete
-translation_fr: complete
+translation_fr: partial
 settings_audit: not_applicable
 mod:          Fullzoon's Cookies Renew (unofficial)
 packageId:    nelim.fullzooncookies
@@ -23,6 +23,7 @@ remaining:
   - "unverified: the joy giver `EatFZBiscuits`, added on 2026-09-28 on the owner's word, has never been seen working. Scenario 15 asks the game to choose it, and is the least deterministic scenario of the suite: a red there is to be read before it is blamed on the giver. Manual scenario 8 replays it by hand."
   - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
+  - "unverified: French review by Virginie"
 historical_remaining_2026_09_12:
   - unverified: the twelve scenarios of `_tools/FUNCTIONAL-SCENARIOS.md`, none of them played
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
@@ -326,6 +327,20 @@ RimWorld classes and data: **138 keys checked, 0 errors**, including Chinese and
 French; 11,613 Defs indexed, 30 patch operations applied by the validator. No unresolved
 translation targets reported. This is static validation, not proof of game loading.
 English/French rendering, fallback behavior and clipping remain unverified in game.
+
+**Gender agreement (2026-09-30 rule).** Read all five French DefInjected files in full:
+`RecipeDef/Recipes_FZfood_Meals.xml` (45 strings: labels, descriptions, jobStrings),
+`ThingDef/Items_FZMeal.xml` (5 items), `ThingDef/Items_FZRawWheat.xml`,
+`ThingDef/Plants_FZWheat.xml`, `ThoughtDef/Thoughts_FZfood.xml` (5 memory stages: label +
+description). No text in this mod agrees with a pawn: item/recipe text describes food, not
+a colonist, and the thought stages use `avoir`-auxiliary participles ("a mangé", "J'ai
+mangé") which do not agree with the subject's gender. No adjective, participle or noun
+referring to a pawn was found anywhere in the inventory. No three-segment switch is needed;
+none is missing.
+
+`translation_fr` stays `partial`: the mechanical checks above (coverage, DefInjected
+resolution, gender-agreement reading) all pass, but per `TRANSLATIONS.md` §3 only Virginie's
+own reading of the French text can set it to `complete`. Not done in this session.
 
 ### Executed checks and limits
 
