@@ -10,17 +10,20 @@ visibility:   public
 detached:     yes
 stage:        done
 workflow_stage: done
-current_step: "waiting for request 20260928-131214-960-f08d, pass 1 of Tests/Pickle/README.md, then the other passes (done -> tested)"
+current_step: "done -> tested: scenario 15 (joy giver) red twice and its replay d521 has no result on disk; then pass 3 (beside Mlie), pass 4 (Chinese), then the non-regression passes together at the end"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:
+  - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence in Tests/Pickle/Evidence/ (ignored by git), one line per run in docs/runs/2026-09-28.md"
 workshop:     3806761765
 remaining:
-  - "unverified: the Pickle suite of `Tests/Pickle/` (32 scenarios in 15 features) has never been played, and neither has any manual scenario. Three passes are required, bare English, bare French and beside Mlie's wheat, and a fourth for Chinese Simplified if the install carries it. A first run will very probably fail somewhere: `Tests/Pickle/README.md` names what is least certain, the two bakes, and the way a dotted field path prints. Request 20260928-131214-960-f08d, pass 1, is in the queue."
-  - "unverified: the joy giver `EatFZBiscuits`, added on 2026-09-28 on the owner's word, has never been seen working. Scenario 15 asks the game to choose it, and is the least deterministic scenario of the suite: a red there is to be read before it is blamed on the giver. Manual scenario 8 replays it by hand."
+  - "defect: scenario 15 (a colonist is sent to a biscuit for pleasure by `EatFZBiscuits`) is red twice, 2026-09-28 pass 1 and 2026-09-29 replay `20260929-110314-718-412a`: the guest took `Play_Horseshoes`, then `Skygaze`, never `Ingest`. The giver is unproven, not refuted. The scenario was reworked (draft/undraft repeated six times); its replay `20260929-230410-312-d521` has no result on disk and is absent from the queue list of 2026-10-02. File scenario 15 again, alone, small ticket."
+  - "unverified: pass 3 (beside Mlie's wheat, English, 25 scenarios) and pass 4 (Chinese Simplified, only if the install carries it) have never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
+  - "unverified: the `@review` capture of feature 14 (kept as JPEG in the pass 1 evidence) has not been opened and looked at, and the `Player.log` of passes 1 and 2 were not read in this audit"
+  - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
   - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
   - "unverified: French review by Virginie"
@@ -29,13 +32,37 @@ historical_remaining_2026_09_12:
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-09-28, migration from the original dropped
-audited_revision: 8b092c5cd13d84ce9f836a20d43d3f3183914971
+updated:      2026-10-02, audit replay, evidence trimmed, runs recorded
+audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
 ---
 
 # Fullzoon's Cookies Renew — status
 
 ## Where this mod stands
+
+**Audit of 2026-10-02, revision `155738e`: `done` holds.** Nothing went back. Between 2026-09-28 and now `Mod/`
+changed only in `About/Preview.png` (badge in the corner); no def, patch or text moved. This section corrects
+what the sections below say about "nothing played": the game ran twice on this mod.
+
+- **Replayed offline on 2026-10-02:** `Check-XmlFields` (8 files, no unknown field), `Check-DefRefs` (28 defs, 1 abstract
+  parent, no unresolved reference), `Check-TypeRefs` (0 foreign type), `Check-DefInjected` (138 keys, 0 errors, 30 patch
+  operations), `_tools/Check-Recipes.ps1` (15 recipes hold). `Tests/Pickle/Check-Steps.ps1` could **not** be replayed:
+  it wants the Pickle assemblies under `workshop/content/294100/3791648678`, which this machine's Windows Steam no longer
+  has. Not a defect; the two Pickle passes below resolved every step.
+- **Played, WSL, bare set** (Pickle 4.9.1, `exitReason` read before the counts): pass 1 English 22 passed, 1 failed,
+  3 skipped of 26, only scenario 15 red; pass 2 French 15 passed, 0 failed, 2 skipped of 17, clean. Counts agree with
+  `Check-Steps.ps1`. The 2026-09-28 unfiltered "replay 15" (32 scenarios, 7 red) was a wrong filter: its six red were the
+  Chinese features played in an English pass, and its seventh was scenario 15 again. It proved nothing the other runs do
+  not, and was deleted.
+- **Rules read since the last audit** (see `docs/PROTOCOLS-READ.md`): French gender agreement (2026-09-30), done on the five
+  DefInjected files below; PR to the original's repository (none exists, `upstream_mod_remotes: N/A`); the order of passes
+  of 2026-10-02 (never-played and red first, non-regression together at the end); the WSL cleanup at sleep time (nothing
+  of this mod's was downloaded there yet that is known: pass 3's two Workshop items are to be checked then).
+- **Prepublication:** `Mod/About/PublishedFileId.txt` (`3806761765`) is tracked, `CHANGELOG.md` opens on `0.1.0`, no
+  `.dds` is tracked and `*.dds`, `*.ico`, `Tests/Pickle/Evidence/` are ignored.
+- **Evidence** on disk went from 90 MB to under 1 MB: kept `2026-09-28-pass1-bare-en` (the `@review` capture as JPEG),
+  `2026-09-29-pass1-replay-15-2` (latest word on scenario 15, red) and `2026-09-29-pass2-bare-fr`. No field of this file
+  pointed at the deleted folder.
 
 **Audit of 2026-09-28, later the same day: `preTest` becomes `done` again.** The section below, written that
 morning, put the mod at `preTest` for one reason, and the reason is gone: the Pickle suite exists. The audit was

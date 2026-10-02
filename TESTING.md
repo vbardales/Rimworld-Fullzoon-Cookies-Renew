@@ -1,8 +1,8 @@
 # Testing
 
 How this mod is tested, how many passes it needs, what each covers, and what has to be true before
-`STATUS.md` may say `tested`. Revised on 2026-09-28, after the Pickle suite was written. **Nothing has been
-played in a game yet**: not one scenario of the suite, not one of the manual list.
+`STATUS.md` may say `tested`. Revised on 2026-10-02. **Played so far: pass 1 (English: 22 passed, scenario 15 red, 3 skipped) and pass 2
+(French: 15 passed, 2 skipped).** Passes 3 and 4 have never run, and no manual scenario was played by hand.
 
 The mod is XML and nothing else: no assembly, no Harmony, no tick, one conditional patch. What can be proved
 without a game is proved offline. What remains needs a colony, and the manual scenarios that describe it are in
@@ -16,8 +16,9 @@ in [`Tests/Pickle/`](Tests/Pickle/README.md).
 | Static checks: fields, references, types, DefInjected | shared scripts of the collection, run and green on 2026-09-28: `docs/runs/2026-09-28.md` |
 | `_tools/Check-Recipes.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
 | `Tests/Pickle/Check-Steps.ps1` | written and run green on 2026-09-28: 32 scenarios in 15 features parse, every step line resolves to exactly one step, and the counts each pass must show are computed from the tags. Seen failing on four injected faults |
-| Pickle suite | **written, never played.** 32 scenarios in 15 features, no local C# |
-| Functional scenarios 0 to 13 | written with setup, actions and expected results; **none played** |
+| Pickle suite | 32 scenarios in 15 features, no local C#. **Played: passes 1 and 2 only** (see the line above). Green: all but `15`. Not played: pass 3 (`08`, `11`, the rest beside Mlie) and pass 4 (Chinese). Offline checks replayed on 2026-10-02 on `155738e`: `Mod/` unchanged except the Preview image |
+| Functional scenarios 0 to 13 | written with setup, actions and expected results; dispositions in the table below. Not played by hand |
+| Order of what is left (AUDIT.md, 2026-10-02) | never played or red first, each a small ticket: `15` alone, then pass 3 (`08`, `11`), then pass 4 if the install carries Chinese. The non-regression passes (whole suite, English and French) go **together, last**, on the final revision |
 | Compiled-code unit tests | not applicable: there is no code |
 
 ## What is Pickle's, what is offline, what stays manual, and why

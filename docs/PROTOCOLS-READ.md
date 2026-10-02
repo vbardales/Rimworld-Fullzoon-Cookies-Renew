@@ -53,3 +53,25 @@ Not in the list given for the first session and read afterwards, to write the su
 | `docs/runs/` | did not exist, opened on that day |
 | `Tests/Pickle/` | written on that day, never played |
 | `PUBLICATION.md`, `BACKLOG.md`, `NOTES.md`, `BUGS.md` | do not exist |
+
+## Second pass, 2026-10-02 (session `local_3bd3240e-8e04-46ee-8ebb-6a591416d67f`)
+
+`AUDIT.md` was read in full again. For the others only the **diff since the version recorded above** was read
+(`git --git-dir=../rimworld-protocols.git diff <old> -- <file>`); a file not listed as read in full was not re-read in
+full. A document whose hash is unchanged below is not worth reading again.
+
+| Document | Version now | What changed since the first pass, and does it touch this mod? |
+|---|---|---|
+| `AGENTS.md` | `7fd7475` 2026-09-29, `44dddcbc8f` | Reworded shorter; the two gates and the evidence rule are the same, plus: published mods get `docs/runs/history.md` trimmed. **No effect now** (not published) |
+| `AUDIT.md` | `d1fdbe1` 2026-10-02, `daab030ccf` | Read in full. New: Pickle pass order (never-played and red first, non-regression together at the end); WSL cleanup of downloaded Workshop mods at sleep time; `tested` needs no `@wip`, every `@requires` run, no manual test left. **All applied** |
+| `PUBLISHING.md` | `4e8f11a` 2026-10-02, `11de03424f` | New: PR to the original's repo is systematic (none exists here); gallery `0-preview.png` rule and one-digit numbering; Preview badge; animal-mod integrations (**does not apply: no animal**). Useful at `tested -> prepublished` |
+| `TRANSLATIONS.md` | `af8427f` 2026-10-02, `7b4d9a23bd` | New: French gender agreement and neutral forms (2026-09-30). **Replayed in STATUS.md**: no text agrees with a pawn. `translation_fr` stays `partial` until Virginie reads it |
+| `MOD_SETTINGS.md` | `b83933b` 2026-09-23 | Unchanged commit. Not re-read; not useful again for an XML mod without settings |
+| `STYLE_RIMWORLD.md` | `c105a43` 2026-10-01 plus uncommitted changes, `773961397c` | Not re-read. Preview typography and line-art protocol moved; nothing is regenerated here |
+| `WORKSHOP_COMMENTS.md` | `7fd7475` 2026-09-29, `cdd3381ba9` | Not re-read; needed at `tested -> prepublished` |
+| `scripts/SEARCHING.md` | `50de695` 2026-09-28, `45f0fa13cc` | Not re-read; not useful, no search needed |
+| `PickleTools/README.md`, `Headless/README.md`, `docs/steps.md`, `Authoring/README.md` | no commit; hashes `1d28b27e67`, `c023a674fb`, `8639a06971`, `75329decf2` | Not re-read in full. Useful again when a pass is filed or a step is added |
+| `Rimworld-Release-Admin/docs/OPERATIONS.md`, `Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, `SUBMIT.md` | no commit; hashes `347a0d63b9`, `1bdd1eed63`, `7ab5e437d4` | Not re-read. `SUBMIT.md` becomes needed the day scenario 15 or pass 3 is filed |
+
+This mod's own `BACKLOG.md`, `NOTES.md`, `BUGS.md` and `PUBLICATION.md` still do not exist. `PUBLICATION.md` is owed at
+`tested -> prepublished`; `BACKLOG.md` only if a PR to the original becomes possible (it has no repository).
