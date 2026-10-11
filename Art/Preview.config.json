@@ -1,0 +1,46 @@
+{
+  "title": "Fullzoon's Cookies Renew",
+  "titleSize": 46,
+  "titleParts": [
+    {
+      "text": "Fullzoon's",
+      "scale": 0.65,
+      "font": "ui",
+      "color": "secondary"
+    },
+    {
+      "text": "Cookies"
+    },
+    {
+      "text": "Renew",
+      "breakBefore": true,
+      "scale": 0.65,
+      "font": "ui",
+      "color": "secondary"
+    }
+  ],
+  "suffix": "",
+  "tag": "(unofficial)",
+  "copyLines": [
+    "A wheat crop, and five biscuits baked from it at the stove."
+  ],
+  "backgroundPosition": "50% 54%",
+  "iconBadge": {
+    "file": "ModIcon-source.png",
+    "corner": "bottom-left",
+    "width": 220,
+    "translate": "-27.3%, 27.3%",
+    "rotate": 15,
+    "radius": 48,
+    "outline": false
+  },
+  "backgroundFile": "Preview-source.png",
+  "backgroundSize": "cover",
+  "palette": {
+    "veil": "#EFD9A8",
+    "inkPrimary": "#17120E",
+    "inkSecondary": "#684014",
+    "accent": "#EA542A",
+    "badgeInk": "#17120E"
+  }
+}
