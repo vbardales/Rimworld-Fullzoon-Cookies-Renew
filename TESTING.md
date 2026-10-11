@@ -6,7 +6,7 @@ How this mod is tested, how many passes it needs, what each covers, and what has
 
 The mod is XML and nothing else: no assembly, no Harmony, no tick, one conditional patch. What can be proved
 without a game is proved offline. What remains needs a colony, and the manual scenarios that describe it are in
-[`_tools/FUNCTIONAL-SCENARIOS.md`](_tools/FUNCTIONAL-SCENARIOS.md), numbered 0 to 13. The suite that plays them is
+[`TEST_SCENARIOS.md`](TEST_SCENARIOS.md), numbered 0 to 13. The suite that plays them is
 in [`Tests/Pickle/`](Tests/Pickle/README.md).
 
 ## Where this stands
