@@ -48,7 +48,7 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
   owner's word.
 - An in-game test suite for Pickle, under `Tests/Pickle/`: 30 scenarios in 14 features and no code of its
   own. Three passes are required, bare English, bare French and beside Mlie's Vanilla-like Wheat, and a
-  fourth for Chinese Simplified. Written on 2026-09-28 and not yet played. Development only; none of it is in
+  fourth for Chinese Simplified. Written on 2026-09-28; it had not yet been played at that point. Development only; none of it is in
   `Mod/`, so none of it reaches a player.
 - `_tools/Check-Recipes.ps1`, an offline check that the fifteen recipes are five biscuits at x1, x5 and x10,
   multiples of one another, at the two stoves. Development only.
@@ -84,12 +84,12 @@ Creation of a publishIdFile. Prepublication: a first upload whose only purpose w
 Workshop item (private, as Steam creates every item, RimWorld never changing that) and obtain
 `Mod/About/PublishedFileId.txt`, which holds the item ID `3806761765`.
 
-The upload contained `Mod/` as it stood at commit `73d3406` (tree `1906c02`), unchanged since, plus
+The upload contained `Mod/` as it stood at that upload, commit `73d3406` (tree `1906c02`), plus
 six generated `.dds` textures that sat beside the PNGs in `Mod/Textures/Things/Item/` (written at
 14:13, two hours before the ID file at 16:34; untracked, now ignored, and never part of a later CI
 upload, which ships tracked files only). The commit that adds the ID file is the commit of this
 version. `packageId` was `nelim.fullzooncookiesrenew` at that upload; it became
-`nelim.fullzooncookies` afterwards (see 1.0.0), so the item's own `About.xml` on Steam keeps the old
+`nelim.fullzooncookies` afterwards (see [Unreleased]), so the item's own `About.xml` on Steam keeps the old
 one until the next upload.
 
 This entry does not say the mod is public or tested: see `STATUS.md`.
