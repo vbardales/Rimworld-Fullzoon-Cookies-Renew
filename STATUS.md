@@ -8,9 +8,8 @@ packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-stage:        done
-workflow_stage: done
-current_step: "done -> tested: scenario 15 (joy giver) red twice and its replay d521 has no result on disk; then pass 3 (beside Mlie), pass 4 (Chinese), then the non-regression passes together at the end"
+workflow_stage: writeTests[1.0.0]
+current_step: "writeTests: Virginie reads FRENCH_REVIEW.md (7.g); the queued ticket for scenario 15 ticket 20261011-222430-975-5a78 queued (replay alone); then (joy giver) red twice and its replay d521 has no result on disk; then pass 3 (beside Mlie), pass 4 (Chinese), then the non-regression passes together at the end"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -20,6 +19,8 @@ tested_on:
   - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence in Tests/Pickle/Evidence/ (ignored by git), one line per run in docs/runs/2026-09-28.md"
 workshop:     3806761765
 remaining:
+  - "unverified: French review by Virginie of `FRENCH_REVIEW.md` (7.g), the exit criterion of writeTests"
+  - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "defect: scenario 15 (a colonist is sent to a biscuit for pleasure by `EatFZBiscuits`) is red twice, 2026-09-28 pass 1 and 2026-09-29 replay `20260929-110314-718-412a`: the guest took `Play_Horseshoes`, then `Skygaze`, never `Ingest`. The giver is unproven, not refuted. The scenario was reworked (draft/undraft repeated six times); its replay `20260929-230410-312-d521` has no result on disk and is absent from the queue list of 2026-10-02. File scenario 15 again, alone, small ticket."
   - "unverified: pass 3 (beside Mlie's wheat, English, 25 scenarios) and pass 4 (Chinese Simplified, only if the install carries it) have never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
   - "unverified: the `@review` capture of feature 14 (kept as JPEG in the pass 1 evidence) has not been opened and looked at, and the `Player.log` of passes 1 and 2 were not read in this audit"
@@ -32,11 +33,13 @@ historical_remaining_2026_09_12:
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-10-02, audit replay, evidence trimmed, runs recorded
+updated:      2026-10-11, full audit replay: back to writeTests (7.g), FRENCH_REVIEW.md generated
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
 ---
 
 # Fullzoon's Cookies Renew — status
+
+**Audit of 2026-10-11, revision `1302760` (full replay of steps 1 to 7 against the current AUDIT.md): `done` becomes `writeTests[1.0.0]`.** First failing criterion: 7.g, `translation_fr` is `partial` (Virginie has not read the French; a session never marks its own French as read). Also found and handled: `FRENCH_REVIEW.md` was missing (6.f), generated today; `CHANGELOG.md` header `## [1.0.0] - unreleased` became `## [Unreleased]` (3.c); `Art/Preview-original.png` and `Art/preview-before-2026-09-13.html` removed (2.f, nothing cites them). Defect for the owner, not fixed (2.e, sources are hers): `Art/Preview-source.png` has mean value 0.261, under the 0.30 floor (`Measure-Palette.sh`: 2 families, Smean 0.299). Left alone: `Art/ModIcon-signature-candidate.png` (untracked, hers). Offline checks replayed green (below). Not read this session: PICKLE, PUBLISHING, TRANSLATIONS, STYLE, MOD_SETTINGS, AGENTS in full, so `protocols_read_sha` stays unwritten and `Mark-ProtocolsRead` was not run. The scenario 15 ticket stays queued: it prepares `playTests` and costs nothing. Offline checks replayed: `Check-XmlFields`, `Check-DefRefs`, `Check-TypeRefs`, `Check-DefInjected`, `Check-Recipes`. `translation_fr` -> `complete` needs her reading, recorded here with date, revision, corrections.
 
 ## Where this mod stands
 
@@ -506,3 +509,7 @@ here: Fullzoon's mod stopped at 1.0 and declares no licence at any of the four p
 be. The fourth of those — the body of the Steam description — is the check that was missed once on
 たたら製鉄, where a ban on redistribution was written there and nowhere else. It was made here
 before anything was copied, and `ATTRIBUTION.md` sets it out in full.
+
+## Preview source migration — 2026-10-03
+
+Preview generation now uses the shared renderer with `Art/Preview.config.json`. Canonical sources and publishable outputs were preserved; transient QA belongs in ignored `Art/.render/`.
