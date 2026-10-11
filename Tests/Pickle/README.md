@@ -64,7 +64,7 @@ powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Generate-LabelFeatures
 
 ```text
 powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
-powershell.exe -ExecutionPolicy Bypass -File _tools/Check-Recipes.ps1
+powershell.exe -ExecutionPolicy Bypass -File scripts/Check-Recipes.ps1
 ```
 
 `Check-Steps.ps1` compiles Pickle's own vocabulary and the staged tool's, and checks that every step line of

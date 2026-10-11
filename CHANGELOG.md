@@ -50,7 +50,7 @@ First release. Port of Fullzoon's **满月的饼干Cookies** to RimWorld 1.6.
   own. Three passes are required, bare English, bare French and beside Mlie's Vanilla-like Wheat, and a
   fourth for Chinese Simplified. Written on 2026-09-28; it had not yet been played at that point. Development only; none of it is in
   `Mod/`, so none of it reaches a player.
-- `_tools/Check-Recipes.ps1`, an offline check that the fifteen recipes are five biscuits at x1, x5 and x10,
+- `scripts/Check-Recipes.ps1`, an offline check that the fifteen recipes are five biscuits at x1, x5 and x10,
   multiples of one another, at the two stoves. Development only.
 
 ### Changed

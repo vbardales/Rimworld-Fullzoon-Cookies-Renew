@@ -14,7 +14,7 @@
 # "I wait for bill" gives up after 120 real seconds and then the watchdog ends the whole run: the scenario is
 # tagged @slow, the speed is raised to the maximum, and the per-scenario limit is raised with @timeout. Both
 # scenarios ask for one x1 bill, which makes five biscuits; the x5 and x10 are asserted offline by
-# _tools/Check-Recipes.ps1, as multiples of it.
+# scripts/Check-Recipes.ps1, as multiples of it.
 @save @slow
 Feature: a colonist bakes five biscuits
 

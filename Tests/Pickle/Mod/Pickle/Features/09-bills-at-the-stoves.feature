@@ -3,7 +3,7 @@
 # does hold when it does not, so a recipe that lost its recipeUsers fails here by name, not silently.
 #
 # Nothing here needs power or fuel: a bill can be queued at a stove that is off. The other half of the claim,
-# "and at nothing else", is asserted offline by _tools/Check-Recipes.ps1 (recipeUsers is exactly the two
+# "and at nothing else", is asserted offline by scripts/Check-Recipes.ps1 (recipeUsers is exactly the two
 # stoves); a campfire that accepted a bill cannot be told from one that refused it with a step Pickle has.
 @save
 Feature: the two vanilla stoves offer all fifteen bills

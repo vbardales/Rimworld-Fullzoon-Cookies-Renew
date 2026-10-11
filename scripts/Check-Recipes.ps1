@@ -16,7 +16,7 @@
   Exit code 0 when every recipe holds, 1 otherwise, with each fault named.
 
 .EXAMPLE
-  powershell.exe -ExecutionPolicy Bypass -File _tools/Check-Recipes.ps1
+  powershell.exe -ExecutionPolicy Bypass -File scripts/Check-Recipes.ps1
 #>
 param(
     [string]$RecipeFile = (Join-Path $PSScriptRoot '..\Mod\Defs\RecipeDefs\Recipes_FZfood_Meals.xml')

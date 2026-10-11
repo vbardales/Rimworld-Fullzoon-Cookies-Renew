@@ -14,7 +14,7 @@ in [`Tests/Pickle/`](Tests/Pickle/README.md).
 | Layer | State |
 |---|---|
 | Static checks: fields, references, types, DefInjected | shared scripts of the collection, run and green on 2026-09-28: `docs/runs/2026-09-28.md` |
-| `_tools/Check-Recipes.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
+| `scripts/Check-Recipes.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
 | `Tests/Pickle/Check-Steps.ps1` | written and run green on 2026-09-28: 32 scenarios in 15 features parse, every step line resolves to exactly one step, and the counts each pass must show are computed from the tags. Seen failing on four injected faults |
 | Pickle suite | 32 scenarios in 15 features, no local C#. **Played: passes 1 and 2 only** (see the line above). Green: all but `15`. Not played: pass 3 (`08`, `11`, the rest beside Mlie) and pass 4 (Chinese). Offline checks replayed on 2026-10-02 on `155738e`: `Mod/` unchanged except the Preview image |
 | Functional scenarios 0 to 13 | written with setup, actions and expected results; dispositions in the table below. Not played by hand |
