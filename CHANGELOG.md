@@ -2,7 +2,7 @@
 
 All notable changes to this mod are documented here.
 
-## [1.0.0] — unreleased
+## [Unreleased]
 
 The tag and the GitHub release come with the publication, from the publishing CI, not by hand.
 
