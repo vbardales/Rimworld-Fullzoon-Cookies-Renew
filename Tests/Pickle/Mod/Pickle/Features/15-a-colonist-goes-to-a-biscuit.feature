@@ -2,7 +2,9 @@
 # claim the mod makes about itself, and the one a file cannot show: it is the joy giver EatFZBiscuits at work
 # inside the game's own choice of what a colonist does next.
 #
-# NOTHING HERE HAS BEEN PLAYED, and this is the least deterministic scenario of the suite, since it asks the
+# Red three times (2026-09-28, 2026-09-29, 2026-10-11): the colonist was at work (HaulToCell), or at another joy.
+# The schedule step below sets all 24 hours to joy, disables every work type and ends the current job.
+# This is the least deterministic scenario of the suite, since it asks the
 # game to CHOOSE. What is done to make the choice likely rather than luck:
 #   - the joy need is set to one percent, so that joy is what the colonist wants above the work of a colony;
 #   - the food need is set to full, so that an Ingest job cannot be hunger's;
@@ -20,6 +22,7 @@
 # "I wait for X to have job" gives up after 30 real seconds, at the speed set. The memory is checked afterwards
 # and waits for itself: eating takes a few game seconds after the job starts.
 @save @slow
+@requires:nelim.pickletools.colonistrace
 Feature: a colonist with time to spare goes to a biscuit
 
   @timeout:300
@@ -28,6 +31,7 @@ Feature: a colonist with time to spare goes to a biscuit
     And a colonist "Guest" exists
     And I spawn a "FZInsectJellyBiscuits" at (146, 155)
     When "Guest" needs "Food" is set to 100 percent
+    And Nelim's Pickle Tools: the schedule of "Guest" is joy all day
     And "Guest" needs "Joy" is set to 1 percent
     And game speed is ultrafast
     And I draft "Guest"

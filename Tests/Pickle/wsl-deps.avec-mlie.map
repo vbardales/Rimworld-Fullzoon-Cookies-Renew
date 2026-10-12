@@ -13,3 +13,6 @@
 nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
 syrchalis.processor.framework 2633514537
 Mlie.VanillalikeWheat 2717707382
+# PickleTools/ColonistRace: the step "the schedule of {string} is joy all day" used by feature 15 (a test tool, no def,
+# changes nothing the mod does).
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod

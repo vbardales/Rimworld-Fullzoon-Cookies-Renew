@@ -7,3 +7,6 @@
 # 02). The tool is not in the aggregate bundle, so a pass that wants it names it. It adds no def and
 # changes nothing the mod does; a game with it and a game without it load the mod the same way.
 nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
+# PickleTools/ColonistRace: the step "the schedule of {string} is joy all day" used by feature 15 (a test tool, no def,
+# changes nothing the mod does).
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
