@@ -28,12 +28,12 @@
   "modIconSource": "ModIcon-source.png",
   "layout": "panel",
   "panelAnchor": "top-left",
-  "echo": { "file": "echo-preview.png", "preSized": true, "color": "var(--accent)", "panelTop": 30, "panelRight": 4, "panelWidth": 22, "opacity": 1, "veil": false, "flipX": true },
+  "echo": { "file": "echo-preview.png", "mode": "alpha", "preSized": true, "veil": false, "color": "var(--accent)", "opacity": 1, "panelTop": 8, "panelRight": 2, "panelWidth": 50, "flipX": true },
   "iconBadge": {
     "file": "ModIcon-source.png",
     "corner": "bottom-left",
-    "width": 220,
-    "translate": "-27.3%, 27.3%",
+    "width": 180,
+    "translate": "-12.5%, 12.5%",
     "rotate": 15,
     "radius": 48,
     "outline": false
@@ -41,9 +41,9 @@
   "backgroundFile": "Preview-source.png",
   "backgroundSize": "cover",
   "palette": {
-    "veil": "#EFD9A8",
-    "inkPrimary": "#17120E",
-    "inkSecondary": "#684014",
+    "veil": "#33291F",
+    "inkPrimary": "#F4EDDF",
+    "inkSecondary": "#D1B36D",
     "accent": "#EA542A",
     "badgeInk": "#17120E"
   }
