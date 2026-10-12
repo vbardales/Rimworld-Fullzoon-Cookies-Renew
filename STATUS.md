@@ -41,7 +41,7 @@ echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 
 # Fullzoon's Cookies Renew - status
 
-**Preview (2026-10-12, `75ecf138232d5810bc6aae314efcaa37101c7357`):** panel layout (dark veil, light ink, set by the Audit session at Virginie's request, her approval), echo `Art/echo-preview.png` kept: accent colour, flipped, panelWidth 50; **it overlaps the summary text**, Virginie may adjust panelWidth/panelTop. ModIcon cropped in badge mode. `social_preview_sha256` (`a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202`) not yet uploaded to GitHub: see `remaining`.
+**Preview (2026-10-12, `75ecf138232d5810bc6aae314efcaa37101c7357`):** panel layout (dark veil, light ink, set by the Audit session at Virginie's request, her approval), echo `Art/echo-preview.png` kept: accent colour, flipped, panelWidth 50; it overlaps the summary text, **kept as is on Virginie's word (2026-10-12)**. ModIcon cropped in badge mode. `social_preview_sha256` (`a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202`) not yet uploaded to GitHub: see `remaining`.
 
 ## Where this mod stands
 
