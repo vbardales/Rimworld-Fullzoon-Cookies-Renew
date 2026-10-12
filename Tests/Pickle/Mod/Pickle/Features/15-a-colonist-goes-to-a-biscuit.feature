@@ -4,7 +4,9 @@
 #
 # Red three times (2026-09-28, 2026-09-29, 2026-10-11): the colonist was at work (HaulToCell), or at another joy.
 # The schedule step below sets all 24 hours to joy, disables every work type and ends the current job.
-# This is the least deterministic scenario of the suite, since it asks the
+# Red four times: the 4th with the schedule step, Guest wandering. A biscuit in the inventory skips the spawn-side tests
+# of JoyGiver_Ingest (forbidden, fog, reserve), the spawned one stays for the diagnostic step, which logs why Guest
+# could or could not take it. This is the least deterministic scenario of the suite, since it asks the
 # game to CHOOSE. What is done to make the choice likely rather than luck:
 #   - the joy need is set to one percent, so that joy is what the colonist wants above the work of a colony;
 #   - the food need is set to full, so that an Ingest job cannot be hunger's;
@@ -30,6 +32,8 @@ Feature: a colonist with time to spare goes to a biscuit
     Given the save "test-colony" is loaded
     And a colonist "Guest" exists
     And I spawn a "FZInsectJellyBiscuits" at (146, 155)
+    And Nelim's Pickle Tools: the thing "FZInsectJellyBiscuits" at (146, 155) is not forbidden
+    And Nelim's Pickle Tools: the colonist "Guest" carries 1 "FZInsectJellyBiscuits"
     When "Guest" needs "Food" is set to 100 percent
     And Nelim's Pickle Tools: the schedule of "Guest" is joy all day
     And "Guest" needs "Joy" is set to 1 percent
@@ -46,6 +50,7 @@ Feature: a colonist with time to spare goes to a biscuit
     And I undraft "Guest"
     And I draft "Guest"
     And I undraft "Guest"
+    And Nelim's Pickle Tools: the reasons why "Guest" cannot take "FZInsectJellyBiscuits" at (146, 155) for joy are logged
     And I wait for "Guest" to have job "Ingest"
     Then "Guest" has thought "AteFZInsectJellyBiscuits"
     And no errors were logged
