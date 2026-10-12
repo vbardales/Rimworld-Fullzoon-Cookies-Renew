@@ -19,7 +19,7 @@ tested_on:
   - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence in Tests/Pickle/Evidence/ (ignored by git), one line per run in docs/runs/2026-09-28.md"
 workshop:     3806761765
 remaining:
-  - "to do: upload `Mod/About/Preview.png` (sha256 4041636539339e17bfbb9b61b0cec322655707db1b3ffecf3bdfdbb91ba6f6c1) as GitHub social preview (browser), then set `social_preview_sha256`"
+  - "to do: upload `Mod/About/Preview.png` (sha256 a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202) as GitHub social preview (browser), then set `social_preview_sha256`"
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "defect: scenario 15 (a colonist is sent to a biscuit for pleasure by `EatFZBiscuits`) is red four times (2026-09-28, 2026-09-29, 2026-10-11: Guest hauled; 2026-10-12 ticket `20261012-043541-820-5432`, joy-only schedule step in place: Guest in GotoWander, never Ingest), 2026-09-28 pass 1 and 2026-09-29 replay `20260929-110314-718-412a`: the guest took `Play_Horseshoes`, then `Skygaze`, never `Ingest`. The giver is unproven, not refuted. The scenario was reworked (draft/undraft repeated six times); its replay `20260929-230410-312-d521` has no result on disk and is absent from the queue list of 2026-10-02. File scenario 15 again, alone, small ticket."
@@ -36,12 +36,12 @@ session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
 updated:      2026-10-11, full audit replay, French validated by Virginie, writeTests closed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
 protocols_read_sha: 5dd27148e2bce1a728b6607c369ad31308c6ca53
-echo_review_sha: a82f3099af193e1aa5aa404a35639e1c31bb2c93
+echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 ---
 
 # Fullzoon's Cookies Renew - status
 
-**Preview (2026-10-12, `a82f309`):** panel layout (cream veil, text contrast now legible, the legacy layout had none), echo `Art/echo-preview.png` kept: accent colour, flipped, in the panel beside the title, no overlap at 896 x 504. ModIcon cropped in badge mode. `social_preview_sha256` (`40416365...f6c1`) not yet uploaded to GitHub: see `remaining`.
+**Preview (2026-10-12, `75ecf138232d5810bc6aae314efcaa37101c7357`):** panel layout (dark veil, light ink, set by the Audit session at Virginie's request, her approval), echo `Art/echo-preview.png` kept: accent colour, flipped, panelWidth 50; **it overlaps the summary text**, Virginie may adjust panelWidth/panelTop. ModIcon cropped in badge mode. `social_preview_sha256` (`a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202`) not yet uploaded to GitHub: see `remaining`.
 
 ## Where this mod stands
 
