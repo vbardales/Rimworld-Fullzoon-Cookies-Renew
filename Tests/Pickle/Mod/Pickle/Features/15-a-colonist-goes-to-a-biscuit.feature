@@ -2,6 +2,9 @@
 # claim the mod makes about itself, and the one a file cannot show: it is the joy giver EatFZBiscuits at work
 # inside the game's own choice of what a colonist does next.
 #
+# 5th run to come: the 4th log (2026-10-12) says "Guest will eat it: False", every other check true. Suspect: the saved
+# food policy of test-colony does not allow the new biscuit defs. The step after the carry step grants it, and the
+# diagnostic logs the policy. If still red, read the [joy] line: the cause is then not the policy.
 # Red three times (2026-09-28, 2026-09-29, 2026-10-11): the colonist was at work (HaulToCell), or at another joy.
 # The schedule step below sets all 24 hours to joy, disables every work type and ends the current job.
 # Red four times: the 4th with the schedule step, Guest wandering. A biscuit in the inventory skips the spawn-side tests
@@ -34,6 +37,7 @@ Feature: a colonist with time to spare goes to a biscuit
     And I spawn a "FZInsectJellyBiscuits" at (146, 155)
     And Nelim's Pickle Tools: the thing "FZInsectJellyBiscuits" at (146, 155) is not forbidden
     And Nelim's Pickle Tools: the colonist "Guest" carries 1 "FZInsectJellyBiscuits"
+    And Nelim's Pickle Tools: the colonist "Guest" follows a food policy that also allows "FZInsectJellyBiscuits"
     When "Guest" needs "Food" is set to 100 percent
     And Nelim's Pickle Tools: the schedule of "Guest" is joy all day
     And "Guest" needs "Joy" is set to 1 percent
