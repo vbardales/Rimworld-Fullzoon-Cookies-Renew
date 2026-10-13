@@ -5,7 +5,7 @@ UNOFFICIAL. This mod is published without the original author's explicit consent
 Port of **Fullzoon's 满月的饼干Cookies** to RimWorld 1.6.
 
 **I am not the author of this mod.** The wheat, the five biscuits, their recipes and their
-artwork are Fullzoon's — all I did was bring them to 1.6, fix what was broken, and write the
+artwork are Fullzoon's — all I did was bring them to the latest RimWorld version, fix what was broken, and write the
 English. Credit goes to them; mistakes in the port are mine.
 
 Original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=1623487558 (declares 1.0 and
