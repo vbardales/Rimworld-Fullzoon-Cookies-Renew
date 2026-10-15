@@ -21,7 +21,7 @@ workshop:     3806761765
 remaining:
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
-  - "defect: scenario 15 (a colonist is sent to a biscuit for pleasure by `EatFZBiscuits`) is red four times (2026-09-28, 2026-09-29, 2026-10-11: Guest hauled; 2026-10-12 ticket `20261012-043541-820-5432`, joy-only schedule step in place: Guest in GotoWander, never Ingest), 2026-09-28 pass 1 and 2026-09-29 replay `20260929-110314-718-412a`: the guest took `Play_Horseshoes`, then `Skygaze`, never `Ingest`. The giver is unproven, not refuted. The scenario was reworked (draft/undraft repeated six times); its replay `20260929-230410-312-d521` has no result on disk and is absent from the queue list of 2026-10-02. File scenario 15 again, alone, small ticket."
+  - "defect: scenario 15 (a colonist is sent to a biscuit for pleasure by `EatFZBiscuits`) is red five times (2026-10-15 ticket `20261015-002924-167-508f`: food policy forced, `[joy]` all true, Guest in Wait_Wander, so not the policy; next: read why JoyGiver_Ingest yields no job), earlier red four times (2026-09-28, 2026-09-29, 2026-10-11: Guest hauled; 2026-10-12 ticket `20261012-043541-820-5432`, joy-only schedule step in place: Guest in GotoWander, never Ingest), 2026-09-28 pass 1 and 2026-09-29 replay `20260929-110314-718-412a`: the guest took `Play_Horseshoes`, then `Skygaze`, never `Ingest`. The giver is unproven, not refuted. The scenario was reworked (draft/undraft repeated six times); its replay `20260929-230410-312-d521` has no result on disk and is absent from the queue list of 2026-10-02. File scenario 15 again, alone, small ticket."
   - "unverified: pass 3 (beside Mlie's wheat, English, 25 scenarios) and pass 4 (Chinese Simplified, only if the install carries it) have never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
   - "unverified: the `@review` capture of feature 14 (kept as JPEG in the pass 1 evidence) has not been opened and looked at, and the `Player.log` of passes 1 and 2 were not read in this audit"
   - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
@@ -34,7 +34,7 @@ historical_remaining_2026_09_12:
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
 updated:      2026-10-11, full audit replay, French validated by Virginie, writeTests closed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: e8f5738ee2228246ab626d3fd9ba5f9e1faf7cbf
+protocols_read_sha: e733386f133716f60efbad53c37602935eda7050
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202
 ---
