@@ -34,7 +34,7 @@ historical_remaining_2026_09_12:
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
 updated:      2026-10-11, full audit replay, French validated by Virginie, writeTests closed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: e733386f133716f60efbad53c37602935eda7050
+protocols_read_sha: 117fb9642df7e57bece2318904c644a9c39296df
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202
 ---
