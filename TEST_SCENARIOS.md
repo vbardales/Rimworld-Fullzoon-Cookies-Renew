@@ -1,84 +1,67 @@
 # Functional scenarios, to be played in game
 
-This mod is XML and nothing else: no assembly, no Harmony, no tick, and a single patch operation.
-Shared XML/reference/translation validators provide automated static checks (see STATUS.md). Runtime behavior still requires a colony. These are the scenarios that
-do, written so each one has a single thing to watch and a single way of being wrong.
+Mod XML only: no assembly, no Harmony, no tick, one patch operation.
+Shared XML/reference/translation validators give automated static checks (see STATUS.md). Runtime behavior still need colony. Scenarios below do that, each with one thing to watch, one way to be wrong.
 
-The mod has never been run in a game. Until scenario 0 passes, nothing below is worth playing.
+Mod never run in game. Until scenario 0 pass, nothing below worth playing.
 
-**Setup for everything here.** Development mode on. A colony with a grower, a cook, a growing zone
-on ordinary soil, a hydroponics basin, an electric stove, a fuelled stove and a campfire. In store,
-by debug spawn: chocolate, milk, berries, insect jelly, a chicken egg and a duck egg. Time controls
-at 3x for the slow ones, and the debug tool *Set growth to 100%* for anything that would otherwise
-take four days and a half.
+**Setup for everything here.** Development mode on. Colony with grower, cook, growing zone
+on ordinary soil, hydroponics basin, electric stove, fuelled stove, campfire. In store,
+by debug spawn: chocolate, milk, berries, insect jelly, chicken egg, duck egg. Time 3x for slow ones, debug tool *Set growth to 100%* for anything else taking four days and a half.
 
 ---
 
 ## 0. It loads, and the defs resolve
 
-**Do.** Start the game with the mod active and load any save.
+**Do.** Start game with mod active, load any save.
 
-**Expect.** No mod-related errors at startup. Continue the later gameplay scenarios even after a clean startup; XML-defined behavior can still fail when used.
+**Expect.** No mod-related errors at startup. Continue later scenarios even after clean startup; XML behavior can still fail in use.
 
-**Watch for in `Player.log`.** Four lines, each meaning something different:
+**Watch for in `Player.log`.** Four lines, each different meaning:
 
-- `Could not resolve cross-reference to Verse.ThingDef named FZRawWheat` — the item file did not
-  load, and the fifteen recipes have lost their main ingredient.
-- `Could not resolve cross-reference ... named EggsUnfertilized` — the egg category was renamed by
-  a game update, and the egg biscuit has no egg.
-- `XML error ... no parent named PlantBase` — the wheat has lost the vanilla base it now inherits
-  from, which would mean Core itself failed to load first.
-- `Patch operation Verse.PatchOperationConditional ... failed` — the Mlie patch. Inspect the full operation error and active mod list; a missing removal target or conflicting patch can also cause failure.
+- `Could not resolve cross-reference to Verse.ThingDef named FZRawWheat` — item file not loaded, fifteen recipes lost main ingredient.
+- `Could not resolve cross-reference ... named EggsUnfertilized` — egg category renamed by game update, egg biscuit has no egg.
+- `XML error ... no parent named PlantBase` — wheat lost vanilla base it inherits from, meaning Core itself failed to load first.
+- `Patch operation Verse.PatchOperationConditional ... failed` — Mlie patch. Inspect full operation error and active mod list; missing removal target or conflicting patch can also cause failure.
 
-**If it fails here, stop.** Everything below assumes the defs are live.
+**If fails here, stop.** Everything below assumes defs live.
 
 ---
 
 ## 1. The wheat is where a crop should be
 
-**Do.** Open a growing zone's plant selector on turn one, without researching anything. Then open
-the plant selector of a hydroponics basin.
+**Do.** Open growing zone plant selector on turn one, no research. Then open hydroponics basin plant selector.
 
-**Expect.** *wheat plant* in both lists, immediately. No research prerequisite exists on the def,
-so a fresh colony can sow it.
+**Expect.** *wheat plant* in both lists, immediately. No research prerequisite on def, fresh colony can sow it.
 
-**Why it matters.** `sowTags` carries `Ground` and `Hydroponic`. If the wheat appears in one list
-and not in the other, one of the two tags was lost — and see scenario 10, where losing `Ground` is
-exactly what the Mlie patch does on purpose.
+**Why it matters.** `sowTags` carries `Ground` and `Hydroponic`. Wheat in one list not other = one tag lost — see scenario 10, where losing `Ground` is exactly what Mlie patch does on purpose.
 
 ## 2. It grows in four days and a half, and gives six grain
 
-**Do.** Sow one tile. Read the growth percentage over a game day, then force it to 100% and
-harvest it with a grower.
+**Do.** Sow one tile. Read growth percentage over a game day, then force 100% and harvest with grower.
 
-**Expect.** Four days and a half at full light and fertility. Six *wheat grain* from the one plant.
-The harvest job is a touch slower than rice: 250 work against vanilla's 200.
+**Expect.** Four days and a half at full light and fertility. Six *wheat grain* from one plant.
+Harvest job slightly slower than rice: 250 work vs vanilla 200.
 
-**Why it matters.** That 250 is the one number this mod keeps from Fullzoon's redefinition of
-`PlantBase` — the plant carries it itself now, rather than inheriting it. If harvesting feels
-exactly like rice, the def has lost its own `harvestWork`.
+**Why it matters.** That 250 is the one number mod keeps from Fullzoon's redefinition of
+`PlantBase` — plant carries it itself now, not inherited. Harvest feels exactly like rice = def lost own `harvestWork`.
 
 ## 3. The grain keeps forty days — and it is not baking-only
 
-**Do.** Leave a stack of wheat grain out of a freezer and watch its rot tooltip. Then, separately,
-queue *cook simple meal* at a stove with nothing but wheat grain in store.
+**Do.** Leave stack of wheat grain out of freezer, watch rot tooltip. Then separately queue *cook simple meal* at stove with only wheat grain in store.
 
-**Expect.** The stack rots at forty days and is destroyed rather than left rotten. **And the cook
-accepts the wheat grain for the simple meal.**
+**Expect.** Stack rots at forty days, destroyed rather than left rotten. **And cook accepts wheat grain for simple meal.**
 
-**Why it matters, and what is wrong.** `FZRawWheat` inherits `PlantFoodRawBase`, which puts it in
-the `PlantFoodRaw` category — the same shelf as raw rice and potatoes. Every vanilla recipe that
-filters on `FoodRaw` therefore takes it: simple, fine and lavish meals, pemmican, kibble. The earlier baking-only claim in README/About was corrected on 2026-09-13; the grain category and gameplay remain unchanged.
+**Why it matters, and what is wrong.** `FZRawWheat` inherits `PlantFoodRawBase`, putting it in
+`PlantFoodRaw` category — same shelf as raw rice and potatoes. Every vanilla recipe filtering on `FoodRaw` takes it: simple, fine, lavish meals, pemmican, kibble. Earlier baking-only claim in README/About corrected 2026-09-13; grain category and gameplay unchanged.
 
 ## 4. Fifteen bills, two stoves, no campfire
 
-**Do.** Open the bills tab of the electric stove, then of the fuelled stove, then of the campfire.
+**Do.** Open bills tab of electric stove, then fuelled stove, then campfire.
 
-**Expect.** Fifteen entries at each of the two stoves — five biscuits, each in an x1, an x5 and an
-x10 form. Nothing at the campfire.
+**Expect.** Fifteen entries at each of two stoves — five biscuits, each in x1, x5, x10 form. Nothing at campfire.
 
-**Why it matters.** `recipeUsers` names `ElectricStove` and `FueledStove` and nothing else. A
-sixteenth entry, or any entry at the campfire, means a recipe was edited with the wrong list.
+**Why it matters.** `recipeUsers` names `ElectricStove` and `FueledStove` only. Sixteenth entry, or any entry at campfire, = recipe edited with wrong list.
 
 ## 5. The batches multiply cleanly
 
@@ -90,137 +73,123 @@ sixteenth entry, or any entry at the campfire, means a recipe was edited with th
 | x5 | 25 grain, 5 eggs | 25 biscuits | 1500 |
 | x10 | 50 grain, 10 eggs | 50 biscuits | 3000 |
 
-**Why it matters.** The x5 and the x10 are separate defs, not a multiplier: every count in them was
-typed by hand. The same check applies to the other four biscuits, whose x1 costs are 6 grain with 1
-chocolate and 2 milk, 6 grain and 4 milk, 6 grain and 4 berries, and 8 grain and 2 insect jelly.
+**Why it matters.** x5 and x10 separate defs, not multiplier: every count typed by hand. Same check applies to other four biscuits, x1 costs: 6 grain with 1
+chocolate and 2 milk, 6 grain and 4 milk, 6 grain and 4 berries, 8 grain and 2 insect jelly.
 All five give five biscuits for 300 work at x1.
 
 ## 6. Any unfertilised egg, not only a chicken's
 
-**Do.** With only a duck egg in store, queue *bake egg biscuits*. Then put a fertilised chicken egg
-in store and queue it again.
+**Do.** With only duck egg in store, queue *bake egg biscuits*. Then put fertilised chicken egg in store, queue again.
 
-**Expect.** The duck egg is taken. The fertilised egg is not.
+**Expect.** Duck egg taken. Fertilised egg not.
 
-**Why it matters.** Fullzoon's recipe named `EggChickenUnfertilized` outright, which locked out the
-nine other unfertilised eggs vanilla ships — duck, goose, turkey, emu, ostrich, cassowary, cobra,
-iguana and tortoise — and every modded bird. It takes the `EggsUnfertilized` category now, and
-fertilised eggs sit in a category of their own, so they stay out.
+**Why it matters.** Fullzoon's recipe named `EggChickenUnfertilized` outright, locking out nine other unfertilised eggs vanilla ships — duck, goose, turkey, emu, ostrich, cassowary, cobra,
+iguana, tortoise — and every modded bird. Now takes `EggsUnfertilized` category; fertilised eggs sit in own category, stay out.
 
 ## 7. A biscuit is not a meal
 
-**Do.** Leave a colonist with biscuits in store and no meals. Watch them go hungry.
+**Do.** Leave colonist with biscuits in store, no meals. Watch them go hungry.
 
-**Expect.** They walk past the biscuits until hunger reaches *starving*, and then eat exactly one.
+**Expect.** They walk past biscuits until hunger reaches *starving*, then eat exactly one.
 
-**Why it matters.** `preferability` is `DesperateOnly` and `maxNumToIngestAtOnce` is 1, the vanilla
-chocolate arrangement. A colonist who eats biscuits while merely *hungry* is reading some other
-preferability, which would mean the abstract base did not apply.
+**Why it matters.** `preferability` is `DesperateOnly`, `maxNumToIngestAtOnce` is 1, vanilla
+chocolate arrangement. Colonist eating biscuits while merely *hungry* reads other preferability, meaning abstract base did not apply.
 
 ## 8. Eaten for pleasure, it pays joy and a memory
 
-**Do.** Give a colonist free time with biscuits in store. Watch the recreation bar and the mood tab.
+**Do.** Give colonist free time with biscuits in store. Watch recreation bar and mood tab.
 
-**Expect.** The colonist goes to a biscuit on their own, and recreation rises by the biscuit's own amount — 0.10
-for the egg biscuit, 0.13 for the chocolate chip cookie, 0.15 for the butter cookie, 0.08 for the berry biscuit,
-0.20 for the insect jelly biscuit — under the *gluttonous* recreation type. A mood memory appears for half a day,
-worth +3, +5, +5, +3 and +7 in the same order, each with its own line of text.
+**Expect.** Colonist goes to biscuit on own, recreation rises by biscuit's own amount — 0.10
+egg biscuit, 0.13 chocolate chip cookie, 0.15 butter cookie, 0.08 berry biscuit,
+0.20 insect jelly biscuit — under *gluttonous* recreation type. Mood memory appears for half a day,
+worth +3, +5, +5, +3, +7 same order, each own line of text.
 
-**What was wrong, and is fixed, found on 2026-09-28 by reading the game's code rather than by playing.** A
-colonist is sent to food *for pleasure* by a `JoyGiver_Ingest`, whose class reads a fixed list of defs. The
-game's only one, `JoyGiverDef EatChocolate`, lists `Chocolate` and `InsectJelly`, and the port had no giver of its
-own, so **no free colonist ever went to a biscuit**: it was eaten only by a starving colonist with nothing better,
-its preferability being `DesperateOnly`. The README and the About description said the opposite. The owner ruled
-that the biscuits get a giver like the chocolate's, and `EatFZBiscuits` now lists the five, with chocolate's base
+**What was wrong, and is fixed, found 2026-09-28 by reading game's code, not playing.** Colonist sent to food *for pleasure* by `JoyGiver_Ingest`, whose class reads fixed list of defs. Game's only one, `JoyGiverDef EatChocolate`, lists `Chocolate` and `InsectJelly`, port had no giver of own, so **no free colonist ever went to biscuit**: eaten only by starving colonist with nothing better,
+preferability `DesperateOnly`. README and About description said opposite. Owner ruled biscuits get giver like chocolate's, `EatFZBiscuits` now lists the five, with chocolate's base
 chance and joy kind.
 
-**Play it as written.** Nothing has been seen working yet. The suite plays it (`Tests/Pickle/.../15-a-colonist-goes-
-to-a-biscuit.feature`) for one biscuit, and proves the five memories are wired in `12`. By hand, read the job the
-colonist takes when their recreation is low: `Ingest`, without hunger. **Two things to see with the chocolate
-beside it:** a colonist who has both chooses between them, and both feed the same tolerance, since they share the
-joy kind. A biscuit that is never chosen while chocolate is would be the giver's chance, not a fault.
+**Play it as written.** Nothing seen working yet. Suite plays it (`Tests/Pickle/.../15-a-colonist-goes-
+to-a-biscuit.feature`) for one biscuit, proves five memories wired in `12`. By hand, read job colonist takes when recreation low: `Ingest`, without hunger. **Two things to see with chocolate
+beside it:** colonist with both chooses between them, both feed same tolerance, sharing
+joy kind. Biscuit never chosen while chocolate is = giver's chance, not fault.
 
-**Why it matters.** Fullzoon also shipped `AteFZfoods`, a sixth thought worth **+99 mood** that
-nothing referenced. It is dropped. If a +99 memory ever shows up in that tab, a `tasteThought` is
-pointed at the wrong def.
+**Why it matters.** Fullzoon also shipped `AteFZfoods`, sixth thought worth **+99 mood** that
+nothing referenced. Dropped. If +99 memory ever shows in that tab, a `tasteThought` points at wrong def.
 
 ## 9. Nothing else in the game was reparented
 
-**Do.** Open the info card of a rice plant, then of a plant from a mod loading after this one.
+**Do.** Open info card of rice plant, then plant from mod loading after this one.
 
-**Expect.** Both still carry Beauty, still sit under *Plants* in the resource readout, and still
+**Expect.** Both still carry Beauty, still sit under *Plants* in resource readout, still
 harvest at vanilla speed.
 
-**Why it matters.** This is the fault the port exists for. Fullzoon declared his own
-`<ThingDef Name="PlantBase">` and `<RecipeDef Name="CookMealBase">` — the abstract bases every
-plant and every cooking recipe in the game inherit from — under those exact names, and RimWorld
-resolves a `ParentName` to the copy from the highest-loading mod at or below the def asking for
-it. Every plant of every mod loading after this one could have been reparented onto a copy that
-carried no `BeautyOutdoors`, no `Plants` category and a harvest work of 250. Both copies are
-deleted. A plant with no beauty in its info card would mean one came back.
+**Why it matters.** This is the fault port exists for. Fullzoon declared own
+`<ThingDef Name="PlantBase">` and `<RecipeDef Name="CookMealBase">` — abstract bases every
+plant and every cooking recipe in game inherit from — under those exact names, and RimWorld
+resolves `ParentName` to copy from highest-loading mod at or below def asking.
+Every plant of every mod loading after this one could be reparented onto copy
+with no `BeautyOutdoors`, no `Plants` category, harvest work 250. Both copies
+deleted. Plant with no beauty in info card = one came back.
 
 ## 10. Two wheats in one colony
 
-**Do.** Play once with Mlie's *Vanilla-like Wheat (Continued)* active, and once without. Both
-times, open a growing zone's plant selector and a stove's bill list.
+**Do.** Play once with Mlie's *Vanilla-like Wheat (Continued)* active, once without. Both
+times, open growing zone plant selector and stove bill list.
 
-**Expect.** Without it: *wheat plant* in the sow menu, recipes taking `FZRawWheat`. With it: one
-*wheat plant* in the sow menu, Mlie's, and the fifteen recipes accepting Mlie's `RawWheat` as well
-as this mod's grain. Tiles of `FZPlant_Wheat` already sown keep growing and stay harvestable — the
-patch removes the sow tags, not the plant.
+**Expect.** Without: *wheat plant* in sow menu, recipes taking `FZRawWheat`. With: one
+*wheat plant* in sow menu, Mlie's, fifteen recipes accepting Mlie's `RawWheat` as well
+as this mod's grain. Tiles of `FZPlant_Wheat` already sown keep growing, stay harvestable — patch removes sow tags, not plant.
 
-**Why it matters.** The patch tests for the def `PlantWheat`, not for the mod's displayed name:
-`PatchOperationFindMod` compares `ModMetaData.Name` by exact string equality, and that name is
-Mlie's to change. If both wheats appear in the sow menu with that mod active, the xpath no longer
-matches — the def was renamed, or the operation was edited.
+**Why it matters.** Patch tests for def `PlantWheat`, not mod's displayed name:
+`PatchOperationFindMod` compares `ModMetaData.Name` by exact string equality, name is
+Mlie's to change. Both wheats in sow menu with mod active = xpath no longer
+matches — def renamed, or operation edited.
 
 ## 11. English, French and Chinese read through
 
-**Do.** Restart in English, then French, then Chinese (Simplified). Open the sow menu, a stove's bill list, an
-item's info card, and a mood tab carrying a biscuit memory.
+**Do.** Restart in English, then French, then Chinese (Simplified). Open sow menu, stove bill list, item info card, mood tab carrying biscuit memory.
 
-**Expect.** Every label and every description in the chosen language. No raw key on screen —
-`FZRawWheat.label` printed literally means the DefInjected path or the file name no longer matches
-the def it targets.
+**Expect.** Every label and description in chosen language. No raw key on screen —
+`FZRawWheat.label` printed literally = DefInjected path or file name no longer matches
+targeted def.
 
-**Why it matters.** 69 keys in each language, against 69 translatable strings. The French is the
-port's own work; the Chinese is Fullzoon's, restored rather than thrown away.
+**Why it matters.** 69 keys in each language, against 69 translatable strings. French is port's own work; Chinese is Fullzoon's, restored not thrown away.
 
 ---
 
 ## 12. New colony and existing-save persistence
 
 **Preconditions.** RimWorld 1.6, Core and this mod only, development mode enabled.
-Use a new test colony and a separate backup copy of an existing 1.6 colony without this mod.
-Never overwrite the original save. Record game version, language and mod list.
+Use new test colony and separate backup copy of existing 1.6 colony without this mod.
+Never overwrite original save. Record game version, language, mod list.
 
-**Do.** Start the new colony and run scenarios 0-8. Keep grain, each biscuit, a planted
-wheat tile, a growing-zone crop selection, stove bills and stockpile filters. Save,
-quit the game, restart and reload. Repeat by adding the mod to the existing colony copy,
-creating the same objects and saving/reloading. Repeat the UI inspection in English and French.
+**Do.** Start new colony, run scenarios 0-8. Keep grain, each biscuit, planted
+wheat tile, growing-zone crop selection, stove bills, stockpile filters. Save,
+quit, restart, reload. Repeat by adding mod to existing colony copy,
+creating same objects, saving/reloading. Repeat UI inspection in English and French.
 
 **Expect.** Both colonies load without mod-related errors; contents, counts, crop selection,
-bills and filters survive reload. Wheat grows and can be harvested; recipes still execute.
+bills, filters survive reload. Wheat grows, can be harvested; recipes still execute.
 No untranslated owned labels, clipped text, empty settings page or settings MainButton.
-Inspect Player.log at startup, after actions and after reload; record actual results.
+Inspect Player.log at startup, after actions, after reload; record actual results.
 
 ## 13. Migration from the original mod
 
-**Dropped on 2026-09-28.** The owner ruled that compatibility with saves made by the original mod is not a goal, and
-the promise was taken out of the README and the CHANGELOG. The scenario is kept as a number so that the others
-keep theirs; there is nothing to play. Its preconditions needed a save that only the original can make, and
-nothing in the port relies on the answer.
+**Dropped on 2026-09-28.** Owner ruled compatibility with saves from original mod not a goal, and
+promise removed from README and CHANGELOG. Scenario kept as number so others
+keep theirs; nothing to play. Preconditions needed save only original can make, and
+nothing in port relies on answer.
 
 ## Result recording
 
 For each scenario, record date, game version, ordered mod list, language, save origin,
-expected versus observed result, pass/fail/unverified and Player.log evidence location.
-After any fix, rerun the affected scenario plus startup and reload checks. The absence of
-an exception at startup alone does not prove later gameplay behavior.
+expected versus observed result, pass/fail/unverified, Player.log evidence location.
+After any fix, rerun affected scenario plus startup and reload checks. No
+exception at startup alone does not prove later gameplay behavior.
 
 ## What these scenarios cannot answer
 
-- **Side by side with the original mod.** The defNames are identical, so the two cannot be loaded
-  together: the game complains about every one of them. That is the warning the README gives, and it is not
-  played: the original declares no `packageId`, so the game cannot be told to refuse the pair.
-- **The Workshop listing.** Preview, icon and description are read by Steam, not by the game.
+- **Side by side with the original mod.** defNames identical, so the two cannot load
+  together: game complains about every one. That is warning README gives, not
+  played: original declares no `packageId`, so game cannot be told to refuse the pair.
+- **The Workshop listing.** Preview, icon, description read by Steam, not game.

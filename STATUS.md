@@ -38,113 +38,109 @@ protocols_read_sha: 117fb9642df7e57bece2318904c644a9c39296df
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202
 ---
-
 # Fullzoon's Cookies Renew - status
 
-**Preview (2026-10-12, `75ecf138232d5810bc6aae314efcaa37101c7357`):** panel layout (dark veil, light ink, set by the Audit session at Virginie's request, her approval), echo `Art/echo-preview.png` kept: accent colour, flipped, panelWidth 50; it overlaps the summary text, **kept as is on Virginie's word (2026-10-12)**. ModIcon cropped in badge mode. Social preview uploaded 2026-10-12, og:image sha256 checked equal.
+**Preview (2026-10-12, `75ecf138232d5810bc6aae314efcaa37101c7357`):** panel layout (dark veil, light ink, set by Audit session at Virginie's request, her approval), echo `Art/echo-preview.png` kept: accent colour, flipped, panelWidth 50; overlaps summary text, **kept as is on Virginie's word (2026-10-12)**. ModIcon cropped in badge mode. Social preview uploaded 2026-10-12, og:image sha256 checked equal.
 
 ## Where this mod stands
 
 **Audit of 2026-10-02, revision `155738e`: `done` holds.** Nothing went back. Between 2026-09-28 and now `Mod/`
-changed only in `About/Preview.png` (badge in the corner); no def, patch or text moved. This section corrects
-what the sections below say about "nothing played": the game ran twice on this mod.
+changed only in `About/Preview.png` (badge in corner); no def, patch or text moved. This section corrects
+what sections below say about "nothing played": game ran twice on this mod.
 
-- **Replayed offline on 2026-10-02:** `Check-XmlFields` (8 files, no unknown field), `Check-DefRefs` (28 defs, 1 abstract
+- **Replayed offline 2026-10-02:** `Check-XmlFields` (8 files, no unknown field), `Check-DefRefs` (28 defs, 1 abstract
   parent, no unresolved reference), `Check-TypeRefs` (0 foreign type), `Check-DefInjected` (138 keys, 0 errors, 30 patch
-  operations), `_tools/Check-Recipes.ps1` (15 recipes hold). `Tests/Pickle/Check-Steps.ps1` could **not** be replayed:
-  it wants the Pickle assemblies under `workshop/content/294100/3791648678`, which this machine's Windows Steam no longer
-  has. Not a defect; the two Pickle passes below resolved every step.
-- **Played, WSL, bare set** (Pickle 4.9.1, `exitReason` read before the counts): pass 1 English 22 passed, 1 failed,
+  operations), `_tools/Check-Recipes.ps1` (15 recipes hold). `Tests/Pickle/Check-Steps.ps1` **not** replayable:
+  needs Pickle assemblies under `workshop/content/294100/3791648678`, which this machine's Windows Steam no longer
+  has. Not defect; two Pickle passes below resolved every step.
+- **Played, WSL, bare set** (Pickle 4.9.1, `exitReason` read before counts): pass 1 English 22 passed, 1 failed,
   3 skipped of 26, only scenario 15 red; pass 2 French 15 passed, 0 failed, 2 skipped of 17, clean. Counts agree with
-  `Check-Steps.ps1`. The 2026-09-28 unfiltered "replay 15" (32 scenarios, 7 red) was a wrong filter: its six red were the
-  Chinese features played in an English pass, and its seventh was scenario 15 again. It proved nothing the other runs do
-  not, and was deleted.
-- **Rules read since the last audit** (see `docs/PROTOCOLS-READ.md`): French gender agreement (2026-09-30), done on the five
-  DefInjected files below; PR to the original's repository (none exists, `upstream_mod_remotes: N/A`); the order of passes
-  of 2026-10-02 (never-played and red first, non-regression together at the end); the WSL cleanup at sleep time (nothing
-  of this mod's was downloaded there yet that is known: pass 3's two Workshop items are to be checked then).
-- **Prepublication:** `Mod/About/PublishedFileId.txt` (`3806761765`) is tracked, `CHANGELOG.md` opens on `0.1.0`, no
-  `.dds` is tracked and `*.dds`, `*.ico`, `Tests/Pickle/Evidence/` are ignored.
-- **Evidence** on disk went from 90 MB to under 1 MB: kept `2026-09-28-pass1-bare-en` (the `@review` capture as JPEG),
+  `Check-Steps.ps1`. 2026-09-28 unfiltered "replay 15" (32 scenarios, 7 red) was wrong filter: its six red were
+  Chinese features played in English pass, seventh was scenario 15 again. Proved nothing other runs do
+  not, deleted.
+- **Rules read since last audit** (see `docs/PROTOCOLS-READ.md`): French gender agreement (2026-09-30), done on five
+  DefInjected files below; PR to original's repository (none exists, `upstream_mod_remotes: N/A`); order of passes
+  of 2026-10-02 (never-played and red first, non-regression together at end); WSL cleanup at sleep time (nothing
+  of this mod's downloaded there yet that is known: pass 3's two Workshop items to be checked then).
+- **Prepublication:** `Mod/About/PublishedFileId.txt` (`3806761765`) tracked, `CHANGELOG.md` opens on `0.1.0`, no
+  `.dds` tracked and `*.dds`, `*.ico`, `Tests/Pickle/Evidence/` ignored.
+- **Evidence** on disk went from 90 MB to under 1 MB: kept `2026-09-28-pass1-bare-en` (`@review` capture as JPEG),
   `2026-09-29-pass1-replay-15-2` (latest word on scenario 15, red) and `2026-09-29-pass2-bare-fr`. No field of this file
-  pointed at the deleted folder.
+  pointed at deleted folder.
 
-**Audit of 2026-09-28, later the same day: `preTest` becomes `done` again.** The section below, written that
-morning, put the mod at `preTest` for one reason, and the reason is gone: the Pickle suite exists. The audit was
-replayed for `preTest -> done` on the revision below, and nothing stands in its way. The section further down
+**Audit of 2026-09-28, later same day: `preTest` becomes `done` again.** Section below, written that
+morning, put mod at `preTest` for one reason, reason gone: Pickle suite exists. Audit replayed for `preTest -> done` on revision below, nothing stands in way. Section further down
 keeps its reasoning as history.
 
-`done` means ready to be played, not played. **Nothing has been played:** not one scenario of the suite, not one
-manual scenario. The suite was written and checked offline, which is all `done` asks (`AUDIT.md`, the
-clarification of 2026-09-21).
+`done` means ready to be played, not played. **Nothing has been played:** not one scenario of suite, not one
+manual scenario. Suite written and checked offline, all `done` asks (`AUDIT.md`, clarification of 2026-09-21).
 
-**Reading the game's code, to write the scenario for eating a biscuit for pleasure, found that it could not
-happen, and the owner ruled the same day.** The mod's text says a colonist eats a biscuit for pleasure, and the
-game never sent one: a colonist is sent to food for pleasure by a `JoyGiver_Ingest`, and the game's only one
-lists `Chocolate` and `InsectJelly` by name. The owner ruled that the biscuits get a joy giver like the
-chocolate's, and `EatFZBiscuits` (`Mod/Defs/JoyGiverDefs/`) now lists the five, with chocolate's own base
-chance and joy kind. Nothing is patched. **It has not been seen working:** scenario 15 asks the game to choose
-it and is the least deterministic scenario there is; see `remaining`. The text of the README and the About
-description is true again, and was extended by a sentence saying so.
+**Reading game's code, to write scenario for eating biscuit for pleasure, found it could not
+happen, owner ruled same day.** Mod's text says colonist eats biscuit for pleasure, game
+never sent one: colonist sent to food for pleasure by `JoyGiver_Ingest`, game's only one
+lists `Chocolate` and `InsectJelly` by name. Owner ruled biscuits get joy giver like
+chocolate's, `EatFZBiscuits` (`Mod/Defs/JoyGiverDefs/`) now lists the five, with chocolate's own base
+chance and joy kind. Nothing patched. **Not seen working:** scenario 15 asks game to choose
+it, least deterministic scenario there is; see `remaining`. README and About
+description text true again, extended by a sentence saying so.
 
 ## Work of playTests, in the order that saves machine time
 
-Strictly what it takes, in the order that saves machine time:
+Strictly what it takes, in order that saves machine time:
 
 1. **Play the suite**, one request per pass, from `Tests/Pickle/README.md`: bare English (filed, waiting), bare
-   French, beside Mlie's wheat, and Chinese if the install has it. Expect reds on the first run and read the
-   cook, the fuel and the haul before blaming a recipe, and what the colonist did before blaming the joy giver.
-   Each red is fixed and replayed green.
-2. **Open the `@review` capture** of `14` and look at it, and read every `Player.log`.
-3. The three conditions added on 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
-   scenario has run on a map that mounts its mod, no manual test left to validate.
+   French, beside Mlie's wheat, Chinese if install has it. Expect reds on first run, read
+   cook, fuel and haul before blaming recipe, what colonist did before blaming joy giver.
+   Each red fixed and replayed green.
+2. **Open `@review` capture** of `14`, look at it, read every `Player.log`.
+3. Three conditions added 2026-09-25 to 28, in `TESTING.md`: no scenario left in `@wip`, every conditional
+   scenario has run on map that mounts its mod, no manual test left to validate.
 
-Nothing is left to the owner: scenario 13, the migration from the original, was dropped on 2026-09-28 at her word.
-A request ships the working tree as it stands when its ticket is played, so the one already filed will play the
-tree with the joy giver and scenario 15, not the one it was filed at. Keep the tree on the revision under test
+Nothing left to owner: scenario 13, migration from original, dropped 2026-09-28 at her word.
+Request ships working tree as it stands when its ticket played, so one already filed will play
+tree with joy giver and scenario 15, not one it was filed at. Keep tree on revision under test
 until each `RUN_DONE`.
 
 ### Settings audit
 
-Inventory covers all delivered Defs, the conditional patch and all repository files.
-The mod supplies five fixed snacks, fifteen stove recipes, one crop, its grain and
+Inventory covers all delivered Defs, conditional patch, all repository files.
+Mod supplies five fixed snacks, fifteen stove recipes, one crop, its grain and
 five mood memories. Recipe selection and batch choice are existing game bill controls;
-sowing and ingredient filters are native game controls. Stats are content balance
-constants, not an existing user configuration contract. Compatibility automatically
-removes duplicate crop selection when the external wheat Def is present. No concrete
-need for a separate user setting was identified. No C# Mod/ModSettings implementation,
-custom settings page, MainButtonDef or settings shortcut exists. No empty page is
+sowing and ingredient filters native game controls. Stats are content balance
+constants, not existing user configuration contract. Compatibility automatically
+removes duplicate crop selection when external wheat Def present. No concrete
+need for separate user setting identified. No C# Mod/ModSettings implementation,
+custom settings page, MainButtonDef or settings shortcut exists. No empty page
 introduced. Result: **not_applicable**, justified by behavior inventory, not merely
-absence of C#. Persistence, input limits, reset and shortcut tests are not applicable.
-No RIMMSQOL or other customization integration is claimed as tested.
+absence of C#. Persistence, input limits, reset and shortcut tests not applicable.
+No RIMMSQOL or other customization integration claimed tested.
 
 ### Translation audit
 
 Inventory: 14 ThingDef strings (seven labels/descriptions), 45 RecipeDef strings
-(fifteen labels/descriptions/jobStrings), and 10 nested thought-stage strings.
-All 69 use native translatable Def fields. English is supplied by source values;
-no redundant English folder is required. All 69 French entries are nonempty and
-unique; comparison with the source-field inventory returned no missing or extra keys.
-Text and meaning were reviewed, including x5/x10 labels and thought handles. These
-strings contain no format parameters, grammar tokens or rich-text tags requiring
+(fifteen labels/descriptions/jobStrings), 10 nested thought-stage strings.
+All 69 use native translatable Def fields. English supplied by source values;
+no redundant English folder required. All 69 French entries nonempty and
+unique; comparison with source-field inventory returned no missing or extra keys.
+Text and meaning reviewed, including x5/x10 labels and thought handles. Strings
+contain no format parameters, grammar tokens or rich-text tags needing
 parameter reconciliation. No code-owned UI text, Keyed usage or patch-added text exists.
-Metadata/docs are outside the in-game localization gate.
+Metadata/docs outside in-game localization gate.
 
-`../scripts/Check-DefInjected.ps1 -TransMod <repo>/Mod` ran against the installed
+`../scripts/Check-DefInjected.ps1 -TransMod <repo>/Mod` ran against installed
 RimWorld classes and data: **138 keys checked, 0 errors**, including Chinese and
-French; 11,613 Defs indexed, 30 patch operations applied by the validator. No unresolved
-translation targets reported. This is static validation, not proof of game loading.
+French; 11,613 Defs indexed, 30 patch operations applied by validator. No unresolved
+translation targets reported. Static validation, not proof of game loading.
 English/French rendering, fallback behavior and clipping remain unverified in game.
 
 **Gender agreement (2026-09-30 rule).** Read all five French DefInjected files in full:
 `RecipeDef/Recipes_FZfood_Meals.xml` (45 strings: labels, descriptions, jobStrings),
 `ThingDef/Items_FZMeal.xml` (5 items), `ThingDef/Items_FZRawWheat.xml`,
 `ThingDef/Plants_FZWheat.xml`, `ThoughtDef/Thoughts_FZfood.xml` (5 memory stages: label +
-description). No text in this mod agrees with a pawn: item/recipe text describes food, not
-a colonist, and the thought stages use `avoir`-auxiliary participles ("a mangé", "J'ai
-mangé") which do not agree with the subject's gender. No adjective, participle or noun
-referring to a pawn was found anywhere in the inventory. No three-segment switch is needed;
-none is missing.
+description). No text in mod agrees with pawn: item/recipe text describes food, not
+colonist, thought stages use `avoir`-auxiliary participles ("a mangé", "J'ai
+mangé") which do not agree with subject's gender. No adjective, participle or noun
+referring to pawn found anywhere in inventory. No three-segment switch needed;
+none missing.
 
-Review by Virginie, 2026-10-11, revision `8826c43` (`FRENCH_REVIEW.md` regenerated from it at `0fc56a8`, with the Chinese original): validated in chat. Corrections she asked for and applied: `FZPlant_Wheat.description`, `FZRawWheat.description` and `AteFZCookies.stages.ate_butter_cookie.description` reworded; no text needs a gender branch. `translation_fr` is `complete`.
-
+Review by Virginie, 2026-10-11, revision `8826c43` (`FRENCH_REVIEW.md` regenerated from it at `0fc56a8`, with Chinese original): validated in chat. Corrections she asked for and applied: `FZPlant_Wheat.description`, `FZRawWheat.description` and `AteFZCookies.stages.ate_butter_cookie.description` reworded; no text needs gender branch. `translation_fr` is `complete`.
