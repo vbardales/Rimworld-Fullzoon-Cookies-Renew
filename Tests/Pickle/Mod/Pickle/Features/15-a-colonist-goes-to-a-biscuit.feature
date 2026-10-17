@@ -55,6 +55,7 @@ Feature: a colonist with time to spare goes to a biscuit
     And I draft "Guest"
     And I undraft "Guest"
     And Nelim's Pickle Tools: the reasons why "Guest" cannot take "FZInsectJellyBiscuits" at (146, 155) for joy are logged
+    And Nelim's Pickle Tools: the joy giver "EatFZBiscuits" is asked what it would give "Guest"
     And I wait for "Guest" to have job "Ingest"
     Then "Guest" has thought "AteFZInsectJellyBiscuits"
     And no errors were logged
