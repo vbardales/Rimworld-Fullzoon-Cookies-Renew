@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: scenario 15 red a fourth time (Guest wanders, no joy job found); find why EatFZBiscuits yields no job; then pass 3, pass 4, code review 8.m, non-regression after the commit"
+current_step: "playTests: ticket `20261018-004838-972-3e9a` waits (scenario 15 alone, tree `54521c8`, NPT step `the joy giver \"EatFZBiscuits\" is asked what it would give \"Guest\"`, PickleTools `a794e6b`, not played before); on RUN_DONE read `summary.json` then the `[joy-giver]` lines of `Player.log` in `Tests/Pickle/Evidence/2026-10-18-s15-giver`; then pass 3, pass 4, code review 8.m, non-regression after the commit. Keep `Mod/`, `Source/`, `Tests/` untouched until RUN_DONE"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
