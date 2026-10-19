@@ -9,21 +9,21 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: ticket `20261018-004838-972-3e9a` waits (scenario 15 alone, tree `54521c8`, NPT step `the joy giver \"EatFZBiscuits\" is asked what it would give \"Guest\"`, PickleTools `a794e6b`, not played before); on RUN_DONE read `summary.json` then the `[joy-giver]` lines of `Player.log` in `Tests/Pickle/Evidence/2026-10-18-s15-giver`; then pass 3, pass 4, code review 8.m, non-regression after the commit. Keep `Mod/`, `Source/`, `Tests/` untouched until RUN_DONE"
+current_step: "playTests: ticket `20261018-004838-972-3e9a` played, red (scenario 15 alone, tree `54521c8`). `[joy-giver]` lines in `Tests/Pickle/Parked/2026-10-18-s15-giver`: `EatFZBiscuits` loaded, `CanBeGivenTo` true, `TryGiveJob` returned `Ingest`, yet Guest took `Play_Horseshoes`. The giver works; next: find what overrides the job (another joy giver or think-tree priority). Then pass 3, pass 4, code review 8.m, non-regression after the commit"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:
-  - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence in Tests/Pickle/Evidence/ (ignored by git), one line per run in docs/runs/2026-09-28.md"
+  - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in docs/runs/2026-09-28.md"
 workshop:     3806761765
 remaining:
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 and `FZPlant_Wheat.description` reworded again on 2026-10-18 (reviewed and validated by Virginie) (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "defect: scenario 15 (a colonist is sent to a biscuit for pleasure by `EatFZBiscuits`) is red five times (2026-10-15 ticket `20261015-002924-167-508f`: food policy forced, `[joy]` all true, Guest in Wait_Wander, so not the policy; next: read why JoyGiver_Ingest yields no job), earlier red four times (2026-09-28, 2026-09-29, 2026-10-11: Guest hauled; 2026-10-12 ticket `20261012-043541-820-5432`, joy-only schedule step in place: Guest in GotoWander, never Ingest), 2026-09-28 pass 1 and 2026-09-29 replay `20260929-110314-718-412a`: the guest took `Play_Horseshoes`, then `Skygaze`, never `Ingest`. The giver is unproven, not refuted. The scenario was reworked (draft/undraft repeated six times); its replay `20260929-230410-312-d521` has no result on disk and is absent from the queue list of 2026-10-02. File scenario 15 again, alone, small ticket. 2026-10-18 offline read of `JoyGiver_Ingest`, `JobGiver_GetJoy`, `SocialProperness`: with a biscuit carried, `CanIngestForJoy` passes on every check the diagnostic logs, so the giver would return a job if it were asked; suspects are `CanBeGivenTo`, `BoredOf`, joy level, or `EatFZBiscuits` absent from `DefDatabase`. Next: ask NPT for a diagnostic step that calls the giver Worker (`CanBeGivenTo`, `TryGiveJob`) and logs the presence of the def."
   - "unverified: pass 3 (beside Mlie's wheat, English, 25 scenarios) and pass 4 (Chinese Simplified, only if the install carries it) have never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
-  - "unverified: the `@review` capture of feature 14 (kept as JPEG in the pass 1 evidence) has not been opened and looked at, and the `Player.log` of passes 1 and 2 were not read in this audit"
+  - "unverified: the `@review` capture of feature 14 was never looked at and its evidence is deleted: shoot it again at shootGallery"
   - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
   - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -64,7 +64,7 @@ what sections below say about "nothing played": game ran twice on this mod.
   of 2026-10-02 (never-played and red first, non-regression together at end); WSL cleanup at sleep time (nothing
   of this mod's downloaded there yet that is known: pass 3's two Workshop items to be checked then).
 - **Prepublication:** `Mod/About/PublishedFileId.txt` (`3806761765`) tracked, `CHANGELOG.md` opens on `0.1.0`, no
-  `.dds` tracked and `*.dds`, `*.ico`, `Tests/Pickle/Evidence/` ignored.
+  `.dds` tracked and `*.dds`, `*.ico`, `Tests/Pickle/{Evidence,Inbox,Parked}/` ignored.
 - **Evidence** on disk went from 90 MB to under 1 MB: kept `2026-09-28-pass1-bare-en` (`@review` capture as JPEG),
   `2026-09-29-pass1-replay-15-2` (latest word on scenario 15, red) and `2026-09-29-pass2-bare-fr`. No field of this file
   pointed at deleted folder.
