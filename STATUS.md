@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: ticket `20261018-004838-972-3e9a` played, red (scenario 15 alone, tree `54521c8`). `[joy-giver]` lines in `Tests/Pickle/Parked/2026-10-18-s15-giver`: `EatFZBiscuits` loaded, `CanBeGivenTo` true, `TryGiveJob` returned `Ingest`, yet Guest took `Play_Horseshoes`. The giver works; next: find what overrides the job (another joy giver or think-tree priority). Then pass 3, pass 4, code review 8.m, non-regression after the commit"
+current_step: "playTests: ticket `20261018-004838-972-3e9a` played, red (scenario 15 alone, tree `54521c8`). `[joy-giver]` lines in `Tests/Pickle/Parked/2026-10-18-s15-giver`: `EatFZBiscuits` loaded, `CanBeGivenTo` true, `TryGiveJob` returned `Ingest`, yet Guest took `Play_Horseshoes`. The giver works; the scenario tests the game's random pick among joy givers, not the mod. Next: ask NPT for a step that starts the job `TryGiveJob` returns (forced), use it in scenario 15 instead of `I wait for "Guest" to have job "Ingest"`, replay 15 alone. Then pass 3, pass 4, code review 8.m, non-regression after the commit"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
