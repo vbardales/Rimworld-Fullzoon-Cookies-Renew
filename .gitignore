@@ -37,3 +37,7 @@ Tests/Pickle/Evidence/
 evidence/
 Art/preview-qa/
 Art/.render/
+
+# Pickle reception and parked results: on disk only (AGENTS.md, "Test evidence").
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
