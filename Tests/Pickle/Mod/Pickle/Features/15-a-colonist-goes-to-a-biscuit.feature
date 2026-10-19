@@ -2,6 +2,10 @@
 # claim the mod makes about itself, and the one a file cannot show: it is the joy giver EatFZBiscuits at work
 # inside the game's own choice of what a colonist does next.
 #
+# 2026-10-19: run 3e9a showed the giver returns Ingest (TryGiveJob) while Guest stays in Play_Horseshoes: the pick among
+# joy givers is the game's lottery, not the mod's. The "job is forced" step now starts the job the giver returns, so
+# the scenario proves the giver's job eats the biscuit and leaves its memory; the draft/undraft rerolls stay as a try.
+# Older notes, kept for history:
 # 5th run to come: the 4th log (2026-10-12) says "Guest will eat it: False", every other check true. Suspect: the saved
 # food policy of test-colony does not allow the new biscuit defs. The step after the carry step grants it, and the
 # diagnostic logs the policy. If still red, read the [joy] line: the cause is then not the policy.
@@ -56,6 +60,7 @@ Feature: a colonist with time to spare goes to a biscuit
     And I undraft "Guest"
     And Nelim's Pickle Tools: the reasons why "Guest" cannot take "FZInsectJellyBiscuits" at (146, 155) for joy are logged
     And Nelim's Pickle Tools: the joy giver "EatFZBiscuits" is asked what it would give "Guest"
+    And Nelim's Pickle Tools: the joy giver "EatFZBiscuits" job is forced on "Guest"
     And I wait for "Guest" to have job "Ingest"
     Then "Guest" has thought "AteFZInsectJellyBiscuits"
     And no errors were logged
