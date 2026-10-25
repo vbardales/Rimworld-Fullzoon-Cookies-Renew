@@ -2,6 +2,8 @@
 # claim the mod makes about itself, and the one a file cannot show: it is the joy giver EatFZBiscuits at work
 # inside the game's own choice of what a colonist does next.
 #
+# 2026-10-25: run 4fd0 forced the giver's job: Guest was in Ingest at the check (the giver works), but the memory is
+# only given when the eating ends, and "has thought" does not wait. A wait of 600 ticks now sits before the check.
 # 2026-10-19: run 3e9a showed the giver returns Ingest (TryGiveJob) while Guest stays in Play_Horseshoes: the pick among
 # joy givers is the game's lottery, not the mod's. The "job is forced" step now starts the job the giver returns, so
 # the scenario proves the giver's job eats the biscuit and leaves its memory; the draft/undraft rerolls stay as a try.
@@ -62,5 +64,6 @@ Feature: a colonist with time to spare goes to a biscuit
     And Nelim's Pickle Tools: the joy giver "EatFZBiscuits" is asked what it would give "Guest"
     And Nelim's Pickle Tools: the joy giver "EatFZBiscuits" job is forced on "Guest"
     And I wait for "Guest" to have job "Ingest"
+    And I wait 600 ticks
     Then "Guest" has thought "AteFZInsectJellyBiscuits"
     And no errors were logged
