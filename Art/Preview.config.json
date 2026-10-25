@@ -1,45 +1,35 @@
 {
-  "title": "Fullzoon's Cookies Renew",
-  "titleSize": 46,
-  "titleParts": [
-    {
-      "text": "Fullzoon's",
-      "scale": 0.65,
-      "font": "ui",
-      "color": "secondary"
-    },
-    {
-      "text": "Cookies"
-    },
-    {
-      "text": "Renew",
-      "breakBefore": true,
-      "scale": 0.65,
-      "font": "ui",
-      "color": "secondary"
-    }
-  ],
-  "suffix": "",
-  "tag": "(unofficial)",
-  "copyLines": [
-    "A wheat crop, and five biscuits baked from it at the stove."
-  ],
-  "backgroundPosition": "50% 54%",
-  "modIconSource": "ModIcon-source.png",
-  "layout": "panel",
-  "panelAnchor": "top-left",
-  "echo": { "file": "echo-preview.png", "mode": "alpha", "preSized": true, "veil": false, "color": "var(--accent)", "opacity": 1, "panelTop": 8, "panelRight": 2, "panelWidth": 50, "flipX": true },
-  "iconBadge": {
-    "file": "ModIcon-source.png",
-    "corner": "bottom-left",
-    "width": 180,
-    "translate": "-12.5%, 12.5%",
-    "rotate": 15,
-    "radius": 48,
-    "outline": false
+  "panel": {
+    "title": "Fullzoon's Cookies Renew",
+    "titleSize": 46,
+    "titleParts": [
+      {
+        "text": "Fullzoon's",
+        "scale": 0.65,
+        "font": "ui",
+        "color": "secondary"
+      },
+      {
+        "text": "Cookies"
+      },
+      {
+        "text": "Renew",
+        "breakBefore": true,
+        "scale": 0.65,
+        "font": "ui",
+        "color": "secondary"
+      }
+    ],
+    "tag": "(unofficial)",
+    "copyLines": [
+      "A wheat crop, and five biscuits baked from it at the stove."
+    ]
   },
   "backgroundFile": "Preview-source.png",
-  "backgroundSize": "cover",
+  "echo": { "file": "echo-preview.png", "color": "var(--accent)" },
+  "icon": {
+    "file": "ModIcon-source.png"
+  },
   "palette": {
     "veil": "#33291F",
     "inkPrimary": "#F4EDDF",
