@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: ticket `20261018-004838-972-3e9a` played, red (scenario 15 alone, tree `54521c8`). `[joy-giver]` lines in `Tests/Pickle/Parked/2026-10-18-s15-giver`: `EatFZBiscuits` loaded, `CanBeGivenTo` true, `TryGiveJob` returned `Ingest`, yet Guest took `Play_Horseshoes`. The giver works; the scenario tested the game's random pick among joy givers, not the mod. Scenario 15 now forces the giver's job (PickleTools `23814b1`, tree `0ddf815`): ticket `20261019-233107-313-4fd0` waits (scenario 15 alone, evidence `Tests/Pickle/Inbox/2026-10-19-s15-forced`); on RUN_DONE read `summary.json`, then `junit.xml` and the `[joy-giver] forced` line. Then pass 3, pass 4, code review 8.m, non-regression after the commit"
+current_step: "playTests: ticket `20261018-004838-972-3e9a` played, red (scenario 15 alone, tree `54521c8`). `[joy-giver]` lines in `Tests/Pickle/Parked/2026-10-18-s15-giver`: `EatFZBiscuits` loaded, `CanBeGivenTo` true, `TryGiveJob` returned `Ingest`, yet Guest took `Play_Horseshoes`. The giver works; the scenario tested the game's random pick among joy givers, not the mod. Scenario 15 now forces the giver's job (PickleTools `23814b1`, tree `0ddf815`): ticket `20261019-233107-313-4fd0` played red (run of 2026-10-23, evidence deleted): the forced job ran, Guest was in `Ingest` at the check, but `has thought` does not wait and the memory comes when eating ends. Scenario 15 now waits 600 ticks before the check (tree `82d6cfc`); replay alone, ticket `20261025-182933-178-f494`, evidence `Tests/Pickle/Inbox/2026-10-25-s15-wait`; on RUN_DONE read `summary.json`, then `junit.xml`. If `I wait 600 ticks` is not a step, `Check-Steps` was not run (no Pickle assemblies here): the run says so. Then pass 3, pass 4, code review 8.m, non-regression after the commit"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -35,7 +35,7 @@ historical_remaining_2026_09_12:
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
 updated:      2026-10-11, full audit replay, French validated by Virginie, writeTests closed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: c17f68bb3aa06d7c07fffc8dfabd612460bafb8f
+protocols_read_sha: 65f1477c389ca6e741af05b7745aa30f6b26b595
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: a53eaa6f910171f31a17dfa5266890628bdbdba27ed04347b7098ea5dbd5a202
 ---
