@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: scenario 15 green (ticket `20261025-182933-178-f494`, tree `82d6cfc`, evidence `Tests/Pickle/Evidence/2026-10-25-s15-wait`). Next: pass 3 (beside Mlie's wheat), pass 4 (Chinese, if install has it), scenarios 08 and 11 un-skipped, code review 8.m, then non-regression after the commit"
+current_step: "playTests: scenario 15 green (ticket `20261025-182933-178-f494`, tree `82d6cfc`, evidence `Tests/Pickle/Evidence/2026-10-25-s15-wait`). Pass 3 (beside Mlie's wheat, English) filed, ticket `20261030-162201-656-b18a`, tree `2785d66`, evidence `Tests/Pickle/Inbox/2026-10-30-pass3-mlie`; on RUN_DONE read `summary.json`, then `junit.xml`. Next: pass 4 (Chinese, if install has it), scenarios 08 and 11 un-skipped, code review 8.m, then non-regression after the commit"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
