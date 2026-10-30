@@ -17,10 +17,12 @@ dependencies: none
 showcase:     complete
 tested_on:
   - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in docs/runs/2026-09-28.md"
+  - "2026-10-30, scenario 15 alone, English, ticket `20261025-182933-178-f494`, tree `82d6cfc`: 1 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-10-25-s15-wait`, line in docs/runs/2026-10-30.md"
 workshop:     3806761765
 remaining:
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 and `FZPlant_Wheat.description` reworded again on 2026-10-18 (reviewed and validated by Virginie) (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
+  - "unverified: 8.m code review never done (no `code_review_sha`): after passes 3 and 4 and scenarios 08 and 11, once code is stable"
   - "unverified: pass 3 (beside Mlie's wheat, English, 25 scenarios) and pass 4 (Chinese Simplified, only if the install carries it) have never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
   - "unverified: the `@review` capture of feature 14 was never looked at and its evidence is deleted: shoot it again at shootGallery"
   - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
@@ -32,9 +34,9 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
-updated:      2026-10-11, full audit replay, French validated by Virginie, writeTests closed
+updated:      2026-10-30, replay-audit: playTests holds, scenario 15 green, 8.m and passes 3/4 open
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: af740f581512fb2b0d8180812d83916db48bf0c1
+protocols_read_sha: b64c0668c5e891395288750fb050e54c2891f497
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
 ---
