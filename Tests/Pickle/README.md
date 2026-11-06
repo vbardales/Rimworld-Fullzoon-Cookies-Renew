@@ -27,7 +27,7 @@ There is no local C#: no `Source/`, no assembly. The suite uses Pickle's own ste
 | `15-a-colonist-goes-to-a-biscuit` | `@save @slow` | English passes | a colonist with time to spare is sent to an insect jelly biscuit by the joy giver, eats it and keeps its memory |
 
 Thirty-two scenarios in fifteen features. What each pass should discover, play and skip is computed by
-`Check-Steps.ps1` from the tags, and is the number a report has to match.
+`Pass-Counts.ps1` from the tags, and is the number a report has to match.
 
 ## Three limits worth knowing before reading a green
 
@@ -63,11 +63,12 @@ powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Generate-LabelFeatures
 ## Checking without the game
 
 ```text
-powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Check-Steps.ps1
+powershell.exe -ExecutionPolicy Bypass -File ../scripts/Check-Steps.ps1 -ModRoot .
+powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Pass-Counts.ps1
 powershell.exe -ExecutionPolicy Bypass -File scripts/Check-Recipes.ps1
 ```
 
-`Check-Steps.ps1` compiles Pickle's own vocabulary and the staged tool's, and checks that every step line of
+The shared `scripts/Check-Steps.ps1` compiles Pickle's own vocabulary and the staged tool's, and checks that every step line of
 every feature resolves to exactly one step, that every feature parses and holds no step outside a scenario, and
 that a pass map ends with a newline and names a tool that exists. It was seen failing on an invented step, on a
 missing newline, on a missing tool and on a misspelt keyword, and it prints the counts above. It proves the text

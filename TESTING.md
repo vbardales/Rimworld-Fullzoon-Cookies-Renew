@@ -15,7 +15,7 @@ in [`Tests/Pickle/`](Tests/Pickle/README.md).
 |---|---|
 | Static checks: fields, references, types, DefInjected | shared scripts of the collection, run and green on 2026-09-28: `docs/runs/2026-09-28.md` |
 | `scripts/Check-Recipes.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
-| `Tests/Pickle/Check-Steps.ps1` | written and run green on 2026-09-28: 32 scenarios in 15 features parse, every step line resolves to exactly one step, and the counts each pass must show are computed from the tags. Seen failing on four injected faults |
+| `Tests/Pickle/Pass-Counts.ps1` | 32 scenarios in 15 features; the counts each pass must show are computed from the tags and the pass maps. Parsing and step resolution are the shared `scripts/Check-Steps.ps1` |
 | Pickle suite | 32 scenarios in 15 features, no local C#. **Played: passes 1 and 2 only** (see the line above). Green: all but `15`. Not played: pass 3 (`08`, `11`, the rest beside Mlie) and pass 4 (Chinese). Offline checks replayed on 2026-10-02 on `155738e`: `Mod/` unchanged except the Preview image |
 | Functional scenarios 0 to 13 | written with setup, actions and expected results; dispositions in the table below. Not played by hand |
 | Order of what is left (AUDIT.md, 2026-10-02) | never played or red first, each a small ticket: `15` alone, then pass 3 (`08`, `11`), then pass 4 if the install carries Chinese. The non-regression passes (whole suite, English and French) go **together, last**, on the final revision |
@@ -72,7 +72,7 @@ requires SYR Processor Framework (2633514537), which the pass map lists first. T
 Three passes are required, four with Chinese; a pass without the language is `unverified`, never skipped in
 silence. One pass is one request, with its own `-DepMap` and `-Language` and a fresh `-EvidenceDir`; the exact
 commands and filters are in `Tests/Pickle/README.md`. The numbers are computed from the tags by
-`Check-Steps.ps1`, and a report that does not show them has found a wrong filter or a wrong tag. The skips in
+`Pass-Counts.ps1`, and a report that does not show them has found a wrong filter or a wrong tag. The skips in
 passes 1, 2 and 4 are `08` and `11`, which need Mlie's mod: **a skip is not a pass**, and pass 3 is the only place
 they play.
 
