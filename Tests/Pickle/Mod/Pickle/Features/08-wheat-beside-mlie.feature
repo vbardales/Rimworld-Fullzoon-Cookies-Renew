@@ -4,6 +4,9 @@
 # that the crop is still there to be harvested; the menu itself is the game's list, and nothing of this mod
 # draws it.
 #
+# The step "was patched by mod" compares the DISPLAY name only, never the packageId (PickleTools/Upstream/PENDING.md):
+# pass 3 (ticket b18a, 2026-11-08) went red on the packageId while the patch had taken. The display name is given.
+#
 # The patch tests a def, not a mod name: PatchOperationFindMod compares ModMetaData.Name by exact string, and
 # that name is Mlie's to change. So if Mlie renames PlantWheat, this is the scenario that goes red.
 #
@@ -17,7 +20,7 @@ Feature: beside Mlie's wheat this wheat stands down
     Then mod "Mlie.VanillalikeWheat" is loaded
     And def "PlantWheat" of type "ThingDef" exists
     And def "RawWheat" of type "ThingDef" exists
-    And def "FZPlant_Wheat" was patched by mod "nelim.fullzooncookies"
+    And def "FZPlant_Wheat" was patched by mod "Fullzoon's Cookies Renew (unofficial)"
 
   Scenario: the crop is withdrawn from sowing, not from the game
     Given the main menu is open
