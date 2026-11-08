@@ -36,7 +36,7 @@ historical_remaining_2026_09_12:
 session:      local_e26c87bd-50c9-4420-aba0-572f5dd2f69d
 updated:      2026-10-30, replay-audit: playTests holds, scenario 15 green, 8.m and passes 3/4 open
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: b64c0668c5e891395288750fb050e54c2891f497
+protocols_read_sha: a95086f2b1c3b3d1df3d0bb4b62e789ea0561c85
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
 ---
