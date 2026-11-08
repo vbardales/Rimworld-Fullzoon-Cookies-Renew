@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: scenario 15 green (ticket `20261025-182933-178-f494`, tree `82d6cfc`, evidence `Tests/Pickle/Evidence/2026-10-25-s15-wait`). Pass 3 (beside Mlie's wheat, English) filed, ticket `20261030-162201-656-b18a`, tree `2785d66`, evidence `Tests/Pickle/Inbox/2026-10-30-pass3-mlie`; on RUN_DONE read `summary.json`, then `junit.xml`. Next: pass 4 (Chinese, if install has it), scenarios 08 and 11 un-skipped, code review 8.m, then non-regression after the commit"
+current_step: "playTests: pass 3 (beside Mlie's wheat, ticket `20261030-162201-656-b18a`, tree `2785d66`) 23 of 25 passed, reds 08 and 15 fixed in scenarios (`9368ab4`), run parked `Tests/Pickle/Parked/2026-10-30-pass3-mlie`. Replay of 08 + 15 alone beside Mlie's wheat to file once SYR Processor Framework (2633514537) is in the WSL cache (pre-check refused it, download running). Then pass 4 (Chinese, if install has it), scenarios 08 and 11 un-skipped, code review 8.m, non-regression after the commit"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -17,13 +17,14 @@ dependencies: none
 showcase:     complete
 tested_on:
   - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in docs/runs/2026-09-28.md"
+  - "2026-11-03, pass 3 beside Mlie's wheat, English, ticket `20261030-162201-656-b18a`, tree `2785d66`: 23 passed, 2 failed of 25 (08 step name, 15 wait too short; both fixed in `9368ab4`, replay pending). Line in docs/runs/2026-11-03.md"
   - "2026-10-30, scenario 15 alone, English, ticket `20261025-182933-178-f494`, tree `82d6cfc`: 1 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-10-25-s15-wait`, line in docs/runs/2026-10-30.md"
 workshop:     3806761765
 remaining:
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 and `FZPlant_Wheat.description` reworded again on 2026-10-18 (reviewed and validated by Virginie) (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "unverified: 8.m code review never done (no `code_review_sha`): after passes 3 and 4 and scenarios 08 and 11, once code is stable"
-  - "unverified: pass 3 (beside Mlie's wheat, English, 25 scenarios) and pass 4 (Chinese Simplified, only if the install carries it) have never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
+  - "unverified: pass 3 played 2026-11-03, 23 of 25 green, reds 08 and 15 to replay green beside Mlie's wheat; pass 4 (Chinese Simplified, only if the install carries it) has never been played. Scenarios 08 and 11 are skipped in passes 1, 2 and 4, and a skip is not a pass."
   - "unverified: the `@review` capture of feature 14 was never looked at and its evidence is deleted: shoot it again at shootGallery"
   - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
   - "unverified: whether the WSL install's Workshop cache holds Mlie's Vanilla-like Wheat (2717707382) and SYR Processor Framework (2633514537), which pass 3 stages. A missing one is a download through `Use-Wsl.ps1`."
