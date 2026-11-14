@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: pass 4 (bare, Chinese Simplified) green 2026-11-09, ticket `20261109-002213-075-df2a` (15 passed, 0 failed, 2 skipped of 17; the skips are the Mlie conditionals, played in pass 3). Passes 3 and 4 green. 8.0 ecosystem refresh asked of PiI 2026-11-14. Next: 8.m code review, then the non-regression passes after the commit"
+current_step: "playTests: passes 3 and 4 green. Recipes now accept the grain of RC2 Core, Medieval Overhaul, VGP Garden Gourmet, Mousekin Race (MayRequire) and Medieval Overhaul goat and sheep milk, commit `0d49abe`. Pass 5 (RC2 Core, ticket `20261114-185356-431-e614`) and pass 6 (Medieval Overhaul, ticket `20261114-185402-614-2571`) filed 2026-11-14, evidence `Tests/Pickle/Inbox/2026-11-14-pass5-rc2` and `...-pass6-medieval`. Next: read both, then 8.m code review, then the non-regression passes"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -22,6 +22,7 @@ tested_on:
   - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in docs/runs/2026-11-09.md"
 workshop:     3806761765
 remaining:
+  - "unverified: passes 5 and 6 (grain of RC2 Core and of Medieval Overhaul, scenarios 16 and 17, never played; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 and `FZPlant_Wheat.description` reworded again on 2026-10-18 (reviewed and validated by Virginie) (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "unverified: 8.m code review never done (no `code_review_sha`): passes 3 and 4 and scenarios 08 and 11 are green, code stable: due now"
@@ -34,7 +35,7 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
-updated:      2026-11-14, pass 4 read green, 8.0 ECOSYSTEM? sent to PiI
+updated:      2026-11-14, wheat family: recipes widened, passes 5 and 6 filed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
 protocols_read_sha: 94853549a80797ac10a9940526f1639911a46083
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
