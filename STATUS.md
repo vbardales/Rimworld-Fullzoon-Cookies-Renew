@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: passes 3, 4, 5 and 6 green, 8.m code review done 2026-11-14 (XML only, no defect). Next: commit, then the non-regression passes (whole suite, English and French, on the final revision), then leave playTests"
+current_step: "playTests: 8.m done. Non-regression passes filed 2026-11-14 on `0d49abe`: 575e (bare English), 780b (bare French), fcfb (with Mlie), 3f30 (bare Chinese), evidence `Tests/Pickle/Inbox/2026-11-14-nr*`. Passes 5 and 6 (RC2, Medieval Overhaul) green. Next: read the four, then leave playTests"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -34,7 +34,7 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
-updated:      2026-11-14, 8.m code review done
+updated:      2026-11-14, non-regression passes filed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
 protocols_read_sha: 94853549a80797ac10a9940526f1639911a46083
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
