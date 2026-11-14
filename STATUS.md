@@ -36,7 +36,7 @@ historical_remaining_2026_09_12:
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
 updated:      2026-11-14, non-regression passes filed
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 94853549a80797ac10a9940526f1639911a46083
+protocols_read_sha: 61053669ed540d5e0b41ea5367adf22b89c75f07
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
