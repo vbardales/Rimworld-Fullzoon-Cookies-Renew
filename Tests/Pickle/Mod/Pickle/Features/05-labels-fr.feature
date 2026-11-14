@@ -23,8 +23,8 @@ Feature: the French labels and descriptions reach the loaded definitions
     And def "FZCookies" field "description" is "Un riche biscuit occidental à la crème. Dans certains pays, en préparer est une coutume des fêtes : on réserve une heure dans un atelier, on suit les instructions du pâtissier, et on offre la fournée aux gens qu'on aime."
     And def "FZBerryBiscuits" field "description" is "Des baies cuites à même la pâte, un mariage qui marche mieux qu'il n'y paraît. Il y reste assez de vitamine C pour que ça compte."
     And def "FZInsectJellyBiscuits" field "description" is "Un biscuit de farine de blé et de gelée d'insecte. Contre toute attente il a un goût de pomme, et on se surprend à en reprendre un."
-    And def "FZRawWheat" field "description" is "Du blé battu. Difficile à avaler cru, mais il se cuit en toutes sortes de biscuits."
-    And def "FZPlant_Wheat" field "description" is "Une céréale cultivée pour son grain. Elle rentre plus vite que la plupart des cultures et se conserve bien, mais elle ne sert à rien tant qu'on n'en a rien cuit."
+    And def "FZRawWheat" field "description" is "Du grain de blé battu. Difficile à avaler cru, mais on peut en préparer toutes sortes de biscuits."
+    And def "FZPlant_Wheat" field "description" is "Une céréale cultivée pour son grain. Elle se récolte plus vite que la plupart des cultures, et son grain se conserve bien. Il est de peu d’utilité tant qu’il n’est pas cuit."
 
   Scenario: the fifteen bills a player can queue at a stove
     Given the main menu is open
