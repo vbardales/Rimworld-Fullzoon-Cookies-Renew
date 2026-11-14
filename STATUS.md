@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: pass 3 beside Mlie's wheat green whole (23 of 25 on 2026-11-03, reds 08 and 15 replayed green 2026-11-09 by ticket `20261109-001111-438-9824`, tree `9368ab4`, evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`). Pass 4 (bare, Chinese Simplified) filed: ticket `20261109-002213-075-df2a`, tree `e9fa2e4`, evidence `Tests/Pickle/Inbox/2026-11-09-pass4-zh`; a missing ChineseSimplified pack in the install makes the pass not applicable, not red. Next: 8.m code review once pass 4 answers, then the non-regression passes after the commit"
+current_step: "playTests: pass 4 (bare, Chinese Simplified) green 2026-11-09, ticket `20261109-002213-075-df2a` (15 passed, 0 failed, 2 skipped of 17; the skips are the Mlie conditionals, played in pass 3). Passes 3 and 4 green. 8.0 ecosystem refresh asked of PiI 2026-11-14. Next: 8.m code review, then the non-regression passes after the commit"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -18,13 +18,13 @@ showcase:     complete
 tested_on:
   - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in docs/runs/2026-09-28.md"
   - "2026-11-03, pass 3 beside Mlie's wheat, English, ticket `20261030-162201-656-b18a`, tree `2785d66`: 23 passed, 2 failed of 25 (08 step name, 15 wait too short; both fixed in `9368ab4`). Line in docs/runs/2026-11-03.md"
+  - "2026-11-09, pass 4 bare, Chinese Simplified, ticket `20261109-002213-075-df2a`, tree `e9fa2e4`: 15 passed, 0 failed, 2 skipped of 17. Evidence `Tests/Pickle/Inbox/2026-11-09-pass4-zh`, line in docs/runs/2026-11-09.md"
   - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in docs/runs/2026-11-09.md"
 workshop:     3806761765
 remaining:
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 and `FZPlant_Wheat.description` reworded again on 2026-10-18 (reviewed and validated by Virginie) (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
-  - "unverified: 8.m code review never done (no `code_review_sha`): after passes 3 and 4 and scenarios 08 and 11, once code is stable"
-  - "unverified: pass 4 (Chinese Simplified, only if the install carries it) filed 2026-11-09, ticket `20261109-002213-075-df2a`, never played yet. Pass 3 is green whole (08 and 11 played there)."
+  - "unverified: 8.m code review never done (no `code_review_sha`): passes 3 and 4 and scenarios 08 and 11 are green, code stable: due now"
   - "unverified: the `@review` capture of feature 14 was never looked at and its evidence is deleted: shoot it again at shootGallery"
   - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -34,9 +34,9 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
-updated:      2026-11-09, RUN_DONE 9824 green (pass 3 whole), pass 4 Chinese filed
+updated:      2026-11-14, pass 4 read green, 8.0 ECOSYSTEM? sent to PiI
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 1b089279ae73b32a5ea8d56b3a598885d03cc393
+protocols_read_sha: 94853549a80797ac10a9940526f1639911a46083
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
 ---
