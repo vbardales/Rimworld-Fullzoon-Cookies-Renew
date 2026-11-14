@@ -147,3 +147,11 @@ none missing.
 
 Review by Virginie, 2026-10-11, revision `8826c43` (`FRENCH_REVIEW.md` regenerated from it at `0fc56a8`, with Chinese original): validated in chat. Corrections she asked for and applied: `FZPlant_Wheat.description`, `FZRawWheat.description` and `AteFZCookies.stages.ate_butter_cookie.description` reworded; no text needs gender branch. `translation_fr` is `complete`.
 Review by Virginie, 2026-10-18, revision `a2b76eb` (`FRENCH_REVIEW.md` regenerated at it): validated in chat after two ChatGPT passes. Correction applied: `FZPlant_Wheat.description` now follows English (any baked use). `translation_fr` stays `complete`.
+
+## Ecosystem
+
+8.0 refresh, 2026-11-14, by PiI (`docs/inventory/ecosystem-steam/FullzoonCookiesRenew.md`, source: Steam + registre):
+
+- Original `1623487558` (2019, no packageId, no version tag, same defNames: 24 of our 25). Never active with this mod; cannot be declared `incompatibleWith` (no packageId). Said in About and README.
+- `Mlie.VanillalikeWheat` `2717707382` (Vanilla-like wheat Continued, alive 1.6): second wheat, conflict case. Covered: pass 3 green beside it (23 + 2 of 25), scenarios 08 and 11.
+- No other fork, patch, retexture or translation found. Nothing subscribed.
