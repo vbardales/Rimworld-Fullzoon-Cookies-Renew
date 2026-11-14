@@ -1,0 +1,10 @@
+# Pass "avec-medieval": Medieval Overhaul beside this mod. 17 plays here. It requires Harmony (2009463077), Vanilla
+# Factions Expanded - Core (2023507013) and SYR Processor Framework (3210544395, About.xml of the item), in that
+# order. Whether the WSL install holds these items has not been checked; a missing one is a download, and a
+# download goes through Use-Wsl.ps1 (PickleTools/Headless/README.md).
+nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
+brrainz.harmony 2009463077
+OskarPotocki.VanillaFactionsExpanded.Core 2023507013
+syrchalis.processor.framework 3210544395
+DankPyon.Medieval.Overhaul 3219596926
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod

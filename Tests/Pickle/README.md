@@ -89,10 +89,12 @@ Submit-PickleRun.ps1 -Mod FullzoonCookiesRenew -Owner local_<session id> -Label 
 
 | # | Pass | Extra arguments | Discovers, plays, skips |
 |---|---|---|---|
-| 1 | bare, English | `-DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only'` | 26, 23, 3 |
+| 1 | bare, English | `-DepMap wsl-deps.sans-facultatifs.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only'` | 28, 23, 5 |
 | 2 | bare, French | `-DepMap wsl-deps.sans-facultatifs.map -Language French -Filter 'Fullzoon Cookies Renew - Pickle tests,!@en-only,!@zh-only,!@save'` | 17, 15, 2 |
-| 3 | with Mlie, English | `-DepMap wsl-deps.avec-mlie.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only,!@wheat-alone'` | 25, 25, 0 |
+| 3 | with Mlie, English | `-DepMap wsl-deps.avec-mlie.map -Language English -Filter 'Fullzoon Cookies Renew - Pickle tests,!@fr-only,!@zh-only,!@wheat-alone'` | 27, 25, 2 |
 | 4 | bare, Chinese, if the install has it | `-DepMap wsl-deps.sans-facultatifs.map -Language ChineseSimplified -Filter 'Fullzoon Cookies Renew - Pickle tests,!@en-only,!@fr-only,!@save'` | 17, 15, 2 |
+| 5 | with RimCuisine 2 Core, English | `-DepMap wsl-deps.avec-rc2.map -Language English -Filter '16-a-real-bake-with-rc2-grain::five egg biscuits'` | 1, 1, 0 |
+| 6 | with Medieval Overhaul, English | `-DepMap wsl-deps.avec-medieval.map -Language English -Filter '17-a-real-bake-with-medieval-grain::five egg biscuits'` | 1, 1, 0 |
 
 Skipped by requirement is what a pass without Mlie's mod must show for `08` and `11`: skipped counts, exclusions
 do not, which is why `!@wheat-alone` and the language tags are exclusions and the requirements are not. **The

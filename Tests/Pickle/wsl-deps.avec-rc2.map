@@ -1,0 +1,6 @@
+# Pass "avec-rc2": RimCuisine 2 Core (Continued) beside this mod. 16 plays here, because its tag finds the mod.
+# Its About.xml lists no dependency. Whether the WSL install holds Workshop 2562519366 has not been checked; a
+# missing one is a download, and a download goes through Use-Wsl.ps1 (PickleTools/Headless/README.md).
+nelim.pickletools.loadaudit path:PickleTools/LoadAudit/Mod
+Mlie.RC2.Core 2562519366
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
