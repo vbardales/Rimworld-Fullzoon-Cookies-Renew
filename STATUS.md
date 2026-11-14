@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: playTests[1.0.0]
-current_step: "playTests: passes 3, 4, 5 and 6 green. Recipes widened to other wheat grains, commit `0d49abe`. Next: 8.m code review, then the non-regression passes after the commit"
+current_step: "playTests: passes 3, 4, 5 and 6 green, 8.m code review done 2026-11-14 (XML only, no defect). Next: commit, then the non-regression passes (whole suite, English and French, on the final revision), then leave playTests"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -25,7 +25,6 @@ remaining:
   - "unverified: passes 5 (RC2) and 6 (Medieval Overhaul) green 2026-11-14; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "unverified: after deploy, Pickle replay of the scenarios that display the three French texts reworded on 2026-10-11 and `FZPlant_Wheat.description` reworded again on 2026-10-18 (reviewed and validated by Virginie) (TRANSLATIONS.md, text edit after validation), French pass"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
-  - "unverified: 8.m code review never done (no `code_review_sha`): passes 3 and 4 and scenarios 08 and 11 are green, code stable: due now"
   - "unverified: the `@review` capture of feature 14 was never looked at and its evidence is deleted: shoot it again at shootGallery"
   - "unverified: the non-regression passes (whole suite, English and French, on the final revision) are filed together at the very end, once 15, 08, 11 and the Chinese pass are green (order rule of AUDIT.md, 2026-10-02)"
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -35,9 +34,10 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
-updated:      2026-11-14, pass 6 (Medieval Overhaul grain) green
+updated:      2026-11-14, 8.m code review done
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
 protocols_read_sha: 94853549a80797ac10a9940526f1639911a46083
+code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
 ---
@@ -157,3 +157,5 @@ Review by Virginie, 2026-10-18, revision `a2b76eb` (`FRENCH_REVIEW.md` regenerat
 - `Mlie.VanillalikeWheat` `2717707382` (Vanilla-like wheat Continued, alive 1.6): second wheat, conflict case. Covered: pass 3 green beside it (23 + 2 of 25), scenarios 08 and 11.
 - No other fork, patch, retexture or translation found. Nothing subscribed.
 - Wheat family pass, 2026-11-14, by PiI (section "Family pass: wheat" of the same md): Vanilla has no wheat. Alive and installed mods each add their own wheat plant: RimCuisine 2 Core (`Mlie.RC2.Core`), VGP Garden Gourmet, Medieval Overhaul (`DankPyon_Plant_Wheat`), VV New Harvest, Stoneborn Cuisine, Mousekin and Lapin race wheats. No defName clash with `FZPlant_Wheat`; our recipes accept only `FZRawWheat`, so the other grains are never used by them. Mlie's originals (`1522917562`, `2020443885`) dead. Only Mlie's is withdrawn by the patch. Suggested Pickle beside RC2 Core and Medieval Overhaul (load clean, no error): to decide with Virginie.
+
+**8.m code review, 2026-11-14, `Mod/` from the first commit to `0d49abe` (no `Source/`, XML only): no defect.** Read: the plant, the grain, the joy giver, the conditional patch, the 15 recipes (grains behind `MayRequire`, Medieval Overhaul milks), thing and thought defs. Notes, no action: only Mlie's wheat withdraws this wheat from sowing; the other wheat mods keep their own plant beside ours (different defNames, no clash, owner aware 2026-11-14). The recipes accept grain that a quern would normally process (Mlie's, others), as decided earlier.
