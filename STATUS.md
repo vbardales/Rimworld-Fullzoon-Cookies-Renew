@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: shootGallery[1.0.0]
-current_step: "shootGallery: leaving playTests 2026-11-15. All Pickle passes green (1.6), feature 14 capture looked at. Next: skill write-shotlist (9.0)"
+current_step: "shootGallery: shotlist written 2026-11-15 (4 scenes at plan 5, 2 interface windows), header in 20-gallery.feature. Next: write the scenarios, Check-ShotlistVsScenario, NPT steps for the two windows, then rate-gallery"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -172,6 +172,19 @@ Left alone: no scenario written (stage rule: shotlist and scenarios start at `wr
 | Animal the mod includes (rule 5) | Shot(s) | Status |
 | --- | --- | --- |
 | none: the mod adds a crop, a grain, five snacks, recipes and memories, no `PawnKindDef` and no race | not applicable | nothing missing |
+
+## Shotlist
+
+Written 2026-11-15 at `shootGallery[1.0.0]`, header in `Tests/Pickle/Mod/Pickle/Features/20-gallery.feature`. No capture yet: rating the plan. Story: a baking morning at the Sanctuary, 08:00 to 11:00, Nelim protagonist (tunic `LTS_Tunika`, earrings, `Roo_HD_Hair_Highpony`, smile), Shogun in every scene. Director pass by an Opus sub-agent: kept nearly every remark (see the header). Scenes 5 and 6 are interface windows (no subtitle, not rated), each needs an NPT step (open the Add-bill list; open the Needs tab with the biscuit memory), to ask at rate-gallery.
+
+| Scene | a time frame | b decor | c living | d pawns | e action | f composition | g subject | j mod | Plan score |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 bake-1-the-field | `plant-garden`, 08:00 Fog, +0 h | wheat rows, cut row, grain stacks, `TorchLamp`, `WoodLog`, 2 `PlantPot` daylily | wheat plants, Shogun east | tunic, Highpony, smile | carries grain, just after the cut | zoom 7, stack in foreground | harvest starts the day | grain stack 11 px at 268 px, golden rows | 5 |
+| 2 bake-2-the-stove | `terrace`, 09:00 Clear, +1 h | `FueledStove` lit, `Shelf` with wheat and eggs, finished stack, `TorchLamp`, `WoodLog` | Shogun lying west | same, smile | forced cooking job, before the next batch | rectangle (196,119)-(200,122), zoom 3 | grain becomes biscuits | output stack foreground, 30 px per cell at thumbnail | 5 |
+| 3 bake-3-the-five | `dining-nook`, 10:00 Clear, +1 h | `Table3x3c` with five biscuits, orchid, cabinet, chairs, daylight | Shogun under the table | same, smile | forced joy job, paused 30 ticks in | zoom 2.8, five colours spaced | the first batch, she chooses | five colours, 27 px each at thumbnail | 5 |
+| 4 bake-4-a-bite | `cloister`, 11:00 Clear, +1 h | `Stool`, small table, `TorchLamp`, daylily pot | Shogun sitting, front view | same, eating mouth (written trait) | sits, holds the green biscuit, first bite | zoom 3 | she stops to eat | green biscuit in hand on stone | 5 |
+
+k (series): ok. One story, wide (1), medium (2), tight (3, 4), opening field and closing bite, hours advance. First rating of the first draft, before the fixes of the Opus pass and of this check: scenes 1 to 4 at 3.5 to 4 (d weak: hairstyle unwritten; e weak: standing pose and a reach with no obtained gesture; j weak at zoom 7 to 10.5). Not verified: free cells at the chosen coordinates, defNames `Table3x3c`, `FueledStove` owned placement and weather `Fog`, that the cooking bar survives the hidden UI, that a forced joy job keeps her in frame. Capture verdicts: none yet.
 
 ## Ecosystem
 
