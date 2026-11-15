@@ -147,6 +147,32 @@ none missing.
 Review by Virginie, 2026-10-11, revision `8826c43` (`FRENCH_REVIEW.md` regenerated from it at `0fc56a8`, with Chinese original): validated in chat. Corrections she asked for and applied: `FZPlant_Wheat.description`, `FZRawWheat.description` and `AteFZCookies.stages.ate_butter_cookie.description` reworded; no text needs gender branch. `translation_fr` is `complete`.
 Review by Virginie, 2026-10-18, revision `a2b76eb` (`FRENCH_REVIEW.md` regenerated at it): validated in chat after two ChatGPT passes. Correction applied: `FZPlant_Wheat.description` now follows English (any baked use). `translation_fr` stays `complete`.
 
+## NSB
+
+First sync, 2026-11-15, at the start of `shootGallery` (no shotlist yet: the tables below are the plan `write-shotlist` starts from, not a played gallery). NSB changed nothing the mod used before: the mod had no NSB line. NPT: read once in full for the steps this story needs. Rules said back (owner, 2026-11-05 and 2026-11-07): everything in NSB is free to use; a colonist or domestic animal outside NSB needs Virginie's express validation (an animal the mod adds is authorized, this mod adds none); no change to a colonist's properties without her words; every outfit is free; every animal the mod includes must be in a shot.
+
+Places read: 2026-11-15 Tribe read: 2026-11-15 Steps read: 2026-11-15
+
+Left alone: no scenario written (stage rule: shotlist and scenarios start at `write-shotlist`). Found while reading: NSB has no wheat field and no stove named in its place docs; the cotton field is farm zone 16, so wheat is sown there by a scenario step; a stove is built or spawned by a step, to confirm with NPT at `write-shotlist` (ask NPT, never a local step).
+
+| Place | Shots that use it | Changes made for the gallery | Last read |
+| --- | --- | --- | --- |
+| `cotton-field` (211, 106), farm zone 16, validated 2026-11-07 | wheat field | sow wheat on zone 16 by step, plan only | 2026-11-15 |
+| `hearth-hall` (181, 115), to embellish; `dining-nook` (176, 108) | stoves, biscuit in hand, joy-eating | none planned; a stove to place by step (ask NPT) | 2026-11-15 |
+| `statue-garden` (155, 99), validated | optional, biscuit in hand outdoors | none | 2026-11-15 |
+
+| Colonist | Shots | Outfit per shot | Last read of profile | Exceptions |
+| --- | --- | --- | --- | --- |
+| Nelim (in the save, cooking 12, major passion) | protagonist: field, stoves, biscuit in hand, joy-eating | daily `LTS_Tunika` emerald with `Apparel_PAESmallEarrings` (validated 2026-11-04); a cook outfit is free, shotlist says which and why | 2026-11-15 | none |
+
+| Animal | Shots | Outfit | Last read of its sheet | Exceptions |
+| --- | --- | --- | --- | --- |
+| Shogun (labrador, Nelim's, in the save) | one shot facing the camera (step `the animal {string} faces {word}` exists) | `Apparel_leatherdogcollar` by default, wardrobe validated 2026-11-06 | 2026-11-15 (catalogue and wardrobe lines) | none |
+
+| Animal the mod includes (rule 5) | Shot(s) | Status |
+| --- | --- | --- |
+| none: the mod adds a crop, a grain, five snacks, recipes and memories, no `PawnKindDef` and no race | not applicable | nothing missing |
+
 ## Ecosystem
 
 8.0 refresh, 2026-11-14, by PiI (`docs/inventory/ecosystem-steam/FullzoonCookiesRenew.md`, source: Steam + registre):
