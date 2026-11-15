@@ -8,14 +8,15 @@ packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-workflow_stage: playTests[1.0.0]
-current_step: "playTests: non-regression passes read 2026-11-15 on `0d49abe` (Mod unchanged since): 575e English, fcfb with Mlie, 3f30 Chinese green; 780b French red on a stale scenario text, fixed in `b81c890`, replay 7219 green. Lines in Docs/runs/2026-11-14.md. Next: leave playTests"
+workflow_stage: shootGallery[1.0.0]
+current_step: "shootGallery: leaving playTests 2026-11-15. All Pickle passes green (1.6), feature 14 capture looked at. Next: skill write-shotlist (9.0)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
 dependencies: none
 showcase:     complete
 tested_on:
+  - "2026-11-15 pickle b81c890 (Mod unchanged since 0d49abe): non-regression 575e English 23 of 28, fcfb with Mlie 25 of 27, 3f30 Chinese 15 of 17, French 780b 14 of 17 then replay 7219 green, feature 14 capture 51ca looked at. Skipped are conditionals covered by passes 3, 5, 6. Lines in Docs/runs/2026-11-14.md"
   - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in docs/runs/2026-09-28.md"
   - "2026-11-03, pass 3 beside Mlie's wheat, English, ticket `20261030-162201-656-b18a`, tree `2785d66`: 23 passed, 2 failed of 25 (08 step name, 15 wait too short; both fixed in `9368ab4`). Line in docs/runs/2026-11-03.md"
   - "2026-11-09, pass 4 bare, Chinese Simplified, ticket `20261109-002213-075-df2a`, tree `e9fa2e4`: 15 passed, 0 failed, 2 skipped of 17. Evidence `Tests/Pickle/Inbox/2026-11-09-pass4-zh`, line in docs/runs/2026-11-09.md"
@@ -24,7 +25,6 @@ workshop:     3806761765
 remaining:
   - "unverified: passes 5 (RC2) and 6 (Medieval Overhaul) green 2026-11-14; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
-  - "unverified: the `@review` capture of feature 14 was never looked at and its evidence is deleted: shoot it again at shootGallery"
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
 historical_remaining_2026_09_12:
   - unverified: the twelve scenarios of `_tools/FUNCTIONAL-SCENARIOS.md`, none of them played
@@ -32,9 +32,9 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
-updated:      2026-11-15, non-regression passes read, all green
+updated:      2026-11-15, playTests done, shootGallery starts
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 61053669ed540d5e0b41ea5367adf22b89c75f07
+protocols_read_sha: 976a636c6be33d24749088f814ae7547d9ba3336
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
