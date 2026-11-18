@@ -34,7 +34,7 @@ historical_remaining_2026_09_12:
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
 updated:      2026-11-15, playTests done, shootGallery starts
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 976a636c6be33d24749088f814ae7547d9ba3336
+protocols_read_sha: 6202fb28009d0ccb335d6fe3a96d3de876befa4b
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
@@ -151,7 +151,9 @@ Review by Virginie, 2026-10-18, revision `a2b76eb` (`FRENCH_REVIEW.md` regenerat
 
 First sync, 2026-11-15, at the start of `shootGallery` (no shotlist yet: the tables below are the plan `write-shotlist` starts from, not a played gallery). NSB changed nothing the mod used before: the mod had no NSB line. NPT: read once in full for the steps this story needs. Rules said back (owner, 2026-11-05 and 2026-11-07): everything in NSB is free to use; a colonist or domestic animal outside NSB needs Virginie's express validation (an animal the mod adds is authorized, this mod adds none); no change to a colonist's properties without her words; every outfit is free; every animal the mod includes must be in a shot.
 
-Places read: 2026-11-15 Tribe read: 2026-11-15 Steps read: 2026-11-15
+Places read: 2026-11-15 Tribe read: 2026-11-19 Steps read: 2026-11-19
+
+Sync 2026-11-19: NSB moved since 2026-11-15 (Iori, BiB gene renames, VALIDE for Miel, Quo, Quaren, Daichi, Dalia, Ada; save-rebuild plan `RECONSTRUCTION-SAUVEGARDE.md`, nothing built; sex-stable test, save holds only Nelim as colonist). None of it touches Nelim, Shogun or the three places used; their validations in `VALIDE.md` stand. NPT moved: vanilla face section in `face-parts.md` only, no step added or removed, no scenario affected. Shotlist and scenarios unchanged. Only if the save is rebuilt (v2): the 20-gallery scenarios load `Nelims-tribe`, to repoint then.
 
 Left alone: no scenario written (stage rule: shotlist and scenarios start at `write-shotlist`). Found while reading: NSB has no wheat field and no stove named in its place docs; the cotton field is farm zone 16, so wheat is sown there by a scenario step; a stove is built or spawned by a step, to confirm with NPT at `write-shotlist` (ask NPT, never a local step).
 
