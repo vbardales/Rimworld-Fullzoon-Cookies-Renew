@@ -8,7 +8,7 @@ packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-workflow_stage: shootGallery[1.0.0]
+workflow_stage: declareDependencies[1.0.0]
 current_step: "shootGallery: shotlist and 4 scenarios written 2026-11-15 in 20-gallery.feature, drift check green. Next: ask NPT for the two window steps, small ticket on scenes 2 to 4, then full series (rate-gallery)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
@@ -23,6 +23,9 @@ tested_on:
   - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in docs/runs/2026-11-09.md"
 workshop:     3806761765
 remaining:
+  - "defect 4.e: Mod/About/OptionalCompat.xml missing; Check-OptionalCompat.ps1 lists five undeclared targets from the recipes' MayRequire (DankPyon.Medieval.Overhaul, dismarzero.VGP.VGPGardenGourmet, Mlie.RC2.Core, Mlie.VanillalikeWheat, sumghai.MousekinRace). Write them with -Write, set kind by hand, rerun the check (added by commit 0d49abe on 2026-11-14, after declareDependencies)"
+  - "defect 4.g: record of the five optional integrations (date, revision) and field workshop_required_items (n/a, not released yet) missing in STATUS.md"
+  - "after 4.e and 4.g: replay, return to shootGallery[1.0.0] (shotlist, 4 scenarios and drift check stay valid; next: NPT window steps, small ticket on scenes 2 to 4)"
   - "unverified: passes 5 (RC2) and 6 (Medieval Overhaul) green 2026-11-14; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -32,9 +35,9 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
-updated:      2026-11-15, playTests done, shootGallery starts
+updated:      2026-11-19, audit replay: back to declareDependencies (4.e, 4.g open), gallery work kept
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 6202fb28009d0ccb335d6fe3a96d3de876befa4b
+protocols_read_sha: 7d7534ad8275d700cd94aa1d995144f9a9fddeaa
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
