@@ -8,8 +8,8 @@ packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-workflow_stage: writeShotlist[1.0.0]
-current_step: "writeShotlist (replay 2026-11-19, 9.0 and 9.0 bis open: scenes 5 and 6 have no plan score): scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery)"
+workflow_stage: shootGallery[1.0.0]
+current_step: "shootGallery (replay 2026-11-19, 9.0 and 9.0 bis done: scenes 5 and 6 are interface windows, not rated). Scenes 2 to 4 fixed e305f6d after red ticket 391d, replay ticket e1a7 filed. scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
@@ -26,7 +26,6 @@ tested_on:
   - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in Docs/runs/pickle.md"
 workshop:     3806761765
 remaining:
-  - "9.0 and 9.0 bis open: shotlist table holds scenes 1 to 4 only; run score-gallery on scenes 5 (bake-5-the-bills) and 6 (bake-6-the-memory), add their rows with plan score, then replay to return to shootGallery. Ticket 391d (scenes 2 to 4) stays queued"
   - "pending migration (AGENTS.md hygiene 2026-11-19): merge Tests/TEST_SCENARIOS.md into Tests/Pickle/README.md (PROTOCOLS-READ, Docs/runs and Rule-OwnValues.ps1 done 2026-11-19). Test-Mod.ps1 generation by CI/CD still to ask (needs the mounted junction); Rule-OwnValues row awaits Audit validation"
   - "unverified: passes 5 (RC2) and 6 (Medieval Overhaul) green 2026-11-14; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
@@ -37,9 +36,9 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_4bf25320-c1bd-45a2-9b16-82a32a4168fd
-updated:      2026-11-19, audit replay: back to writeShotlist (9.0 and 9.0 bis), ecosystem_line 1.0 written
+updated:      2026-11-19, audit replay: shootGallery again (9.0 and 9.0 bis done, windows not rated), hygiene migration done
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 12c4022e5236021ecfb0fd81f8a4c6f64249f982
+protocols_read_sha: 305845b4f341f63dc420d6a40b602bef764f4084
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
