@@ -14,7 +14,7 @@ licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
 dependencies: none
-workshop_required_items: n/a (not released yet; the five integrations below are optional, none required)
+workshop_required_items: n/a, not released yet
 optional_integrations: "2026-11-19, revision 890ff96: DankPyon.Medieval.Overhaul 3219596926, dismarzero.VGP.VGPGardenGourmet 2007062982, Mlie.RC2.Core 2562519366, Mlie.VanillalikeWheat 2717707382, sumghai.MousekinRace 2494193063, all kind patch, in Mod/About/OptionalCompat.xml, Check-OptionalCompat OK"
 showcase:     complete
 tested_on:
