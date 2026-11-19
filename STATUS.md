@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: shootGallery[1.0.0]
-current_step: "shootGallery: shotlist and 4 scenarios written 2026-11-15 in 20-gallery.feature, drift check green. NPT answered 2026-11-19: scene 6 step (Pickle Tools gains memory thought + open ITab_Pawn_Needs) new, compiled, not played; scene 5 composed from existing steps (select FueledStove, open Bills tab, click AddBill), fallback ask NPT if tag not found. Next: small ticket on scenes 2 to 4, then full series (rate-gallery)"
+current_step: "shootGallery: scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
