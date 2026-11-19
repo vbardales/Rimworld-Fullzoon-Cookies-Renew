@@ -36,7 +36,7 @@ historical_remaining_2026_09_12:
 session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
 updated:      2026-11-19, 4.e and 4.g closed (890ff96, 1c978ec), back to shootGallery
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 4778b712108a584d43f2593c33f20830fb1dd2d2
+protocols_read_sha: b6dffae1771d4293af91253cfa700331460b42af
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
