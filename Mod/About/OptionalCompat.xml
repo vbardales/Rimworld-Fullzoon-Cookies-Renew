@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OptionalCompat>
+  <li><packageId>DankPyon.Medieval.Overhaul</packageId><workshopId>3219596926</workshopId><kind>patch</kind></li>
+  <li><packageId>dismarzero.VGP.VGPGardenGourmet</packageId><workshopId>2007062982</workshopId><kind>patch</kind></li>
+  <li><packageId>Mlie.RC2.Core</packageId><workshopId>2562519366</workshopId><kind>patch</kind></li>
+  <li><packageId>Mlie.VanillalikeWheat</packageId><workshopId>2717707382</workshopId><kind>patch</kind></li>
+  <li><packageId>sumghai.MousekinRace</packageId><workshopId>2494193063</workshopId><kind>patch</kind></li>
+</OptionalCompat>
