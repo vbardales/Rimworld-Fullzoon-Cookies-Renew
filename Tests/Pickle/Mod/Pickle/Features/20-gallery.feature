@@ -51,9 +51,9 @@
 #        (176, 127) one cell away facing South (front view of the animal). Instant: the first bite. Closing image.
 #        Says: a colonist stops to eat a biscuit for pleasure. Subtitle: "A pause, a biscuit, a smile."
 #   5. bake-5-the-bills, interface window (no subtitle, on `window-backdrop-for-height`): the stove's Add-bill list
-#        with the mod's recipes visible. Needs a step that opens the list (to ask NPT at rate-gallery). Cropped.
+#        with the mod's recipes visible. Composed from NPT's steps (answer 2026-11-19, not yet played): select the stove, open the Bills tab, click AddBill. Cropped.
 #   6. bake-6-the-memory, interface window (no subtitle, same backdrop): the Needs tab mood list with the memory a
-#        biscuit leaves. Needs a step that opens the tab with the thought given (to ask NPT). Cropped.
+#        biscuit leaves. NPT's new step gives the thought, then the Needs tab opens (2026-11-19, compiled, not played). Cropped.
 #
 # DIRECTOR PASS (Opus, one call). KEPT: wheat half harvested with grain in the foreground; Nelim carrying, not
 # "mid-stride"; zoom 7 and 3 for the subjects; shelf and a finished stack in scene 2 so input and output show;
@@ -71,6 +71,8 @@
 @requires:nelim.pickletools.camerazoom
 @requires:nelim.pickletools.stagedecor
 @requires:nelim.pickletools.colonistrace
+@requires:nelim.pickletools.inspecttabs
+@requires:nelim.pickletools.keyedclick
 Feature: a baking morning at the Sanctuary
 
   Scenario: bake-1-the-field
@@ -195,3 +197,32 @@ Feature: a baking morning at the Sanctuary
     And Nelim's Pickle Tools: I let 20 ticks pass
     And I take a screenshot "bake-4-a-bite"
     Then Nelim's Pickle Tools: the decor is removed
+
+  Scenario: bake-5-the-bills
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
+    And game speed is paused
+    And Nelim's Pickle Tools: the tooltips are hidden
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
+    And I set the hour to 9
+    And Nelim's Pickle Tools: I place the decor "FueledStove" owned by the colonists at (198, 120)
+    And Nelim's Pickle Tools: the recipe for "CookFZEggBiscuit" is available at "FueledStove"
+    When Nelim's Pickle Tools: I select the thing of def "FueledStove" at (198, 120)
+    And Nelim's Pickle Tools: I open the "Bills" inspect tab
+    And Nelim's Pickle Tools: I click button keyed "AddBill"
+    And Nelim's Pickle Tools: I let 5 frames pass
+    And I take a screenshot "bake-5-the-bills"
+    Then Nelim's Pickle Tools: the decor is removed
+
+  Scenario: bake-6-the-memory
+    Given the save "Nelims-tribe-decor-mods-z3" is loaded
+    And game speed is paused
+    And Nelim's Pickle Tools: the tooltips are hidden
+    And Nelim's Pickle Tools: the colonist bar is hidden
+    And Nelim's Pickle Tools: the learning helper is hidden
+    And I set the hour to 11
+    And Nelim's Pickle Tools: "Nelim" gains the memory thought "AteFZCookies"
+    When Nelim's Pickle Tools: I select the colonist named "Nelim" alone
+    And Nelim's Pickle Tools: I open the "ITab_Pawn_Needs" inspect tab
+    And Nelim's Pickle Tools: I let 5 frames pass
+    And I take a screenshot "bake-6-the-memory"
