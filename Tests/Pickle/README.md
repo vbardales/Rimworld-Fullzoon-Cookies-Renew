@@ -65,7 +65,7 @@ powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Generate-LabelFeatures
 ```text
 powershell.exe -ExecutionPolicy Bypass -File ../scripts/Check-Steps.ps1 -ModRoot .
 powershell.exe -ExecutionPolicy Bypass -File Tests/Pickle/Pass-Counts.ps1
-powershell.exe -ExecutionPolicy Bypass -File scripts/Check-Recipes.ps1
+powershell.exe -ExecutionPolicy Bypass -File Tests/Rule-OwnValues.ps1 -ModRoot .
 ```
 
 The shared `scripts/Check-Steps.ps1` compiles Pickle's own vocabulary and the staged tool's, and checks that every step line of
@@ -107,4 +107,4 @@ the WSL install's Workshop cache; whether they are there has not been checked.
 ## Evidence
 
 Reports go to `Tests/Pickle/Evidence/<run>/`, ignored by git, never in the repository. What to keep from a run and
-what to delete is in `../../TESTING.md`. The history is one line per run in `../../docs/runs/`.
+what to delete is in `../../TESTING.md`. The history is one line per run in `../../Docs/runs/pickle.md`.

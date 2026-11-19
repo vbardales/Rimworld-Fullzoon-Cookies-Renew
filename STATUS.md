@@ -19,15 +19,15 @@ workshop_required_items: n/a, not released yet
 optional_integrations: "2026-11-19, revision 890ff96: DankPyon.Medieval.Overhaul 3219596926, dismarzero.VGP.VGPGardenGourmet 2007062982, Mlie.RC2.Core 2562519366, Mlie.VanillalikeWheat 2717707382, sumghai.MousekinRace 2494193063, all kind patch, in Mod/About/OptionalCompat.xml, Check-OptionalCompat OK"
 showcase:     complete
 tested_on:
-  - "2026-11-15 pickle b81c890 (Mod unchanged since 0d49abe): non-regression 575e English 23 of 28, fcfb with Mlie 25 of 27, 3f30 Chinese 15 of 17, French 780b 14 of 17 then replay 7219 green, feature 14 capture 51ca looked at. Skipped are conditionals covered by passes 3, 5, 6. Lines in Docs/runs/2026-11-14.md"
-  - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in docs/runs/2026-09-28.md"
-  - "2026-11-03, pass 3 beside Mlie's wheat, English, ticket `20261030-162201-656-b18a`, tree `2785d66`: 23 passed, 2 failed of 25 (08 step name, 15 wait too short; both fixed in `9368ab4`). Line in docs/runs/2026-11-03.md"
-  - "2026-11-09, pass 4 bare, Chinese Simplified, ticket `20261109-002213-075-df2a`, tree `e9fa2e4`: 15 passed, 0 failed, 2 skipped of 17. Evidence `Tests/Pickle/Inbox/2026-11-09-pass4-zh`, line in docs/runs/2026-11-09.md"
-  - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in docs/runs/2026-11-09.md"
+  - "2026-11-15 pickle b81c890 (Mod unchanged since 0d49abe): non-regression 575e English 23 of 28, fcfb with Mlie 25 of 27, 3f30 Chinese 15 of 17, French 780b 14 of 17 then replay 7219 green, feature 14 capture 51ca looked at. Skipped are conditionals covered by passes 3, 5, 6. Lines in Docs/runs/pickle.md"
+  - "2026-09-28/29, bare set, Pickle 4.9.1, WSL. Pass 1 (English): 22 passed, 1 failed, 3 skipped of 26. Pass 2 (French): 15 passed, 0 failed, 2 skipped of 17. Evidence deleted 2026-10-19 (older than the last `Mod/` commit), one line per run in Docs/runs/pickle.md"
+  - "2026-11-03, pass 3 beside Mlie's wheat, English, ticket `20261030-162201-656-b18a`, tree `2785d66`: 23 passed, 2 failed of 25 (08 step name, 15 wait too short; both fixed in `9368ab4`). Line in Docs/runs/pickle.md"
+  - "2026-11-09, pass 4 bare, Chinese Simplified, ticket `20261109-002213-075-df2a`, tree `e9fa2e4`: 15 passed, 0 failed, 2 skipped of 17. Evidence `Tests/Pickle/Inbox/2026-11-09-pass4-zh`, line in Docs/runs/pickle.md"
+  - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in Docs/runs/pickle.md"
 workshop:     3806761765
 remaining:
   - "9.0 and 9.0 bis open: shotlist table holds scenes 1 to 4 only; run score-gallery on scenes 5 (bake-5-the-bills) and 6 (bake-6-the-memory), add their rows with plan score, then replay to return to shootGallery. Ticket 391d (scenes 2 to 4) stays queued"
-  - "pending migration (AGENTS.md hygiene 2026-11-19): delete Docs/PROTOCOLS-READ.md and Docs/runs/ files other than pickle.md, merge Tests/TEST_SCENARIOS.md into Tests/Pickle/README.md; Rule-OwnValues conversion (AGENTS.md) not done"
+  - "pending migration (AGENTS.md hygiene 2026-11-19): merge Tests/TEST_SCENARIOS.md into Tests/Pickle/README.md (PROTOCOLS-READ, Docs/runs and Rule-OwnValues.ps1 done 2026-11-19). Test-Mod.ps1 generation by CI/CD still to ask (needs the mounted junction); Rule-OwnValues row awaits Audit validation"
   - "unverified: passes 5 (RC2) and 6 (Medieval Overhaul) green 2026-11-14; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -64,7 +64,7 @@ what sections below say about "nothing played": game ran twice on this mod.
   `Check-Steps.ps1`. 2026-09-28 unfiltered "replay 15" (32 scenarios, 7 red) was wrong filter: its six red were
   Chinese features played in English pass, seventh was scenario 15 again. Proved nothing other runs do
   not, deleted.
-- **Rules read since last audit** (see `docs/PROTOCOLS-READ.md`): French gender agreement (2026-09-30), done on five
+- **Rules read since last audit** (file `Docs/PROTOCOLS-READ.md` deleted 2026-11-19, `protocols_read_sha` replaces it): French gender agreement (2026-09-30), done on five
   DefInjected files below; PR to original's repository (none exists, `upstream_mod_remotes: N/A`); order of passes
   of 2026-10-02 (never-played and red first, non-regression together at end); WSL cleanup at sleep time (nothing
   of this mod's downloaded there yet that is known: pass 3's two Workshop items to be checked then).

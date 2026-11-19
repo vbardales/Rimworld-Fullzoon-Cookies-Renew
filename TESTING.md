@@ -13,8 +13,8 @@ in [`Tests/Pickle/`](Tests/Pickle/README.md).
 
 | Layer | State |
 |---|---|
-| Static checks: fields, references, types, DefInjected | shared scripts of the collection, run and green on 2026-09-28: `docs/runs/2026-09-28.md` |
-| `scripts/Check-Recipes.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
+| Static checks: fields, references, types, DefInjected | shared scripts of the collection, run and green on 2026-09-28: `Docs/runs/pickle.md` (offline checks of 2026-09-28 are in git history) |
+| `Tests/Rule-OwnValues.ps1` | written and run green on 2026-09-28: the fifteen recipes are five biscuits at x1, x5 and x10, multiples of one another, at the two stoves. Seen failing on three injected faults |
 | `Tests/Pickle/Pass-Counts.ps1` | 32 scenarios in 15 features; the counts each pass must show are computed from the tags and the pass maps. Parsing and step resolution are the shared `scripts/Check-Steps.ps1` |
 | Pickle suite | 32 scenarios in 15 features, no local C#. **Played: passes 1 and 2 only** (see the line above). Green: all but `15`. Not played: pass 3 (`08`, `11`, the rest beside Mlie) and pass 4 (Chinese). Offline checks replayed on 2026-10-02 on `155738e`: `Mod/` unchanged except the Preview image |
 | Functional scenarios 0 to 13 | written with setup, actions and expected results; dispositions in the table below. Not played by hand |
@@ -32,8 +32,8 @@ suite, proved offline, not applicable with its reason, or open with what it is w
 | 1 The wheat can be sown | **Pickle, the data half** | `07` and `08` assert what becomes of the crop's `sowTags`. The sow menu is vanilla's list built from them, and nothing of this mod draws it: not applicable |
 | 2 Growth time and yield | **Pickle, the data half** | `03` asserts 4.5 days, a yield of six and the harvested grain. The growth engine is the game's, and Pickle's time steps move the calendar and grow nothing: not applicable |
 | 3 The grain rots at forty days and feeds ordinary meals | **not applicable** | rot is the game's; the grain feeds meals because it inherits vanilla's raw plant food category and vanilla's meal recipes filter on it. That is a claim about vanilla's filter: the game is not under test |
-| 4 Fifteen bills at two stoves | **Pickle** | `09` both stoves accept all fifteen. "And no bill at the campfire" is offline: `Check-Recipes.ps1` asserts `recipeUsers` is exactly the two stoves |
-| 5 The batches multiply | **offline**, and Pickle for x1 | `Check-Recipes.ps1` asserts x5 and x10 are five and ten times x1 in ingredients, product and work; `10` bakes an x1 for real |
+| 4 Fifteen bills at two stoves | **Pickle** | `09` both stoves accept all fifteen. "And no bill at the campfire" is offline: `Rule-OwnValues.ps1` asserts `recipeUsers` is exactly the two stoves |
+| 5 The batches multiply | **offline**, and Pickle for x1 | `Rule-OwnValues.ps1` asserts x5 and x10 are five and ten times x1 in ingredients, product and work; `10` bakes an x1 for real |
 | 6 Any unfertilised egg | **Pickle** | `10` second scenario, a duck egg being the only egg in the colony. That a fertilised egg is refused is the ingredient filter's UI: not applicable |
 | 7 A biscuit is not a meal | **Pickle, the data half** | `03` asserts the inherited `DesperateOnly`. Watching a starving colonist choose or refuse it needs a colony with no other food, and `test-colony` holds meals and pemmican it would take first: not applicable, the choice being vanilla's food logic, the same as for vanilla chocolate |
 | 8 Eaten for pleasure, joy and a memory | **Pickle** | `15` a colonist with time to spare is sent to an insect jelly biscuit by the joy giver `EatFZBiscuits`, eats it and keeps its memory; `01` the giver exists; `12` the five memories are wired and worth +3, +5, +5, +3 and +7; `03` the joy kind. The giver was added on 2026-09-28, after the owner ruled: see below |
@@ -117,7 +117,7 @@ did not repeat. List what goes and what stays before deleting. `Remove-Item` sto
 path limit: empty the folder with `robocopy <empty folder> <target> /MIR`, then remove the shell. Never delete a
 report that `STATUS.md` still points to: repoint it first.
 
-The history is one text line per run in `docs/runs/`, never a folder.
+The history is one text line per run in `Docs/runs/pickle.md`, never a folder.
 
 ## When to rerun
 
