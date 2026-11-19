@@ -33,10 +33,10 @@ historical_remaining_2026_09_12:
   - defect: three documents say the wheat grain is good for nothing but baking, and it is not. Resolved on 2026-09-13, the README and the About description now say the grain feeds ordinary meals
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
-session:      local_8f3dd1db-241a-4d8d-b423-f4b0c74bc941
+session:      local_4bf25320-c1bd-45a2-9b16-82a32a4168fd
 updated:      2026-11-19, 4.e and 4.g closed (890ff96, 1c978ec), back to shootGallery
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: b6dffae1771d4293af91253cfa700331460b42af
+protocols_read_sha: 4967ffd137d51a208cae25feeed1ee0a69bc3712
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
