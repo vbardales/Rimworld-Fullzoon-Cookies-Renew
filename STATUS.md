@@ -9,7 +9,7 @@ repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
 workflow_stage: shootGallery[1.0.0]
-current_step: "shootGallery (replay 2026-11-19, 9.0 and 9.0 bis done: scenes 5 and 6 are interface windows, not rated). Scenes 2 to 4 fixed e305f6d after red ticket 391d, replay ticket e1a7 filed. scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery)"
+current_step: "shootGallery (replay 2026-11-19, 9.0 and 9.0 bis done: scenes 5 and 6 are interface windows, not rated). Scenes 2 to 4 fixed e305f6d after red ticket 391d, replay ticket e1a7 filed. scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery). 2026-11-19 TM relay: 391d red (exit 1, hetzner) but evidenceDir Tests/Pickle/Inbox/gallery-small-2-4 absent here (never existed in repo or git); asked TM for junit.xml, summary.md, log or a re-sync; replay e1a7 is the live ticket"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
