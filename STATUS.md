@@ -8,12 +8,13 @@ packageId:    nelim.fullzooncookies
 repo:         Rimworld-Fullzoon-Cookies-Renew
 visibility:   public
 detached:     yes
-workflow_stage: shootGallery[1.0.0]
-current_step: "shootGallery: scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery)"
+workflow_stage: writeShotlist[1.0.0]
+current_step: "writeShotlist (replay 2026-11-19, 9.0 and 9.0 bis open: scenes 5 and 6 have no plan score): scenes 5 and 6 written 2026-11-19 (566e3fb, window steps from NPT, not played), gallery dep map added. Small ticket scenes 2 to 4 filed (id 391d, tree 566e3fb). Next: read it, fix reds, then full series (rate-gallery)"
 licence:      silent
 licence_at:   no licence at any of the four places one could be - no LICENSE file in the mod, no mention in its About.xml, no linked repository, and nothing in the body of its Steam description. Read again on 2026-09-28 through the Steam Web API - last updated 2019-01-15, tag 1.0, no licence and no link in the description. The mod declares 1.0 and nothing since.
 upstream_mod_remotes: N/A
 dependencies: none
+ecosystem_line: 1.0   # PiI search of 2026-11-14 for the 1.0.0 line (docs/inventory/ecosystem-steam/FullzoonCookiesRenew.md), ecosystem-links block 2026-11-19 (0ef2ef1); AUDIT 2.h
 workshop_required_items: n/a, not released yet
 optional_integrations: "2026-11-19, revision 890ff96: DankPyon.Medieval.Overhaul 3219596926, dismarzero.VGP.VGPGardenGourmet 2007062982, Mlie.RC2.Core 2562519366, Mlie.VanillalikeWheat 2717707382, sumghai.MousekinRace 2494193063, all kind patch, in Mod/About/OptionalCompat.xml, Check-OptionalCompat OK"
 showcase:     complete
@@ -25,6 +26,8 @@ tested_on:
   - "2026-11-09, replay of 08 and 15 beside Mlie's wheat, English, ticket `20261109-001111-438-9824`, tree `9368ab4`: 2 passed, 0 failed. Evidence `Tests/Pickle/Evidence/2026-11-08-pass3-reds`, line in docs/runs/2026-11-09.md"
 workshop:     3806761765
 remaining:
+  - "9.0 and 9.0 bis open: shotlist table holds scenes 1 to 4 only; run score-gallery on scenes 5 (bake-5-the-bills) and 6 (bake-6-the-memory), add their rows with plan score, then replay to return to shootGallery. Ticket 391d (scenes 2 to 4) stays queued"
+  - "pending migration (AGENTS.md hygiene 2026-11-19): delete Docs/PROTOCOLS-READ.md and Docs/runs/ files other than pickle.md, merge Tests/TEST_SCENARIOS.md into Tests/Pickle/README.md; Rule-OwnValues conversion (AGENTS.md) not done"
   - "unverified: passes 5 (RC2) and 6 (Medieval Overhaul) green 2026-11-14; WSL install may lack both mods and their dependencies). Untested ingredients: VGP Rawwheat, Mousekin_RawWheat, Medieval Overhaul milks. Not accepted on purpose: Lapin wheat, VV feed wheat, Stoneborn cave wheat (flour), other berries and chocolates (no category fits)"
   - "defect: `Art/Preview-source.png` mean value 0.261, AUDIT 2.e asks 0.30 or more; the source is the owner's, nothing regenerated"
   - "unverified: whether Workshop item 3806761765 still holds the six `.dds` files of the 0.1.0 upload. The publication CI ships tracked files only, so the next upload should replace the folder. Look at the item after the first CI publish."
@@ -34,9 +37,9 @@ historical_remaining_2026_09_12:
   - defect: the icon's background is a wall of biscuits where the ModIcon block of `STYLE_RIMWORLD.md` asks for a plain near-black one. Accepted by the owner on 2026-09-13
   - "gallery (Audit rule 2026-10-18, via TM): no Workshop gallery scenario exists yet, only review feature 14. At shootGallery run skill write-shotlist first: one story at the Sanctuary, Nelim protagonist, dress from NPT catalogues (PickleTools/ColonistRace/docs), wheat field, stoves, biscuit in hand, joy-eating, animals facing camera once, subtitles in PUBLICATION.md. Closing 9a (gameplay Pickle steps) and 9b (GALLERY-PROPS.md entries) due at release. Ack sent to TM, unconfirmed"
 session:      local_4bf25320-c1bd-45a2-9b16-82a32a4168fd
-updated:      2026-11-19, 4.e and 4.g closed (890ff96, 1c978ec), back to shootGallery
+updated:      2026-11-19, audit replay: back to writeShotlist (9.0 and 9.0 bis), ecosystem_line 1.0 written
 audited_revision: 155738e6dfaa314e0f6c6e5793d9a8a01a001110
-protocols_read_sha: 4967ffd137d51a208cae25feeed1ee0a69bc3712
+protocols_read_sha: 12c4022e5236021ecfb0fd81f8a4c6f64249f982
 code_review_sha: ba9da570fb2cd5bfa0cb30875ce2640393189686
 echo_review_sha: 75ecf138232d5810bc6aae314efcaa37101c7357
 social_preview_sha256: 0fabd38956bc5f427c24378602b32dee06daeca1826ab71b2fca510582308574
