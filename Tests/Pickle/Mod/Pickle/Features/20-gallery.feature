@@ -198,7 +198,7 @@ Feature: a baking morning at the Sanctuary
     And I take a screenshot "bake-4-a-bite"
     Then Nelim's Pickle Tools: the decor is removed
 
-  Scenario: bake-5-the-bills
+  Scenario: bake-5-the-bills interface window
     Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And Nelim's Pickle Tools: the tooltips are hidden
@@ -214,7 +214,7 @@ Feature: a baking morning at the Sanctuary
     And I take a screenshot "bake-5-the-bills"
     Then Nelim's Pickle Tools: the decor is removed
 
-  Scenario: bake-6-the-memory
+  Scenario: bake-6-the-memory interface window
     Given the save "Nelims-tribe-decor-mods-z3" is loaded
     And game speed is paused
     And Nelim's Pickle Tools: the tooltips are hidden
